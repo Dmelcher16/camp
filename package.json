@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "cd client && npm i",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\"",
+    "start:prod": "node server.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,7 +26,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.10.8",
+    "mongoose": "^5.10.8"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.4"
   }
 }
