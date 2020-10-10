@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd client && npm i",
     "start": "node server.js"
   },
   "repository": {
@@ -21,6 +22,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.10.8"
+    "mongoose": "^5.10.8",
+    "nodemon": "^2.0.4"
   }
 }
