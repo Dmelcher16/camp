@@ -1,5 +1,6 @@
 import React from 'react';
 import { AmplifyAuthenticator, AmplifySignUp, AmplifySignIn } from '@aws-amplify/ui-react';
+import './App.css';
 
 const App = () => {
   return (
