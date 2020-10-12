@@ -3,6 +3,6 @@ const dogsController = require("../../controllers/dogsController");
 
 //matches with "/api/dogs"
 router.route("/")
-.get(dogsController.findAll);
+.get(dogsController.findAll).post(dogsController.create);
 
 module.exports = router;
