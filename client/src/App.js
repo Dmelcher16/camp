@@ -1,15 +1,9 @@
 import React from 'react';
-import { AmplifyAuthenticator, AmplifySignIn } from '@aws-amplify/ui-react';
-import './App.css';
-import AuthStateApp from './authstate';
+import Login from './login'
 
 const App = () => {
   return (
-    <AmplifyAuthenticator usernameAlias="email">
-      <AmplifySignIn slot="sign-in" usernameAlias="email" 
-      />
-      <AuthStateApp />
-    </AmplifyAuthenticator>
+    <Login/>
   );
 };
 
