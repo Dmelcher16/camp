@@ -1,12 +1,14 @@
 import React from "react";
 import {
-    AmplifyAuthenticator,
-    AmplifySignUp,
-    AmplifySignIn,
-  } from "@aws-amplify/ui-react";
+  AmplifyAuthenticator,
+  AmplifySignUp,
+  AmplifySignIn,
+} from "@aws-amplify/ui-react";
+import "./Login.css"
 
 const Login = () => {
-  return <div>
+  return (
+    <div>
       <AmplifyAuthenticator usernameAlias="email">
         <AmplifySignUp
           slot="sign-up"
@@ -34,7 +36,8 @@ const Login = () => {
         />
         <AmplifySignIn slot="sign-in" usernameAlias="email" />
       </AmplifyAuthenticator>
-  </div>;
+    </div>
+  );
 };
 
 export default Login;
