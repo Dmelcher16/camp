@@ -2,7 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+
 const PORT = process.env.PORT || 8080;
+
+
+
+//requiring morgan to use as dev tool
+const logger = require("morgan");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +19,8 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
+
+app.use(logger("dev"));
 
 //Connect to Mongo Database
 mongoose.connect(

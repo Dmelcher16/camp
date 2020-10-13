@@ -4,24 +4,6 @@ import './App.css';
 
 const App = () => {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-=======
     <AmplifyAuthenticator usernameAlias="email">
       <AmplifySignUp
         slot="sign-up"
@@ -49,7 +31,6 @@ const App = () => {
       />
       <AmplifySignIn slot="sign-in" usernameAlias="email" />
     </AmplifyAuthenticator>
->>>>>>> 344c89a5f364e04846f7b188097f0b53332136ae
   );
 };
 
