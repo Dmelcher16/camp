@@ -5,10 +5,12 @@ export default function AppNav() {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/"><img src="BlueCampK9Logo.jpeg" alt="logo"></img></NavbarBrand>
+        <NavbarBrand href="/">
+          <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
+        </NavbarBrand>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="/components/">About</NavLink>
+            <NavLink href="/about">About</NavLink>
           </NavItem>
         </Nav>
       </Navbar>
