@@ -8,7 +8,7 @@ import "./Login.css"
 
 const Login = () => {
   return (
-    <div>
+    <div className="main">
       <AmplifyAuthenticator usernameAlias="email">
         <AmplifySignUp
           slot="sign-up"
