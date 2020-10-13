@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
 //create our User model
 const UserSchema = new Schema({
   firstName: {
@@ -33,6 +32,12 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  dogs: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Dog",
+    }
+  ],
 
   lastUpdated: Date,
 
@@ -49,6 +54,8 @@ UserSchema.methods.lastUpdatedDate = function () {
 
   return this.lastUpdated;
 };
+
+// setFullName();
 
 const User = mongoose.model("User", UserSchema);
 

@@ -31,7 +31,7 @@ Schedule & Project Management Board:
 
 
 ## UI/UX Layout:
-![WireFrame](assets/Project_3_Wireframe.png)
+![WireFrame](assets/Project_3_Wireframe_Updated.png)
 
 ## Workflow:
 ![Workflow](assets/Project_3_Workflow.png)

@@ -40,6 +40,7 @@ const DogSchema = new Schema({
 
 DogSchema.methods.setOwnerFullName = function () {
   this.ownerFullName = `${this.ownerFirstName} ${this.ownerLastName}`;
+  console.log(this.ownerFullName)
   return this.ownerFullName;
 };
 
