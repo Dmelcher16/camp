@@ -5,7 +5,7 @@ import "./AppNav.css";
 export default function AppNav() {
   return (
     <div>
-      <Navbar>
+      <Navbar className="navbar" fixed="top">
         <NavbarBrand href="/">
           <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
         </NavbarBrand>
