@@ -7,8 +7,9 @@ import React from "react";
 import "./App.css";
 import AppNav from "./components/AppNav/AppNav.js";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import AboutPage from "./components/AboutPage/AboutPage.js";
-import HomePage from "./components/HomePage/HomePage.js";
+import Footer from "./components/Footer/Footer";
+// import AboutPage from "./components/AboutPage/AboutPage.js";
+// import HomePage from "./components/HomePage/HomePage.js";
 
 const App = () => {
   return (
@@ -45,6 +46,7 @@ const App = () => {
         />
         <AmplifySignIn slot="sign-in" usernameAlias="email" />
       </AmplifyAuthenticator> */}
+      <Footer />
     </Router>
   );
 };
