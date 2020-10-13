@@ -47,5 +47,9 @@ const trainingSchema = new Schema({
       },
     ],
 }, 
-{ toJSON: { virtuals: true } }
 );
+
+const Exercise = mongoose.model("Exercise", DogSchema);
+
+module.exports = Exercise;
+
