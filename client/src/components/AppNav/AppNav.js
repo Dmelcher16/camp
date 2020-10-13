@@ -9,7 +9,7 @@ export default function AppNav() {
         <NavbarBrand href="/">
           <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
         </NavbarBrand>
-        <Nav className="mr-auto" navbar>
+        <Nav className="navbar" navbar>
           <NavItem>
             <NavLink href="/about">About</NavLink>
           </NavItem>
