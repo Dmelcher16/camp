@@ -2,14 +2,16 @@
   background-image: url("./images/DogByCacti.jpg");
   height: 100vh;
   background-size: center;
-  background-position: center;
+  background-position: center center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .home {
   background-image: url("./images/DoghouseImage.jpg");
   height: 100vh;
-  background-position: center;
+  background-size: center;
+  background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
