@@ -1,6 +1,6 @@
 import React from 'react';
 import { AmplifyAuthenticator, AmplifySignIn } from '@aws-amplify/ui-react';
-import './login.css';
+import './Login.css';
 import AuthStateApp from './authstate';
 
 const Login = () => {
