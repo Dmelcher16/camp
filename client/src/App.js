@@ -14,12 +14,10 @@ const App = () => {
   return (
     <Router>
       <AppNav />
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/about" component={AboutPage} />
-      <Link to="/">
-        Go home
-      </Link>
-      <Link to="/about">go to about</Link>
+      {/* <Route exact path="/" component={HomePage} />
+      <Route exact path="/about" component={AboutPage} /> */}
+      {/* <Link to="/">Go home</Link>
+      <Link to="/about">go to about</Link> */}
       <AmplifyAuthenticator usernameAlias="email">
         <AmplifySignUp
           slot="sign-up"

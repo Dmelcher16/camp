@@ -1,10 +1,11 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavItem, NavLink, Nav } from "reactstrap";
+import "./AppNav.css";
 
 export default function AppNav() {
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar>
         <NavbarBrand href="/">
           <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
         </NavbarBrand>
@@ -14,6 +15,10 @@ export default function AppNav() {
           </NavItem>
         </Nav>
       </Navbar>
+      <div className="main">
+
+      </div>
+    
     </div>
   );
 }
