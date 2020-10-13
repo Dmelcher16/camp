@@ -1,9 +1,9 @@
 import React from "react";
-import {
-  AmplifyAuthenticator,
-  AmplifySignUp,
-  AmplifySignIn,
-} from "@aws-amplify/ui-react";
+// import {
+//   AmplifyAuthenticator,
+//   AmplifySignUp,
+//   AmplifySignIn,
+// } from "@aws-amplify/ui-react";
 import "./App.css";
 import AppNav from "./components/AppNav/AppNav.js";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
@@ -15,10 +15,10 @@ const App = () => {
     <Router>
       <AppNav />
       {/* <Route exact path="/" component={HomePage} />
-      <Route exact path="/about" component={AboutPage} /> */}
-      {/* <Link to="/">Go home</Link>
+      <Route exact path="/about" component={AboutPage} />
+      <Link to="/">Go home</Link>
       <Link to="/about">go to about</Link> */}
-      <AmplifyAuthenticator usernameAlias="email">
+      {/* <AmplifyAuthenticator usernameAlias="email">
         <AmplifySignUp
           slot="sign-up"
           usernameAlias="email"
@@ -44,7 +44,7 @@ const App = () => {
           ]}
         />
         <AmplifySignIn slot="sign-in" usernameAlias="email" />
-      </AmplifyAuthenticator>
+      </AmplifyAuthenticator> */}
     </Router>
   );
 };
