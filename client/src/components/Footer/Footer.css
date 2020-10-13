@@ -1,4 +1,10 @@
 .footer {
-    background-color: navajowhite
+    background-color: #285A84;
+    text-align: center;
+    padding: 12px 20px;
+}
+
+.footer span {
+    color: #85C872;
 }
 
