@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavItem, NavLink, Nav } from "reactstrap";
 import "./AppNav.css";
-import Login from "../Login/Login";
 
 export default function AppNav() {
   return (
@@ -16,9 +15,7 @@ export default function AppNav() {
           </NavItem>
         </Nav>
       </Navbar>
-      <div className="main">
-        <Login/>
-      </div>
+  
     
     </div>
   );

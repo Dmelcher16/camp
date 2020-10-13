@@ -13,13 +13,6 @@ a {
   
 }
 
-.main {
-  background-image: url("./DogByCacti.jpg");
-  height: 100vh;
-  background-size: center;
-  background-position: center;
-}
-
 .navbar {
   display: flex;
   justify-content: space-around;

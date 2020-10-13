@@ -1,5 +1,6 @@
-/* amplify-authenticator {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.main {
+  background-image: url("./images/DogByCacti.jpg");
+  height: 100vh;
+  background-size: center;
+  background-position: center;
+}
