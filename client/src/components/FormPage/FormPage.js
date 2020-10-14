@@ -1,62 +1,79 @@
 import React from "react";
 import "./FormPage.css";
-import { Button, Form, Col } from "react-bootstrap";
+import { Button, Form, Col, Row } from "react-bootstrap";
 
 export default function FormPage() {
   return (
     <div className="FormPage">
-      <Form className="form">
-        <h1>Welcome Tucker!</h1>
-        <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+      <h1>Welcome Tucker!!</h1>
+      <div className="form-container">
+        <Form className="form">
+          <h4>Add a dog to Start Your Kennel:</h4>
+          <Form.Group as={Row} controlId="name">
+            <Form.Label column sm="2">
+              Name
+            </Form.Label>
+            <Col sm="8">
+              <Form.Control />
+            </Col>
           </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+          <Form.Group as={Row} controlId="breed">
+            <Form.Label column sm="2">
+              Breed
+            </Form.Label>
+            <Col sm="8">
+              <Form.Control as="select" defaultValue="Choose...">
+                <option>Choose...</option>
+                <option>...</option>
+              </Form.Control>
+            </Col>
           </Form.Group>
-        </Form.Row>
-
-        <Form.Group controlId="formGridAddress1">
-          <Form.Label>Address</Form.Label>
-          <Form.Control placeholder="1234 Main St" />
-        </Form.Group>
-
-        <Form.Group controlId="formGridAddress2">
-          <Form.Label>Address 2</Form.Label>
-          <Form.Control placeholder="Apartment, studio, or floor" />
-        </Form.Group>
-
-        <Form.Row>
-          <Form.Group as={Col} controlId="formGridCity">
-            <Form.Label>City</Form.Label>
-            <Form.Control />
+          <Form.Group as={Row} controlId="age">
+            <Form.Label column sm="2">
+              Age
+            </Form.Label>
+            <Col sm="3">
+              <Form.Control />
+            </Col>
+            <Form.Label column sm="2">
+              Yr(s)
+            </Form.Label>
           </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>State</Form.Label>
-            <Form.Control as="select" defaultValue="Choose...">
-              <option>Choose...</option>
-              <option>...</option>
-            </Form.Control>
+          <Form.Group as={Row} controlId="ownername">
+            <Form.Label column sm="4">
+              Owner's First Name
+            </Form.Label>
+            <Col sm="8">
+              <Form.Control />
+            </Col>
           </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label>Zip</Form.Label>
-            <Form.Control />
+          <Form.Group as={Row} controlId="ownerlastname">
+            <Form.Label column sm="4">
+              Owner's Last Name
+            </Form.Label>
+            <Col sm="8">
+              <Form.Control />
+            </Col>
           </Form.Group>
-        </Form.Row>
-
-        <Form.Group id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+          <Form.Group as={Row} controlId="ownerlastname">
+            <Form.Label column sm="8">
+              Training Focus (Select All That Apply):
+            </Form.Label>
+          </Form.Group>
+          <Form.Group as={Row} controlId="training-choices">
+            <Form.Label column sm="12">
+            <Button variant="light">Stays/Sits</Button>
+            <Button variant="light">Biting/Chewing</Button>
+            <Button variant="light">Listening Speed</Button>
+            <Button variant="light">Leash Training</Button>
+            <Button variant="light">Potty Training</Button>
+            </Form.Label>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }
