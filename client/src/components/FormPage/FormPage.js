@@ -11,7 +11,7 @@ export default function FormPage() {
           <h4>Add a dog to Start Your Kennel:</h4>
           <Form.Group as={Row} controlId="name">
             <Form.Label column sm="2">
-              Name
+              Name:
             </Form.Label>
             <Col sm="8">
               <Form.Control />
@@ -19,7 +19,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="breed">
             <Form.Label column sm="2">
-              Breed
+              Breed:
             </Form.Label>
             <Col sm="8">
               <Form.Control as="select" defaultValue="Choose...">
@@ -30,7 +30,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="age">
             <Form.Label column sm="2">
-              Age
+              Age:
             </Form.Label>
             <Col sm="3">
               <Form.Control />
@@ -41,7 +41,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="ownername">
             <Form.Label column sm="4">
-              Owner's First Name
+              Owner's First Name:
             </Form.Label>
             <Col sm="8">
               <Form.Control />
@@ -49,7 +49,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="ownerlastname">
             <Form.Label column sm="4">
-              Owner's Last Name
+              Owner's Last Name:
             </Form.Label>
             <Col sm="8">
               <Form.Control />
@@ -69,7 +69,7 @@ export default function FormPage() {
             <Button variant="light">Potty Training</Button>
             </Form.Label>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="success" type="submit">
             Submit
           </Button>
         </Form>

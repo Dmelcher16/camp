@@ -5,7 +5,6 @@
 .HomePage {
   padding: 1em;
   background-image: url("../../images/DoghouseImage.jpg");
-  height: 100vh;
   background-size: center;
   background-position: center center;
   background-attachment: fixed;

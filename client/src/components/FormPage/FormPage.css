@@ -1,7 +1,9 @@
 .FormPage {
+  position: relative;
+  width: 100%;
   padding: 1em;
   background-image: url("../../images/DoghouseImage.jpg");
-  height: 100vh;
+  width: 100vw;
   background-size: center;
   background-position: center center;
   background-attachment: fixed;
@@ -9,14 +11,14 @@
 }
 
 .form {
-    margin: 8em;
+  margin: 8em;
 }
 
 .form-container {
-    background-color: white;
-    margin: 6em
+  background-color: white;
+  margin: 6em;
 }
 
 h4 {
-    text-align: center;
+  text-align: center;
 }
