@@ -1,31 +1,28 @@
 import React from "react";
-// import "./App.css";
-// import AppNav from "./components/AppNav/AppNav.js";
+import "./App.css";
+import AppNav from "./components/AppNav/AppNav.js";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import AboutPage from "./components/AboutPage/AboutPage";
-import HomePage from "./components/HomePage/HomePage";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 // import Login from "./components/Login/Login";
-// import HomePage from "./components/HomePage/HomePage";
+import AboutPage from "./components/AboutPage/AboutPage.js";
+import HomePage from "./components/HomePage/HomePage.js";
 import loginPage from "./components/loginPage/loginPage";
-// import AboutPage from "./components/AboutPage/AboutPage.js";
-// import HomePage from "./components/HomePage/HomePage.js";
+import FormPage from "./components/FormPage/FormPage"
+
 
 const App = () => {
   return (
     <Router>
-      <div>
-       <Route exact path="/" component={loginPage} />
-       <Route exact path="/about" component={AboutPage} />
-       <Route exact path="/home" component={HomePage} />
-      </div>
+      <AppNav />
+      <Route exact path="/" component={loginPage}/>
+      <Route exact path="/home" component={HomePage} />
+      <Route exact path="/about" component={AboutPage} />
+      <Route exact path="/form" component={FormPage}/>
+      {/* <Link to="/">HOME</Link>
+      <br/>
 
-      {/* <AppNav />
-      <div className="main">
-      <Login />
-      </div>
-      <Footer /> */}
-      
+      <Link to="/about">ABOUT</Link> */}
+      <Footer />
     </Router>
   );
 };
