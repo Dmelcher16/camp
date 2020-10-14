@@ -2,12 +2,14 @@ import React from "react";
 import "./HomePage.css";
 import DocPic from '../../images/DogByCacti.jpg';
 import { Card, Container, Row, Col } from "react-bootstrap";
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
 export default function HomePage() {
   return (
     <div className="HomePage">
       <Container>
         <div className="card-container">
+            <h1>Tucker's Kennel <button> <IoIosAddCircleOutline /> </button> </h1>
           <Row className="row">
             <Col>
               <Card style={{ width: "18rem" }}>
