@@ -1,8 +1,4 @@
-.row {
-  margin-bottom: 1em;
-}
-
-.HomePage {
+.FormPage {
   padding: 1em;
   background-image: url("../../images/DoghouseImage.jpg");
   height: 100vh;
@@ -12,11 +8,6 @@
   background-repeat: no-repeat;
 }
 
-.card-container {
-  margin-top: 8em;
-}
-
-h1 {
-    text-align: center;
-    color: white;
+.form {
+    margin: 8em;
 }
