@@ -1,10 +1,10 @@
 .row {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
-.HomePage{
-    padding: 1em;
-    background-image: url("../../images/DoghouseImage.jpg");
+.HomePage {
+  padding: 1em;
+  background-image: url("../../images/DoghouseImage.jpg");
   height: 100vh;
   background-size: center;
   background-position: center center;
@@ -12,6 +12,11 @@
   background-repeat: no-repeat;
 }
 
-.card-container{
-    margin-top: 10em;
+.card-container {
+  margin-top: 10em;
+}
+
+h1 {
+    text-align: center;
+    color: white;
 }

@@ -8,6 +8,7 @@ export default function HomePage() {
     <div className="HomePage">
       <Container>
         <div className="card-container">
+            {/* <h1>Tucker's Kennel</h1> */}
           <Row className="row">
             <Col>
               <Card style={{ width: "18rem" }}>
