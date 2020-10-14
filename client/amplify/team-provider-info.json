@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-campk9-dev-110738-authRole",
+      "UnauthRoleArn": "arn:aws:iam::805105931920:role/amplify-campk9-dev-110738-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::805105931920:role/amplify-campk9-dev-110738-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-campk9-dev-110738-deployment",
+      "UnauthRoleName": "amplify-campk9-dev-110738-unauthRole",
+      "StackName": "amplify-campk9-dev-110738",
+      "StackId": "arn:aws:cloudformation:us-west-2:805105931920:stack/amplify-campk9-dev-110738/d05705b0-0cb5-11eb-94e9-020e38dec7b1",
+      "AmplifyAppId": "de413dsrv58lr"
+    },
+    "categories": {
+      "auth": {
+        "campk9e4787aa7": {}
+      }
+    }
+  }
+}

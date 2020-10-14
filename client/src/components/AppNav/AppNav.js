@@ -13,6 +13,9 @@ export default function AppNav() {
           <NavItem>
             <NavLink className="linkText" href="/about">About</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink className="linkText" href="/home">Home</NavLink>
+          </NavItem>
         </Nav>
       </Navbar>
   
