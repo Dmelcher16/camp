@@ -1,10 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./HomePage.css";
 import DocPic from '../../images/DogByCacti.jpg';
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { CardGroup, Card, Container, Row, Col } from "react-bootstrap";
 import { IoIosAddCircleOutline } from 'react-icons/io';
+import API from "../../utils/API";
 
-export default function HomePage() {
+function HomePage() {
+  //set initial state
+  const [dogs, setDogs] = useState([]);
+
+
+  //load all the dogs and store them with setDogs
+  useEffect(() => {
+    loadDogs();
+  }, []);
+
+  function loadDogs() {
+    API.getDogs()
+      .then((res) => setDogs(res.data))
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="HomePage">
       <Container>
@@ -12,54 +28,19 @@ export default function HomePage() {
             <h1>Tucker's Kennel <button> <IoIosAddCircleOutline /> </button> </h1>
           <Row className="row">
             <Col>
+            <CardGroup>
+              {dogs.map((dog) => (
+
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={DocPic} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
+                <Card.Body key={dog._id}>
+                  <Card.Title key={dog.name}>{dog.name}</Card.Title>
                 </Card.Body>
               </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={DocPic} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={DocPic} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-          <Row className="row">
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={DocPic} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={DocPic} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={DocPic} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                </Card.Body>
-              </Card>
+              ))}
+            
+            
+            </CardGroup>
             </Col>
           </Row>
         </div>
@@ -67,3 +48,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+export default HomePage;  
