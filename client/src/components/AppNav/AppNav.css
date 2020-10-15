@@ -14,10 +14,11 @@ a {
 }
 
 .navbar {
- background-color: rgba(0,0,255,0) !important;
+ background-color: rgba(0,0,255,0);
 }
 
 #link-name {
-    color: white !important;
+    color: white;
     font-size:30px;
 }
+

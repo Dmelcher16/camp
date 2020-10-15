@@ -11,14 +11,17 @@
 }
 
 .form {
-  margin: 8em;
+  margin-left: 6em;
+  margin-right: 6em;
+  margin-bottom: 20em;
 }
 
 .form-container {
   background-color: white;
-  margin: 6em;
+  margin-left: 6em;
+  margin-right: 6em;
 }
 
-h4 {
+h3 {
   text-align: center;
 }

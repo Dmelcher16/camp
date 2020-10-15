@@ -11,7 +11,7 @@ export default function FormPage() {
       <h1>Welcome Tucker!!</h1>
       <div className="form-container">
         <Form className="form">
-          <h4>Add a dog to Start Your Kennel:</h4>
+          <h3>Add a dog to Start Your Kennel:</h3>
           <Form.Group as={Row} controlId="name">
             <Form.Label column sm="2">
               Name:
