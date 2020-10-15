@@ -3,10 +3,11 @@ import "./HomePage.css";
 import DocPic from '../../images/DogByCacti.jpg';
 import { Card, Container, Row, Col } from "react-bootstrap";
 import { IoIosAddCircleOutline } from 'react-icons/io';
-
+import AppNav from '../AppNav/AppNav'
 export default function HomePage() {
   return (
     <div className="HomePage">
+      <AppNav />
       <Container>
         <div className="card-container">
             <h1>Tucker's Kennel <button> <IoIosAddCircleOutline /> </button> </h1>

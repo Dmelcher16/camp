@@ -1,10 +1,11 @@
 import React from "react";
 import "./FormPage.css";
 import { Button, Form, Col, Row } from "react-bootstrap";
-
+import AppNav from '../AppNav/AppNav'
 export default function FormPage() {
   return (
     <div className="FormPage">
+      <AppNav />
       <h1>Welcome Tucker!!</h1>
       <div className="form-container">
         <Form className="form">
