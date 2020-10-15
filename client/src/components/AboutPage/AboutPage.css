@@ -1,4 +1,4 @@
-.FormPageImg {
+.AboutPageImg {
   position: relative;
   width: 100%;
   background-image: url("../../images/DoghouseImage.jpg");
@@ -10,15 +10,3 @@
   min-height: 100vh;
 }
 
-.form {
-  margin: 8em;
-}
-
-.form-container {
-  background-color: white;
-  margin: 6em;
-}
-
-h4 {
-  text-align: center;
-}

@@ -14,13 +14,10 @@ a {
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-around;
-  min-height: 8vh;
-  position: absolute;
+ background-color: rgba(0,0,255,0) !important;
 }
 
-.linkText {
-    color: white;
-    font-size: 25px;
+#link-name {
+    color: white !important;
+    font-size:30px;
 }

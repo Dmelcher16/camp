@@ -1,15 +1,17 @@
 import React from "react";
-import AppNav from "../AppNav/AppNav";
 import { BrowserRouter as Router } from "react-router-dom";
 import Login from "../Login/Login";
 import "./loginPage.css";
+import AppNav from "../AppNav/AppNav.js";
+import Footer from "../Footer/Footer.js";
 
 export default function loginPage() {
   return (
     <Router>
-      <AppNav />
-      <div className="loginPage">
+      <div className="loginPageImg">
+        <AppNav />
         <Login />
+        <Footer />
       </div>
       {/* <Route exact path="/" component={HomePage} />
       <Route exact path="/about" component={AboutPage} />
