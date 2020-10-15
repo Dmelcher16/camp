@@ -6,13 +6,18 @@ import * as serviceWorker from './serviceWorker';
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Router} from "react-router";
+import history from "./history";
 
 Amplify.configure(awsconfig);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router history={history}>
     <App />
-  </React.StrictMode>,
+  </Router>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
   document.getElementById('root')
   );
 
