@@ -9,7 +9,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 export default function AppNav() {
   return (
     <div>
-//       <Navbar className="navbar" fixed="top">
+{/* //       <Navbar className="navbar" fixed="top">
 //         <NavbarBrand href="/">
 //           <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
 //         </NavbarBrand>
@@ -29,7 +29,7 @@ export default function AppNav() {
 //             </AmplifySignOut>
 //           </NavItem>
           
-//         </Nav>
+//         </Nav> */}
       <Navbar variant="light" bg="dander" expand="sm">
         <Navbar.Brand href="/">
         <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
