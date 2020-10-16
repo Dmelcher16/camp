@@ -98,7 +98,6 @@ export default function AboutPage() {
           </Card.Body>
         </Card>
       </CardDeck>
-      <Footer />
     </div>
   );
 }
