@@ -69,7 +69,6 @@ export default function HomePage() {
           </Row>
         </div>
       </Container>
-      <Footer />
     </div>
   );
 }

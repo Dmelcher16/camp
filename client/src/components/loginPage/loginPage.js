@@ -8,7 +8,6 @@ export default function loginPage() {
    <div>
       <div className="loginPageImg">
         <Login />
-        <Footer />
       </div>
    </div>
     
