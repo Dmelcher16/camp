@@ -1,0 +1,23 @@
+.AboutPageImg {
+  position: relative;
+  width: 100%;
+  background-image: url("../../images/DogWithBall.jpg");
+  width: 100vw;
+  background-size: center;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #285A84 !important;
+}
+
+.card-deck {
+  margin-bottom: 6em;;
+}
+
+p {
+  color: white;
+}

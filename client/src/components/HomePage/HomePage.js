@@ -1,15 +1,20 @@
 import React from "react";
 import "./HomePage.css";
-import DocPic from '../../images/DogByCacti.jpg';
+import DocPic from "../../images/DogByCacti.jpg";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import { IoIosAddCircleOutline } from 'react-icons/io';
+import { IoIosAddCircleOutline } from "react-icons/io";
+import AppNav from "../AppNav/AppNav.js";
+import Footer from "../Footer/Footer.js";
 
 export default function HomePage() {
   return (
-    <div className="HomePage">
+    <div className="HomePageImg">
+      <AppNav />
       <Container>
         <div className="card-container">
-            <h1>Tucker's Kennel <button> <IoIosAddCircleOutline /> </button> </h1>
+          <h1>
+            Tucker's Kennel <IoIosAddCircleOutline />{" "}
+          </h1>
           <Row className="row">
             <Col>
               <Card style={{ width: "18rem" }}>
