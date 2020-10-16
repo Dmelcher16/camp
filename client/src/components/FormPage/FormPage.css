@@ -1,22 +1,27 @@
-.FormPage {
-  padding: 1em;
+.FormPageImg {
+  position: relative;
+  width: 100%;
   background-image: url("../../images/DoghouseImage.jpg");
-  height: 100vh;
+  width: 100vw;
   background-size: center;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .form {
-    margin: 8em;
+  margin-left: 6em;
+  margin-right: 6em;
+  margin-bottom: 20em;
 }
 
 .form-container {
-    background-color: white;
-    margin: 6em
+  background-color: white;
+  margin-left: 6em;
+  margin-right: 6em;
 }
 
-h4 {
-    text-align: center;
+h3 {
+  text-align: center;
 }

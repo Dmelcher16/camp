@@ -1,31 +1,19 @@
 import React, {useState, useEffect} from "react";
 import "./HomePage.css";
-import DocPic from '../../images/DogByCacti.jpg';
-import { CardGroup, Card, Container, Row, Col } from "react-bootstrap";
-import { IoIosAddCircleOutline } from 'react-icons/io';
-import API from "../../utils/API";
-
-function HomePage() {
-  //set initial state
-  const [dogs, setDogs] = useState([]);
-
-
-  //load all the dogs and store them with setDogs
-  useEffect(() => {
-    loadDogs();
-  }, []);
-
-  function loadDogs() {
-    API.getDogs()
-      .then((res) => setDogs(res.data))
-      .catch((err) => console.log(err));
-  }
+import DocPic from "../../images/DogByCacti.jpg";
+import { Card, Container, Row, Col } from "react-bootstrap";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import AppNav from "../AppNav/AppNav.js";
+import Footer from "../Footer/Footer.js";
 
   return (
-    <div className="HomePage">
+    <div className="HomePageImg">
+      <AppNav />
       <Container>
         <div className="card-container">
-            <h1>Tucker's Kennel <button> <IoIosAddCircleOutline /> </button> </h1>
+          <h1>
+            Tucker's Kennel <IoIosAddCircleOutline />{" "}
+          </h1>
           <Row className="row">
             <Col>
             <CardGroup>
@@ -45,6 +33,7 @@ function HomePage() {
           </Row>
         </div>
       </Container>
+      <Footer />
     </div>
   );
 }
