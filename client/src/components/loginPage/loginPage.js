@@ -6,9 +6,8 @@ import Footer from "../Footer/Footer.js";
 export default function loginPage() {
   return (
    <div>
-      <div className="loginPage">
+      <div className="loginPageImg">
         <Login />
-        <Footer />
       </div>
    </div>
     
