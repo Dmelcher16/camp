@@ -13,7 +13,7 @@ import FormPage from "./components/FormPage/FormPage"
 const App = () => {
   return (
     <Router>
-      <AppNav />
+      {/* <AppNav /> */}
       <Route exact path="/" component={loginPage}/>
       <Route exact path="/home" component={HomePage} />
       <Route exact path="/about" component={AboutPage} />

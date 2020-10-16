@@ -35,14 +35,10 @@ const DogSchema = new Schema({
     },
   ],
 
-  ownerFullName: String,
+ 
 });
 
-DogSchema.methods.setOwnerFullName = function () {
-  this.ownerFullName = `${this.ownerFirstName} ${this.ownerLastName}`;
-  console.log(this.ownerFullName)
-  return this.ownerFullName;
-};
+
 
 const Dog = mongoose.model("Dog", DogSchema);
 
