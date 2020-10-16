@@ -28,6 +28,10 @@ const DogSchema = new Schema({
     trim: true,
     required: "Last Name is Required",
   },
+  // image: {
+  //   type: String,
+  //   buffer: image
+  // },
   exercises: [
     {
       type: Schema.Types.ObjectId,

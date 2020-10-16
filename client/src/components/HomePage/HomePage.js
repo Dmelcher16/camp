@@ -5,7 +5,6 @@ import DocPic from "../../images/DogByCacti.jpg";
 import { Card, Container, Row, Col, CardGroup } from "react-bootstrap";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../AppNav/AppNav.js";
-import Footer from "../Footer/Footer.js";
 import API from "../../utils/API";
 
 function Homepage() {
