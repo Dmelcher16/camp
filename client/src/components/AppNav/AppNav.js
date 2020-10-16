@@ -16,8 +16,9 @@ export default function AppNav() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto" id="link-name">
-            <Nav.Link id="link-name" href="/about">About</Nav.Link>
-            <Nav.Link id="link-name" href="/">Home</Nav.Link>
+            <Link id="link-name" to="/about">About</Link>
+            <Link id="link-name" to="/">Home</Link>
+            <Link id="link-name" to="/form">Form</Link>
             <Nav.Link>
             <AmplifySignOut>
             <AuthStateApp/>
