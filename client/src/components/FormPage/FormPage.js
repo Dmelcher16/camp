@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./FormPage.css";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
 import { Label, Input, Select, FormBtn } from "../CreateDogForm/CreateDogForm";
 import API from "../../utils/API";
@@ -8,9 +8,11 @@ import API from "../../utils/API";
 export default function FormPage() {
   const [dogs, setDogs] = useState([]); 
   const [createDog, setCreateDog] = useState({});
+  
 
   useEffect(() => {
     loadDogs();
+   
   }, []);
 
   function loadDogs() {
@@ -18,6 +20,8 @@ export default function FormPage() {
       .then((res) => setDogs(res.data))
       .catch((err) => console.log(err))
   }
+
+  
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -40,6 +44,7 @@ export default function FormPage() {
         ownerFirstName: createDog.ownerFirstName,
         ownerLastName: createDog.ownerLastName
       })
+      .then(alert(`${createDog.name} has been added to your kennel!`))
       .then((res) => loadDogs())
       .catch((err) => console.log(err))
     }
@@ -50,7 +55,9 @@ export default function FormPage() {
       <AppNav />
       <h1>Welcome Tucker!!</h1>
       <Row>
-        <Col md="8">
+        <Col md="6">
+          <Container fluid>
+
           <form>
             <Label>Name:</Label>
             <Input
@@ -83,20 +90,21 @@ export default function FormPage() {
               placeholder="Owner's Last Name (Required)"
             />
             <FormBtn
-              // disabled={
-              //   !(
-              //     createDog.name &&
-              //     createDog.age &&
-              //     createDog.breed &&
-              //     createDog.ownerFirstName &&
-              //     createDog.ownerLastName
-              //   )
-              // }
+              disabled={
+                !(
+                  createDog.name &&
+                  createDog.age &&
+                  createDog.breed &&
+                  createDog.ownerFirstName &&
+                  createDog.ownerLastName
+                )
+              }
               onClick={handleFormSubmit}
             >
               Add Dog
             </FormBtn>
           </form>
+          </Container>
         </Col>
       </Row>
     </div>
