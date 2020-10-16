@@ -58,7 +58,7 @@ export default function FormPage() {
               <Form.Control />
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="ownerlastname">
+          {/* <Form.Group as={Row} controlId="ownerlastname">
             <Form.Label column sm="8">
               Training Focus (Select All That Apply):
             </Form.Label>
@@ -71,7 +71,7 @@ export default function FormPage() {
             <Button className="mr-4" variant="light">Leash Training</Button>
             <Button className="mr-4" variant="light">Potty Training</Button>
             </Form.Label>
-          </Form.Group>
+          </Form.Group> */}
           <Button variant="success" type="submit">
             Submit
           </Button>
