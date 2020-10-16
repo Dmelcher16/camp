@@ -9,7 +9,7 @@ export default function AboutPage() {
     <div className="AboutPageImg">
       <AppNav />
       <h1>About Us</h1>
-      <div>
+      <div className="main-story">
         <p>
           Training your dogs can be difficult especially in the current climate
           of the world. With all the stress and anxiety of this day and age you
@@ -32,20 +32,9 @@ export default function AboutPage() {
       </div>
       <CardDeck className="card-deck">
         <Card className="card" text="light">
-          <Card.Img src="tamu_obedience.jpg" />
-          <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <Card text="light">
           <Card.Img src="sitting-dog.jpeg" />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
+            <Card.Title>Stays/Sits</Card.Title>
             <Card.Text>
               This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
@@ -54,9 +43,9 @@ export default function AboutPage() {
           </Card.Body>
         </Card>
         <Card text="light">
-          <Card.Img src="Dog-training.jpeg" />
+          <Card.Img src="tamu_obedience.jpg" />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
+            <Card.Title>Leash Training</Card.Title>
             <Card.Text>
               This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
@@ -67,7 +56,29 @@ export default function AboutPage() {
         <Card text="light">
           <Card.Img src="Protection-Dog-Training.jpg" />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
+            <Card.Title>Potty Training</Card.Title>
+            <Card.Text>
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card text="light">
+          <Card.Img src="Dog-training.jpeg" />
+          <Card.Body>
+            <Card.Title>Biting</Card.Title>
+            <Card.Text>
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card text="light">
+          <Card.Img src="Dog-Jumping.jpeg" />
+          <Card.Body>
+            <Card.Title>Listening Speed</Card.Title>
             <Card.Text>
               This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
@@ -81,29 +92,3 @@ export default function AboutPage() {
   );
 }
 
-{
-  /* <Container>
-  <Row>
-    <Col xs={6} md={4}>
-      <Card className="card">
-        <Card.Img src="WhiteCampK9Logo.jpeg" roundedCircle />
-        <Card.Body>
-          <Card.Title>Training Excersices</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
-    <Col xs={6} md={4}>
-      <Image src="WhiteCampK9Logo.jpeg" roundedCircle />
-      <h2>Training Excersices</h2>
-      <h4>hello this is simple text to see what shows up</h4>
-    </Col>
-    <Col xs={6} md={4}>
-      <Image src="WhiteCampK9Logo.jpeg" roundedCircle />
-    </Col>
-  </Row>
-</Container>; */
-}
