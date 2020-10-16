@@ -2,7 +2,7 @@ import React from "react";
 import "./FormPage.css";
 import { Button, Form, Col, Row } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
-import Footer from "../Footer/Footer.js";
+
 
 export default function FormPage() {
   return (
@@ -58,7 +58,7 @@ export default function FormPage() {
               <Form.Control />
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="ownerlastname">
+          {/* <Form.Group as={Row} controlId="ownerlastname">
             <Form.Label column sm="8">
               Training Focus (Select All That Apply):
             </Form.Label>
@@ -71,13 +71,13 @@ export default function FormPage() {
             <Button className="mr-4" variant="light">Leash Training</Button>
             <Button className="mr-4" variant="light">Potty Training</Button>
             </Form.Label>
-          </Form.Group>
+          </Form.Group> */}
           <Button variant="success" type="submit">
             Submit
           </Button>
         </Form>
       </div>
-      <Footer />
+    
     </div>
   );
 }

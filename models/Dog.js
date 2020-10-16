@@ -28,10 +28,10 @@ const DogSchema = new Schema({
     trim: true,
     required: "Last Name is Required",
   },
-  trainFocus: [
+  exercises: [
     {
-      type: String,
-      required: true,
+      type: Schema.Types.ObjectId,
+      ref: "Exercise",
     },
   ],
 
