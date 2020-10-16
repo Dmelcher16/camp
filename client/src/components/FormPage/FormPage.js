@@ -65,11 +65,11 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="training-choices">
             <Form.Label column sm="12">
-            <Button variant="light">Stays/Sits</Button>
-            <Button variant="light">Biting/Chewing</Button>
-            <Button variant="light">Listening Speed</Button>
-            <Button variant="light">Leash Training</Button>
-            <Button variant="light">Potty Training</Button>
+            <Button className="mr-4" variant="light">Stays/Sits</Button>
+            <Button className="mr-4" variant="light">Biting/Chewing</Button>
+            <Button className="mr-4"variant="light">Listening Speed</Button>
+            <Button className="mr-4" variant="light">Leash Training</Button>
+            <Button className="mr-4" variant="light">Potty Training</Button>
             </Form.Label>
           </Form.Group>
           <Button variant="success" type="submit">
