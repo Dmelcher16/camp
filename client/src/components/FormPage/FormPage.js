@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FormPage.css";
 import { Button, Form, Col, Row } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
-
+import Breeds from "../Breeds/Breeds";
 
 export default function FormPage() {
+  const [createDog, setCreateDog] = useState({});
+
   return (
     <div className="FormPageImg">
       <AppNav />
@@ -27,7 +29,7 @@ export default function FormPage() {
             <Col sm="8">
               <Form.Control as="select" defaultValue="Choose...">
                 <option>Choose...</option>
-                <option>...</option>
+                <Breeds />
               </Form.Control>
             </Col>
           </Form.Group>
@@ -77,7 +79,6 @@ export default function FormPage() {
           </Button>
         </Form>
       </div>
-    
     </div>
   );
 }
