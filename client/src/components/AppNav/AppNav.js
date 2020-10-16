@@ -30,24 +30,3 @@ export default function AppNav() {
     </div>
   );
 }
-
-{/* <Navbar className="navbar" fixed="top">
-    <NavbarBrand href="/">
-    <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
-    </NavbarBrand>
-    <Nav className="navbar" navbar>
-    <NavItem>
-    <Link className="linkText"  to="/about">About</Link>
-    </NavItem>
-    <NavItem>
-    <Link className="linkText"  to="/form">FormPage</Link>
-    </NavItem>
-    <NavItem>
-    <NavLink className="linkText" href="/home">Home</NavLink>
-    </NavItem>
-    <NavItem>
-    <AmplifySignOut>
-    <AuthStateApp/>
-    </AmplifySignOut>
-    </Nav>
-  </NavItem> */}
