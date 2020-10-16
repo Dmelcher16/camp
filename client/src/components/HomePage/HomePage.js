@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import DocPic from "../../images/DogByCacti.jpg";
 import { Card, Container, Row, Col, CardGroup } from "react-bootstrap";
@@ -28,7 +29,10 @@ function Homepage() {
       <Container>
         <div className="card-container">
           <h1>
-            Tucker's Kennel <IoIosAddCircleOutline />{" "}
+            Tucker's Kennel{" "}
+            <Link to="/form">
+              <IoIosAddCircleOutline />{" "}
+            </Link>
           </h1>
           <Row className="row">
             <Col>
@@ -46,7 +50,6 @@ function Homepage() {
           </Row>
         </div>
       </Container>
-      <Footer />
     </div>
   );
 }

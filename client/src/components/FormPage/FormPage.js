@@ -2,7 +2,7 @@ import React from "react";
 import "./FormPage.css";
 import { Button, Form, Col, Row } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
-import Footer from "../Footer/Footer.js";
+
 
 export default function FormPage() {
   return (
@@ -77,7 +77,7 @@ export default function FormPage() {
           </Button>
         </Form>
       </div>
-      <Footer />
+    
     </div>
   );
 }
