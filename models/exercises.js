@@ -2,54 +2,77 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const trainingSchema = new Schema({
-    day:{
-        type: Date,
-        default: Date.now
-    },
-    exercises: [
-      {
-        type: {
-            type: String,
-            trim: true,
-            required: "Type of excercise is required"
-        },
-        name: {
-            type: String,
-            trim: true,
-            required: "Name of excercise is required"
-        },
-        duration: {
-            type: Number,
-            required: "Duration is required"
-        },
-        pullDuration: {
-            type: Number,
-            required: "Time spent pulling required"
-        },
-        sitDuration: {
-            type: Number,
-            required: "How long were they able to sit or stay?"
-        },
-        commands: {
-            type: Number,
-            required: "How many commands were completed in 2 min?"
-        },
-        chewing: {
-            type: Number,
-            required: "Number of items chewed up today"
-        },
-        accidents: {
-            type: Number,
-            required: "Number of accidents today"
-        }
-       
+const ExerciseSchema = new Schema({
+  day: {
+    type: Date,
+    default: Date.now,
+  },
+  exercises: [
+    {
+      type: {
+        type: String,
+        trim: true,
+        enum: [
+          "Stay/Sit",
+          "Leash Training",
+          "Completed Commands",
+          "Chewing/Biting",
+          "Potty Training",
+        ],
+        required: "Type of excercise is required",
       },
-    ],
-}, 
-);
+      name: {
+        type: String,
+        array: [
+          "Stay/Sit",
+          "Leash Training",
+          "Completed Commands",
+          "Chewing/Biting",
+          "Potty Training",
+        ],
+        required: "Name of excercise is required",
+      },
+      leashDuration: {
+        type: Number,
+        required: "Duration of leash time is required",
+      },
+      leashPullDuration: {
+        type: Number,
+        required: "Time spent pulling on the leash required",
+      },
+      sitStayAttempts: {
+        type: Number,
+        required: "Number of attempted sit/stay commands is required",
+      },
+      sitStaySuccess: {
+        type: Number,
+        required: "Number of times successfully sit/stayed required",
+      },
+      commandsAttempted: {
+        type: Number,
+        required: "Number of commands attempted required",
+      },
 
-const Exercise = mongoose.model("Exercise", DogSchema);
+      commandsCompleted: {
+        type: Number,
+        required: "Number of commands completed required",
+      },
+      chewing: {
+        type: Number,
+        required: "Number of items chewed up today required",
+      },
+      numPottyAccidents: {
+        type: Number,
+        required: "Number of accidents today required",
+      },
+      numPottySuccesses: {
+        type: Number,
+        required: "Number of successful potty breaks required",
+      },
+    },
+  ],
+});
+
+const Exercise = mongoose.model("Exercise", ExerciseSchema);
 
 module.exports = Exercise;
-
