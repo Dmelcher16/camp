@@ -7,8 +7,9 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 
 export default function AppNav() {
-  return (
+  return (    
     <div>
+<<<<<<< HEAD
 {/* //       <Navbar className="navbar" fixed="top">
 //         <NavbarBrand href="/">
 //           <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
@@ -30,6 +31,8 @@ export default function AppNav() {
 //           </NavItem>
           
 //         </Nav> */}
+=======
+>>>>>>> c61a29341fecd3f4590056fec4944e32155142c5
       <Navbar variant="light" bg="dander" expand="sm">
         <Navbar.Brand href="/">
         <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
@@ -39,9 +42,35 @@ export default function AppNav() {
           <Nav className="ml-auto" id="link-name">
             <Nav.Link id="link-name" href="/about">About</Nav.Link>
             <Nav.Link id="link-name" href="/">Home</Nav.Link>
+            <Nav.Link>
+            <AmplifySignOut>
+            <AuthStateApp/>
+            </AmplifySignOut>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     </div>
   );
 }
+
+{/* <Navbar className="navbar" fixed="top">
+    <NavbarBrand href="/">
+    <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
+    </NavbarBrand>
+    <Nav className="navbar" navbar>
+    <NavItem>
+    <Link className="linkText"  to="/about">About</Link>
+    </NavItem>
+    <NavItem>
+    <Link className="linkText"  to="/form">FormPage</Link>
+    </NavItem>
+    <NavItem>
+    <NavLink className="linkText" href="/home">Home</NavLink>
+    </NavItem>
+    <NavItem>
+    <AmplifySignOut>
+    <AuthStateApp/>
+    </AmplifySignOut>
+    </Nav>
+  </NavItem> */}
