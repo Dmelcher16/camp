@@ -1,18 +1,20 @@
 import React from "react";
 import "./FormPage.css";
 import { Button, Form, Col, Row } from "react-bootstrap";
-import AppNav from '../AppNav/AppNav'
+import AppNav from "../AppNav/AppNav.js";
+import Footer from "../Footer/Footer.js";
+
 export default function FormPage() {
   return (
-    <div className="FormPage">
+    <div className="FormPageImg">
       <AppNav />
       <h1>Welcome Tucker!!</h1>
       <div className="form-container">
         <Form className="form">
-          <h4>Add a dog to Start Your Kennel:</h4>
+          <h3>Add a dog to Start Your Kennel:</h3>
           <Form.Group as={Row} controlId="name">
             <Form.Label column sm="2">
-              Name
+              Name:
             </Form.Label>
             <Col sm="8">
               <Form.Control />
@@ -20,7 +22,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="breed">
             <Form.Label column sm="2">
-              Breed
+              Breed:
             </Form.Label>
             <Col sm="8">
               <Form.Control as="select" defaultValue="Choose...">
@@ -31,7 +33,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="age">
             <Form.Label column sm="2">
-              Age
+              Age:
             </Form.Label>
             <Col sm="3">
               <Form.Control />
@@ -42,7 +44,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="ownername">
             <Form.Label column sm="4">
-              Owner's First Name
+              Owner's First Name:
             </Form.Label>
             <Col sm="8">
               <Form.Control />
@@ -50,7 +52,7 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="ownerlastname">
             <Form.Label column sm="4">
-              Owner's Last Name
+              Owner's Last Name:
             </Form.Label>
             <Col sm="8">
               <Form.Control />
@@ -63,18 +65,19 @@ export default function FormPage() {
           </Form.Group>
           <Form.Group as={Row} controlId="training-choices">
             <Form.Label column sm="12">
-            <Button variant="light">Stays/Sits</Button>
-            <Button variant="light">Biting/Chewing</Button>
-            <Button variant="light">Listening Speed</Button>
-            <Button variant="light">Leash Training</Button>
-            <Button variant="light">Potty Training</Button>
+            <Button className="mr-4" variant="light">Stays/Sits</Button>
+            <Button className="mr-4" variant="light">Biting/Chewing</Button>
+            <Button className="mr-4"variant="light">Listening Speed</Button>
+            <Button className="mr-4" variant="light">Leash Training</Button>
+            <Button className="mr-4" variant="light">Potty Training</Button>
             </Form.Label>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="success" type="submit">
             Submit
           </Button>
         </Form>
       </div>
+      <Footer />
     </div>
   );
 }
