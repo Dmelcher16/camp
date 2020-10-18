@@ -7,7 +7,7 @@ import AboutPage from "./components/AboutPage/AboutPage.js";
 import HomePage from "./components/HomePage/HomePage.js";
 import loginPage from "./components/loginPage/loginPage";
 import FormPage from "./components/FormPage/FormPage";
-
+import Chart from './components/ChartPage/dogCharts'
 
 const App = () => {
   return (
@@ -16,13 +16,7 @@ const App = () => {
       <Route exact path="/home" component={HomePage} />
       <Route exact path="/about" component={AboutPage} />
       <Route exact path="/form" component={FormPage} />
-<<<<<<< HEAD
-      {/* <Link to="/">HOME</Link>
-      <br/>
-
-      <Link to="/about">ABOUT</Link> */}
-=======
->>>>>>> 5087964e6743b6a879f80d5e318fc75777ddd252
+      <Route exact path="/chart" component={Chart} />
       <Footer />
     </Router>
   );

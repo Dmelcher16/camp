@@ -19,6 +19,7 @@ export default function AppNav() {
             <Link id="link-name" to="/about">About</Link>
             <Link id="link-name" to="/">Home</Link>
             <Link id="link-name" to="/form">Form</Link>
+            <Link id="link-name" to="/chart">Chart</Link>
             <Nav.Link>
             <AmplifySignOut>
             <AuthStateApp/>
