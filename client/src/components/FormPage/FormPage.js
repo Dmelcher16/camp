@@ -1,83 +1,114 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./FormPage.css";
-import { Button, Form, Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
-
+import { Label, Input, Select, FormBtn } from "../CreateDogForm/CreateDogForm";
+import API from "../../utils/API";
 
 export default function FormPage() {
+  const [dogs, setDogs] = useState([]); 
+  const [createDog, setCreateDog] = useState({});
+  
+
+  useEffect(() => {
+    loadDogs();
+   
+  }, []);
+
+  function loadDogs() {
+    API.getDogs()
+      .then((res) => setDogs(res.data))
+      .catch((err) => console.log(err))
+  }
+
+  
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setCreateDog({ ...createDog, [name]: value });
+  }
+  console.log(createDog);
+
+  // function handleBreedChange(event) {
+  //   const {name, value} = event.target;
+
+  // }
+
+  function handleFormSubmit(event){
+    event.preventDefault();
+    if (createDog.name && createDog.age && createDog.breed && createDog.ownerFirstName && createDog.ownerLastName) {
+      API.addDog({
+        name: createDog.name,
+        age: createDog.age,
+        breed: createDog.breed,
+        ownerFirstName: createDog.ownerFirstName,
+        ownerLastName: createDog.ownerLastName
+      })
+      .then(alert(`${createDog.name} has been added to your kennel!`))
+      .then((res) => loadDogs())
+      .catch((err) => console.log(err))
+    }
+  }
+
   return (
     <div className="FormPageImg">
       <AppNav />
       <h1>Welcome Tucker!!</h1>
-      <div className="form-container">
-        <Form className="form">
-          <h3>Add a dog to Start Your Kennel:</h3>
-          <Form.Group as={Row} controlId="name">
-            <Form.Label column sm="2">
-              Name:
-            </Form.Label>
-            <Col sm="8">
-              <Form.Control />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} controlId="breed">
-            <Form.Label column sm="2">
-              Breed:
-            </Form.Label>
-            <Col sm="8">
-              <Form.Control as="select" defaultValue="Choose...">
-                <option>Choose...</option>
-                <option>...</option>
-              </Form.Control>
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} controlId="age">
-            <Form.Label column sm="2">
-              Age:
-            </Form.Label>
-            <Col sm="3">
-              <Form.Control />
-            </Col>
-            <Form.Label column sm="2">
-              Yr(s)
-            </Form.Label>
-          </Form.Group>
-          <Form.Group as={Row} controlId="ownername">
-            <Form.Label column sm="4">
-              Owner's First Name:
-            </Form.Label>
-            <Col sm="8">
-              <Form.Control />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} controlId="ownerlastname">
-            <Form.Label column sm="4">
-              Owner's Last Name:
-            </Form.Label>
-            <Col sm="8">
-              <Form.Control />
-            </Col>
-          </Form.Group>
-          {/* <Form.Group as={Row} controlId="ownerlastname">
-            <Form.Label column sm="8">
-              Training Focus (Select All That Apply):
-            </Form.Label>
-          </Form.Group>
-          <Form.Group as={Row} controlId="training-choices">
-            <Form.Label column sm="12">
-            <Button className="mr-4" variant="light">Stays/Sits</Button>
-            <Button className="mr-4" variant="light">Biting/Chewing</Button>
-            <Button className="mr-4"variant="light">Listening Speed</Button>
-            <Button className="mr-4" variant="light">Leash Training</Button>
-            <Button className="mr-4" variant="light">Potty Training</Button>
-            </Form.Label>
-          </Form.Group> */}
-          <Button variant="success" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </div>
-    
+      <Row>
+        <Col md="6">
+          <Container fluid>
+
+          <form>
+            <Label>Name:</Label>
+            <Input
+              onChange={handleInputChange}
+              name="name"
+              placeholder="Name (required)"
+            />
+            <Label>Age:</Label>
+            <Input
+              onChange={handleInputChange}
+              name="age"
+              placeholder="Age (required)"
+            />
+            <Label>Breed:</Label>
+            <Select
+              onChange={handleInputChange}
+              name="breed"
+              placeholder="Breed (required)"
+            />
+            <Label>Owner's First Name:</Label>
+            <Input
+              onChange={handleInputChange}
+              name="ownerFirstName"
+              placeholder="Owner's First Name (Required)"
+            />
+            <Label>Owner's Last Name:</Label>
+            <Input
+              onChange={handleInputChange}
+              name="ownerLastName"
+              placeholder="Owner's Last Name (Required)"
+            />
+            <FormBtn
+              disabled={
+                !(
+                  createDog.name &&
+                  createDog.age &&
+                  createDog.breed &&
+                  createDog.ownerFirstName &&
+                  createDog.ownerLastName
+                )
+              }
+              onClick={handleFormSubmit}
+            >
+              Add Dog
+            </FormBtn>
+          </form>
+          </Container>
+        </Col>
+      </Row>
     </div>
   );
 }
+
+
