@@ -6,18 +6,18 @@ import { Label, Input, Select, FormBtn } from "./createExerciseForm";
 import API from "../../utils/exerciseAPI";
 
 export default function ExercisePage() {
-  const [dogs, setDogs] = useState([]); 
-  const [createDog, setCreateDog] = useState({});
+  const [dogs, setExercises] = useState([]); 
+  const [createExercise, setCreateExercise] = useState({});
   
 
   useEffect(() => {
-    loadDogs();
+    loadDogExercises();
    
   }, []);
 
-  function loadDogs() {
+  function loadDogExercises() {
     API.getDogs()
-      .then((res) => setDogs(res.data))
+      .then((res) => setExercises(res.data))
       .catch((err) => console.log(err))
   }
 
@@ -25,9 +25,9 @@ export default function ExercisePage() {
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setCreateDog({ ...createDog, [name]: value });
+    setCreateExercise({ ...createExercise, [name]: value });
   }
-  console.log(createDog);
+  console.log(createExercise);
 
   // function handleBreedChange(event) {
   //   const {name, value} = event.target;
@@ -36,16 +36,21 @@ export default function ExercisePage() {
 
   function handleFormSubmit(event){
     event.preventDefault();
-    if (createDog.name && createDog.age && createDog.breed && createDog.ownerFirstName && createDog.ownerLastName) {
-      API.addDog({
-        name: createDog.name,
-        age: createDog.age,
-        breed: createDog.breed,
-        ownerFirstName: createDog.ownerFirstName,
-        ownerLastName: createDog.ownerLastName
+    if (createExercise.name && createExercise.leashDuration && createExercise.leashPullDuration && createExercise.sitStayAttempts && createExercise.sitStaySuccess && createExercise.commandsAttempted && createExercise.commandsCompleted && createExercise.chewing && createExercise.numPottyAccidents && createExercise.numPottySuccesses) {
+      API.addExercise({
+        name: createExercise.name,
+        leashDuration: createExercise.leashDuration,
+        leashPullDuration: createExercise.leashPullDuration,
+        sitStayAttempts: createExercise.sitStayAttempts,
+        sitStaySuccess: createExercise.sitStaySuccess,
+        commandsAttempted: createExercise.commandsAttempted,
+        commandsCompleted: createExercise.commandsCompleted,
+        chewing: createExercise.chewing,
+        numPottyAccidents: createExercise.numPottyAccidents,
+        numPottySuccesses: createExercise.numPottySuccesses
       })
-      .then(alert(`${createDog.name} has been added to your kennel!`))
-      .then((res) => loadDogs())
+      .then(alert(`${createExercise.name} has been added to your list!`))
+      .then((res) => loadDogExercises())
       .catch((err) => console.log(err))
     }
   }
@@ -113,22 +118,27 @@ export default function ExercisePage() {
               name="numPottyAccidents"
               placeholder="Number of accidents today (Required)"
             />
-            <Label>Owner's Last Name:</Label>
+            <Label>Successful Potty Breaks:</Label>
             <Input
               onChange={handleInputChange}
               name="numPottySuccesses"
               placeholder="Number of successful potty breaks (Required)"
             />
             <FormBtn
-              disabled={
-                !(
-                  createDog.name &&
-                  createDog.age &&
-                  createDog.breed &&
-                  createDog.ownerFirstName &&
-                  createDog.ownerLastName
-                )
-              }
+            //   disabled={
+            //     !(
+            //         createExercise.name &&
+            //         createExercise.leashDuration &&
+            //         createExercise.leashPullDuration &&
+            //         createExercise.sitStayAttempts &&
+            //         createExercise.sitStaySuccess &&
+            //         createExercise.commandsAttempted &&
+            //         createExercise.commandsCompleted &&
+            //         createExercise.chewing &&
+            //         createExercise.numPottyAccidents &&
+            //         createExercise.numPottySuccesses
+            //     )
+            //   }
               onClick={handleFormSubmit}
             >
               Complete
