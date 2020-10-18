@@ -131,7 +131,7 @@ export default function ExercisePage() {
               }
               onClick={handleFormSubmit}
             >
-              Add Dog
+              Complete
             </FormBtn>
           </form>
           </Container>

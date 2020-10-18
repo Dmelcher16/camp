@@ -43,6 +43,7 @@ function Homepage() {
                         <Card.Img variant="top" src={DocPic} />
                         <Card.Body key={dog._id}>
                           <Card.Title key={dog.name}>{dog.name}</Card.Title>
+                          <Link to="/exercise">Add daily exercises</Link>
                         </Card.Body>
                       </Card>
                     </Col>
