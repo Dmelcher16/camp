@@ -5,7 +5,6 @@ import DocPic from "../../images/DogByCacti.jpg";
 import { Card, Container, Row, Col, CardGroup } from "react-bootstrap";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../AppNav/AppNav.js";
-import Footer from "../Footer/Footer.js";
 import API from "../../utils/API";
 
 function Homepage() {
@@ -37,14 +36,18 @@ function Homepage() {
           <Row className="row">
             <Col>
               <CardGroup>
-                {dogs.map((dog) => (
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={DocPic} />
-                    <Card.Body key={dog._id}>
-                      <Card.Title key={dog.name}>{dog.name}</Card.Title>
-                    </Card.Body>
-                  </Card>
-                ))}
+                <Row>
+                  {dogs.map((dog) => (
+                    <Col medium="3">
+                      <Card style={{ width: "18rem" }}>
+                        <Card.Img variant="top" src={DocPic} />
+                        <Card.Body key={dog._id}>
+                          <Card.Title key={dog.name}>{dog.name}</Card.Title>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  ))}
+                </Row>
               </CardGroup>
             </Col>
           </Row>

@@ -1,5 +1,5 @@
 import React from "react";
-import Breeds from "../Breeds/Breeds";
+import Breeds from "./exerciseList";
 
 export function Label(props) {
   return (
