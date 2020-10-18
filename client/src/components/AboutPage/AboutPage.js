@@ -2,7 +2,7 @@ import React from "react";
 import "./AboutPage.css";
 import { Container, Row, Col, CardDeck, Card } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
-import Footer from "../Footer/Footer.js";
+
 
 export default function AboutPage() {
   return (
