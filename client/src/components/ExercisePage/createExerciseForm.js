@@ -1,5 +1,5 @@
 import React from "react";
-import Breeds from "./exerciseList";
+import ExerciseList from "./exerciseList";
 
 export function Label(props) {
   return (
@@ -22,7 +22,7 @@ export function Select(props) {
     <div className="form-group">
       <select className="form-control" defaultValue="Choose..." {...props}>
         <option>Choose...</option>
-        <Breeds />
+        <ExerciseList />
       </select>
     </div>
   );
