@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import DocPic from "../../images/DogByCacti.jpg";
 import { Card, Container, Row, Col, CardGroup } from "react-bootstrap";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../AppNav/AppNav.js";
@@ -29,9 +28,9 @@ function Homepage() {
     <div className="HomePageImg">
       <AppNav />
       <Container>
-        <div className="card-container">
+        {/* <div className="card-container"> */}
           <h1>
-          My Kennel{" "}
+            My Kennel{" "}
             <Link to="/form">
               <IoIosAddCircleOutline />{" "}
             </Link>
@@ -39,25 +38,37 @@ function Homepage() {
           <Row className="row">
             <Col>
               <CardGroup>
-                <Row>
+                <Row id="mapRow">
                   {dogs.map((dog) => (
-                    <Col medium="3">
-                      <Card style={{ width: "18rem" }}>
-                        <Card.Img variant="top" src={DocPic} />
-                        <Card.Body key={dog._id}>
-                          <Card.Title key={dog.name}>{dog.name}</Card.Title>
-                          <Link to="/exercise">Add daily exercises</Link>
+                    <div key={dog._id} className="card-deck">
+                      <Col key={dog._id} mb="3">
+                        <Card
+                          key={dog._id}
+                          style={{ width: "18rem", text: "center" }}
+                        >
+                          <Card.Img
+                            key={dog.image}
+                            variant="top"
+                            src={dog.image}
+                            className="card-img-top"
+                          />
+                          <Card.Body key={dog._id}>
+                            <Card.Title className="dogName" key={dog.name}>
+                              {dog.name}
+                            </Card.Title>
+                            <Link to="/exercise">Add daily exercises</Link>
                           <br></br>
                           <Link to="/chart">View progress</Link>
-                        </Card.Body>
-                      </Card>
-                    </Col>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    </div>
                   ))}
                 </Row>
               </CardGroup>
             </Col>
           </Row>
-        </div>
+        {/* </div> */}
       </Container>
     </div>
   );

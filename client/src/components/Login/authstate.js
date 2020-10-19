@@ -15,7 +15,7 @@ const AuthStateApp = () => {
         return onAuthUIStateChange((nextAuthState, authData) => {
             setAuthState(nextAuthState);
             setUser(authData)
-            console.log(authData)
+            // console.log(authData)
             console.log(nextAuthState)
             switch(nextAuthState) {
                 case "signedin":
@@ -29,7 +29,7 @@ const AuthStateApp = () => {
               }
         });
     }, );
-    console.log(user)
+    // console.log(user)
 
     
 

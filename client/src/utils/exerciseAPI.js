@@ -16,12 +16,5 @@ export default {
   //saves dog to database
   addExercise: function (exerciseData) {
     return axios.post("/api/exercises", exerciseData);
-  },
-
-  async getExercise(id) {
-    const res = await fetch("/api/exercises/" + id);
-    const json = await res.json();
-
-    return json;
-  },
+  }
 };
