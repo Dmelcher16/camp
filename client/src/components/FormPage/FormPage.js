@@ -4,26 +4,41 @@ import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
 import { Label, Input, Select, FormBtn } from "../CreateDogForm/CreateDogForm";
 import API from "../../utils/API";
-import {useHistory} from "react-router-dom";
-
-
+import { useHistory } from "react-router-dom";
 
 export default function FormPage() {
   //setting initial state
   const [createDog, setCreateDog] = useState({});
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
+  const history = useHistory();
 
-//  use Effect(() => {
-//    if (url){
-//      fetch("/createDog")
-//    }
-//  })
+  useEffect(() => {
+    if (url) {
+      API.addDog({
+        name: createDog.name,
+        age: createDog.age,
+        breed: createDog.breed,
+        ownerFirstName: createDog.ownerFirstName,
+        ownerLastName: createDog.ownerLastName,
+        image: url,
+      })
+        .then(alert(`${createDog.name} has been added to your kennel!`))
+        .then(history.push("/home"))
 
+        .catch((err) => console.log(err));
+    }
+  }, [
+    createDog.age,
+    createDog.breed,
+    createDog.name,
+    createDog.ownerFirstName,
+    createDog.ownerLastName,
+    createDog.image,
+    url,
+  ]);
 
-
-
-  const dogDetails = (e) => {
+  const dogDetails = async (e) => {
     e.preventDefault();
     const data = new FormData();
     data.append("file", image);
@@ -46,32 +61,7 @@ export default function FormPage() {
     const { name, value } = event.target;
     setCreateDog({ ...createDog, [name]: value });
   }
-  
-
-  //will handle creation of new dog to db
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (
-      createDog.name &&
-      createDog.age &&
-      createDog.breed &&
-      createDog.ownerFirstName &&
-      createDog.ownerLastName &&
-      createDog.image
-    ) {
-      API.addDog({
-        name: createDog.name,
-        age: createDog.age,
-        breed: createDog.breed,
-        ownerFirstName: createDog.ownerFirstName,
-        ownerLastName: createDog.ownerLastName,
-        image: createDog.image,
-      })
-        .then(alert(`${createDog.name} has been added to your kennel!`))
-
-        .catch((err) => console.log(err));
-    }
-  }
+   
 
   return (
     <div className="FormPageImg">
@@ -109,7 +99,7 @@ export default function FormPage() {
                   placeholder="Owner's Last Name (Required)"
                 />
                 <Label>Image:</Label>
-                <div className="form-group">
+                <div className="form-group-inline">
                   <input
                     type="file"
                     className="form-control-file"
@@ -119,15 +109,15 @@ export default function FormPage() {
                   />
                 </div>
                 <FormBtn
-                  // disabled={
-                  //   !(
-                  //     createDog.name &&
-                  //     createDog.age &&
-                  //     createDog.breed &&
-                  //     createDog.ownerFirstName &&
-                  //     createDog.ownerLastName
-                  //   )
-                  // }
+                  disabled={
+                    !(
+                      createDog.name &&
+                      createDog.age &&
+                      createDog.breed &&
+                      createDog.ownerFirstName &&
+                      createDog.ownerLastName
+                    )
+                  }
                   onClick={dogDetails}
                 >
                   Add Dog

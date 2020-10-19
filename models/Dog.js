@@ -28,8 +28,10 @@ const DogSchema = new Schema({
     trim: true,
     required: "Last Name is Required",
   },
-  image: String,
-
+  image: {
+    type: String,
+    default: "https://placedog.net/200/200"
+  },
   exercises: [
     {
       type: Schema.Types.ObjectId,
