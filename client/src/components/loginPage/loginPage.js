@@ -2,14 +2,11 @@ import React from "react";
 import Login from "../Login/Login";
 import "./loginPage.css";
 
-
 export default function loginPage() {
   return (
-   <div>
-      <div className="loginPageImg">
-        <Login />
-      </div>
-   </div>
-    
+    <div className="loginPageImg">
+      <Image className="logo" src="BlueCampK9Logo.jpeg" fluid />
+      <Login />
+    </div>
   );
 }
