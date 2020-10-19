@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "./FormPage.css";
+// import "../FormPage/FormPage.css";
 import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
 import { Label, Input, Select, FormBtn } from "./createExerciseForm";
@@ -16,7 +16,7 @@ export default function ExercisePage() {
   }, []);
 
   function loadDogExercises() {
-    API.getDogs()
+    API.getExercises()
       .then((res) => setExercises(res.data))
       .catch((err) => console.log(err))
   }
@@ -36,9 +36,9 @@ export default function ExercisePage() {
 
   function handleFormSubmit(event){
     event.preventDefault();
-    if (createExercise.name && createExercise.leashDuration && createExercise.leashPullDuration && createExercise.sitStayAttempts && createExercise.sitStaySuccess && createExercise.commandsAttempted && createExercise.commandsCompleted && createExercise.chewing && createExercise.numPottyAccidents && createExercise.numPottySuccesses) {
+    if (createExercise.Exercise && createExercise.leashDuration && createExercise.leashPullDuration && createExercise.sitStayAttempts && createExercise.sitStaySuccess && createExercise.commandsAttempted && createExercise.commandsCompleted && createExercise.chewing && createExercise.numPottyAccidents && createExercise.numPottySuccesses) {
       API.addExercise({
-        name: createExercise.name,
+        Exercise: createExercise.Exercise,
         leashDuration: createExercise.leashDuration,
         leashPullDuration: createExercise.leashPullDuration,
         sitStayAttempts: createExercise.sitStayAttempts,
@@ -49,7 +49,7 @@ export default function ExercisePage() {
         numPottyAccidents: createExercise.numPottyAccidents,
         numPottySuccesses: createExercise.numPottySuccesses
       })
-      .then(alert(`${createExercise.name} has been added to your list!`))
+      .then(alert(`${createExercise.Exercise} has been added to your list!`))
       .then((res) => loadDogExercises())
       .catch((err) => console.log(err))
     }
@@ -125,20 +125,20 @@ export default function ExercisePage() {
               placeholder="Number of successful potty breaks (Required)"
             />
             <FormBtn
-            //   disabled={
-            //     !(
-            //         createExercise.name &&
-            //         createExercise.leashDuration &&
-            //         createExercise.leashPullDuration &&
-            //         createExercise.sitStayAttempts &&
-            //         createExercise.sitStaySuccess &&
-            //         createExercise.commandsAttempted &&
-            //         createExercise.commandsCompleted &&
-            //         createExercise.chewing &&
-            //         createExercise.numPottyAccidents &&
-            //         createExercise.numPottySuccesses
-            //     )
-            //   }
+              disabled={
+                !(
+                    createExercise.Exercise &&
+                    createExercise.leashDuration &&
+                    createExercise.leashPullDuration &&
+                    createExercise.sitStayAttempts &&
+                    createExercise.sitStaySuccess &&
+                    createExercise.commandsAttempted &&
+                    createExercise.commandsCompleted &&
+                    createExercise.chewing &&
+                    createExercise.numPottyAccidents &&
+                    createExercise.numPottySuccesses
+                )
+              }
               onClick={handleFormSubmit}
             >
               Complete

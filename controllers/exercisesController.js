@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/Exercises");
 
 //defining methods for Exercises Controller
 module.exports = {
