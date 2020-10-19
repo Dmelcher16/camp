@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PChart from './pottyChart'
 import Chart from './dogCharts'
 import AppNav from "../AppNav/AppNav";

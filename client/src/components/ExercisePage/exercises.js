@@ -6,7 +6,7 @@ import { Label, Input, Select, FormBtn } from "./createExerciseForm";
 import API from "../../utils/exerciseAPI";
 
 export default function ExercisePage() {
-  const [dogs, setExercises] = useState([]); 
+  const [exercises, setExercises] = useState([]); // eslint-disable-line 
   const [createExercise, setCreateExercise] = useState({
     Exercises: "",
     leashDuration: "",
