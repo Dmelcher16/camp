@@ -30,7 +30,9 @@ app.use(logger("dev"));
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/campK9", {
     useNewUrlParser: true,
+    useFindAndModify: false,
     useUnifiedTopology: true,
+    useCreateIndex: true,
   }
 )
 

@@ -6,6 +6,9 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../AppNav/AppNav.js";
 import API from "../../utils/API";
 
+
+
+
 function Homepage() {
   //set initial state
   const [dogs, setDogs] = useState([]);
@@ -53,6 +56,9 @@ function Homepage() {
                             <Card.Title className="dogName" key={dog.name}>
                               {dog.name}
                             </Card.Title>
+                            <Link to="/exercise">Add daily exercises</Link>
+                          <br></br>
+                          <Link to="/chart">View progress</Link>
                           </Card.Body>
                         </Card>
                       </Col>

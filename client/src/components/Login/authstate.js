@@ -31,6 +31,8 @@ const AuthStateApp = () => {
     }, );
     // console.log(user)
 
+    
+
   return authState === AuthState.SignedIn && user ? (
 
       <div className="App">
@@ -42,5 +44,6 @@ const AuthStateApp = () => {
         <AmplifyAuthenticator />
         );
     }
+
 
 export default AuthStateApp;
