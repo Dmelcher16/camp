@@ -45,7 +45,7 @@ class Chart extends Component {
         <div className="chartBG">
         <div className="chart">
         <AppNav id="link-name2" />
-        <Bar
+        <Line
           data={this.state.chartData}
           //   width={}
           //   height={}
