@@ -25,9 +25,9 @@ function Homepage() {
     <div className="HomePageImg">
       <AppNav />
       <Container>
-        <div className="card-container">
+        {/* <div className="card-container"> */}
           <h1>
-            Tucker's Kennel{" "}
+            My Kennel{" "}
             <Link to="/form">
               <IoIosAddCircleOutline />{" "}
             </Link>
@@ -35,30 +35,34 @@ function Homepage() {
           <Row className="row">
             <Col>
               <CardGroup>
-                <Row>
+                <Row id="mapRow">
                   {dogs.map((dog) => (
-                    <Col key={dog._id} medium="3">
-                      <Card
-                        key={dog._id}
-                        style={{ width: "18rem", text: "center" }}
-                      >
-                        <Card.Img
-                          key={dog.image}
-                          variant="top"
-                          src={dog.image}
-                          className="card-img-top"
-                        />
-                        <Card.Body key={dog._id}>
-                          <Card.Title className="dogName" key={dog.name}>{dog.name}</Card.Title>
-                        </Card.Body>
-                      </Card>
-                    </Col>
+                    <div key={dog._id} className="card-deck">
+                      <Col key={dog._id} mb="3">
+                        <Card
+                          key={dog._id}
+                          style={{ width: "18rem", text: "center" }}
+                        >
+                          <Card.Img
+                            key={dog.image}
+                            variant="top"
+                            src={dog.image}
+                            className="card-img-top"
+                          />
+                          <Card.Body key={dog._id}>
+                            <Card.Title className="dogName" key={dog.name}>
+                              {dog.name}
+                            </Card.Title>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    </div>
                   ))}
                 </Row>
               </CardGroup>
             </Col>
           </Row>
-        </div>
+        {/* </div> */}
       </Container>
     </div>
   );

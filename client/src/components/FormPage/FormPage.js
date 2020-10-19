@@ -68,8 +68,8 @@ export default function FormPage() {
     <div className="FormPageImg">
       <AppNav />
       <Container fluid>
-        <h1>Welcome Tucker!!</h1>
-        <Row>
+        <h1>Add A Dog To Your Kennel</h1>
+        <Row id="formRow">
           <Col md="6">
             <Container className="form-container">
               <form>

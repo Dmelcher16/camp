@@ -8,6 +8,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
+  padding-bottom: 20px;
 }
 
 .form {
@@ -22,10 +23,15 @@
   margin-right: 6em;
 }
 
-h3 {
+h1 {
   text-align: center;
+  padding-bottom: 15px;
 }
 
 #submit {
   float: center;
+}
+
+#formRow {
+  justify-content: center;
 }

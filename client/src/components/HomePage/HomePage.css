@@ -27,9 +27,17 @@ h1 {
   object-fit: cover;
 }
 
-.card {
+#mapRow {
+  justify-content: center;
+}
+
+/* .card {
   margin-bottom: 15px;
   text-align: center;
+} */
+
+.card-deck {
+  justify-content: center;
 }
 
 .dogName {
