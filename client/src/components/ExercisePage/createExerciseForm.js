@@ -1,5 +1,6 @@
 import React from "react";
 import ExerciseList from "./exerciseList";
+import "./createExerciseForm.css";
 
 export function Label(props) {
   return (
