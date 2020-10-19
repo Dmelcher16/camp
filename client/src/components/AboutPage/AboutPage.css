@@ -7,7 +7,7 @@
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 130vh;
+  min-height: 180vh;
 }
 
 .card {
@@ -15,6 +15,6 @@
 }
 
 .card-deck {
-  margin-bottom: 6em;;
+  margin-bottom: 6em;
 }
 
