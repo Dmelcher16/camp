@@ -28,10 +28,8 @@ const DogSchema = new Schema({
     trim: true,
     required: "Last Name is Required",
   },
-  // image: {
-  //   type: String,
-  //   buffer: image
-  // },
+  image: String,
+
   exercises: [
     {
       type: Schema.Types.ObjectId,
@@ -44,7 +42,7 @@ const DogSchema = new Schema({
 
 DogSchema.methods.setOwnerFullName = function () {
   this.ownerFullName = `${this.ownerFirstName} ${this.ownerLastName}`;
-  console.log(this.ownerFullName)
+  console.log(this.ownerFullName);
   return this.ownerFullName;
 };
 
