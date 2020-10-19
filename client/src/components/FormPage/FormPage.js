@@ -29,6 +29,7 @@ export default function FormPage() {
 
         .catch((err) => console.log(err));
     }
+    // eslint-disable-next-line
   }, [
     createDog.age,
     createDog.breed,
@@ -39,7 +40,7 @@ export default function FormPage() {
     url,
   ]);
 
-  const dogDetails =  (e) => {
+  const addDog = (e) => {
     e.preventDefault();
     const data = new FormData();
     data.append("file", image);
@@ -62,7 +63,6 @@ export default function FormPage() {
     const { name, value } = event.target;
     setCreateDog({ ...createDog, [name]: value });
   }
-   
 
   return (
     <div className="FormPageImg">
@@ -119,7 +119,7 @@ export default function FormPage() {
                       createDog.ownerLastName
                     )
                   }
-                  onClick={dogDetails}
+                  onClick={addDog}
                 >
                   Add Dog
                 </FormBtn>

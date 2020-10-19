@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import DocPic from "../../images/DogByCacti.jpg";
 import { Card, Container, Row, Col, CardGroup } from "react-bootstrap";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../AppNav/AppNav.js";
@@ -39,10 +38,18 @@ function Homepage() {
                 <Row>
                   {dogs.map((dog) => (
                     <Col key={dog._id} medium="3">
-                      <Card key={dog._id} style={{ width: "18rem", text: "center" }}>
-                        <Card.Img key={dog.image} variant="top" src={dog.image} className="card-img-top" />
+                      <Card
+                        key={dog._id}
+                        style={{ width: "18rem", text: "center" }}
+                      >
+                        <Card.Img
+                          key={dog.image}
+                          variant="top"
+                          src={dog.image}
+                          className="card-img-top"
+                        />
                         <Card.Body key={dog._id}>
-                          <Card.Title key={dog.name}>{dog.name}</Card.Title>
+                          <Card.Title className="dogName" key={dog.name}>{dog.name}</Card.Title>
                         </Card.Body>
                       </Card>
                     </Col>
