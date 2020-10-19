@@ -3,7 +3,6 @@ import "./AboutPage.css";
 import { Container, Row, Col, CardDeck, Card } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
 
-
 export default function AboutPage() {
   return (
     <div className="AboutPageImg">
