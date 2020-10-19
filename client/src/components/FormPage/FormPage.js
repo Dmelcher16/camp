@@ -10,9 +10,9 @@ export default function FormPage() {
       <AppNav />
       <h1>Welcome Tucker!!</h1>
       <div className="form-container">
-        <Form className="form">
+        <Form variant="flat" className="form">
           <h3>Add a dog to Start Your Kennel:</h3>
-          <Form.Group as={Row} controlId="name">
+          <Form.Group className="contents" as={Row} controlId="name">
             <Form.Label column sm="2">
               Name:
             </Form.Label>

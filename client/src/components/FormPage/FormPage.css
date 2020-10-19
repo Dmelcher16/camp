@@ -14,14 +14,16 @@
   margin-left: 6em;
   margin-right: 6em;
   margin-bottom: 20em;
+ 
 }
 
 .form-container {
-  background-color: white;
   margin-left: 6em;
   margin-right: 6em;
+  background-color: white;
 }
 
 h3 {
   text-align: center;
 }
+
