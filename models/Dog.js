@@ -30,7 +30,7 @@ const DogSchema = new Schema({
   },
   image: {
     type: String,
-    default: "https://placedog.net/200/200"
+    default: "https://www.zurn.com/media-library/images-(1)/product_400x400/image-placeholder-400x400?maxsidesize=330"
   },
   exercises: [
     {

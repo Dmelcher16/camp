@@ -13,6 +13,7 @@ export default function FormPage() {
   const [url, setUrl] = useState("");
   const history = useHistory();
 
+  //setting hook to push data to db and redirect to homepage upon successful addition
   useEffect(() => {
     if (url) {
       API.addDog({
@@ -38,7 +39,7 @@ export default function FormPage() {
     url,
   ]);
 
-  const dogDetails = async (e) => {
+  const dogDetails =  (e) => {
     e.preventDefault();
     const data = new FormData();
     data.append("file", image);

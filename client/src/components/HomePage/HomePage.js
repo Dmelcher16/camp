@@ -39,8 +39,8 @@ function Homepage() {
                 <Row>
                   {dogs.map((dog) => (
                     <Col key={dog._id} medium="3">
-                      <Card key={dog._id} style={{ width: "18rem" }}>
-                        <Card.Img key={dog.image} variant="top" src={dog.image} />
+                      <Card key={dog._id} style={{ width: "18rem", text: "center" }}>
+                        <Card.Img key={dog.image} variant="top" src={dog.image} className="card-img-top" />
                         <Card.Body key={dog._id}>
                           <Card.Title key={dog.name}>{dog.name}</Card.Title>
                         </Card.Body>
