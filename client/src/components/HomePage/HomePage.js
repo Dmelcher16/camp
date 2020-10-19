@@ -7,6 +7,9 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../AppNav/AppNav.js";
 import API from "../../utils/API";
 
+
+
+
 function Homepage() {
   //set initial state
   const [dogs, setDogs] = useState([]);
@@ -28,7 +31,7 @@ function Homepage() {
       <Container>
         <div className="card-container">
           <h1>
-            Tucker's Kennel{" "}
+          My Kennel{" "}
             <Link to="/form">
               <IoIosAddCircleOutline />{" "}
             </Link>

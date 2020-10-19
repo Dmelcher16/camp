@@ -1,62 +1,16 @@
-const mongoose = require("mongoose");
+import React, { useState, useEffect } from "react";
+import PChart from './pottyChart'
+import Chart from './dogCharts'
+import AppNav from "../AppNav/AppNav";
 
-const Schema = mongoose.Schema;
+function chartPage() {
+  return (
+    <div>
+      <AppNav />
+      <PChart />
+      <Chart />
+    </div>
+  );
+}
 
-const ExerciseSchema = new Schema({
-  day: {
-    type: Date,
-    default: Date.now,
-  },
-  Exercises: {
-    type: String,
-    array: [
-      "Stay/Sit",
-      "Leash Training",
-      "Completed Commands",
-      "Chewing/Biting",
-      "Potty Training",
-    ],
-    required: "Name of excercise is required",
-  },
-  leashDuration: {
-    type: Number,
-    required: "Duration of leash time is required",
-  },
-  leashPullDuration: {
-    type: Number,
-    required: "Time spent pulling on the leash required",
-  },
-  sitStayAttempts: {
-    type: Number,
-    required: "Number of attempted sit/stay commands is required",
-  },
-  sitStaySuccess: {
-    type: Number,
-    required: "Number of times successfully sit/stayed required",
-  },
-  commandsAttempted: {
-    type: Number,
-    required: "Number of commands attempted required",
-  },
-
-  commandsCompleted: {
-    type: Number,
-    required: "Number of commands completed required",
-  },
-  chewing: {
-    type: Number,
-    required: "Number of items chewed up today required",
-  },
-  numPottyAccidents: {
-    type: Number,
-    required: "Number of accidents today required",
-  },
-  numPottySuccesses: {
-    type: Number,
-    required: "Number of successful potty breaks required",
-  },
-});
-
-const ExerciseRoute = mongoose.model("Exercises", ExerciseSchema);
-
-module.exports = ExerciseRoute;
+export default chartPage
