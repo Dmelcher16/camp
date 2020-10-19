@@ -7,7 +7,8 @@
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 130vh;
+  min-height: 100vh;
+  padding-bottom: 20px;
 }
 
 .form {
@@ -23,7 +24,16 @@
   background-color: white;
 }
 
-h3 {
+h1 {
   text-align: center;
+  padding-bottom: 15px;
+}
+
+#submit {
+  float: center;
+}
+
+#formRow {
+  justify-content: center;
 }
 

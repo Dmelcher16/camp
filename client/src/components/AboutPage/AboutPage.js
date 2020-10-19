@@ -46,9 +46,10 @@ export default function AboutPage() {
           <Card.Body>
             <Card.Title>Stays/Sits</Card.Title>
             <Card.Text>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              Animals have a lot of anxiety which causes problems for you.
+              As an owner taking charge of your dog can be difficult,
+              however with owner state of the art sit/stay training you
+              don’t have to worry about your dog acting on anxiety and running off.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -57,9 +58,8 @@ export default function AboutPage() {
           <Card.Body>
             <Card.Title>Leash Training</Card.Title>
             <Card.Text>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              With our state of the art leash training you can be sure your dog will
+              be obedient. Leash training will allow you to relax while not fussing over your dog.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -68,9 +68,9 @@ export default function AboutPage() {
           <Card.Body>
             <Card.Title>Potty Training</Card.Title>
             <Card.Text>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              Accidents happen, however it can be a problem when they become consistent. Potty training
+              will allow your dog to become more versatile when it comes to their ability to make rational
+              decisions on what is right and wrong.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -79,9 +79,9 @@ export default function AboutPage() {
           <Card.Body>
             <Card.Title>Biting</Card.Title>
             <Card.Text>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              A dog’s natural instinct is to chew on things. If this habit becomes consistent,
+              it may cause hundreds, possibly even thousands of dollars worth in damage. With
+              this training you can be sure that your belongings will be safe.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -90,9 +90,8 @@ export default function AboutPage() {
           <Card.Body>
             <Card.Title>Listening Speed</Card.Title>
             <Card.Text>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              Many dogs have a slow reaction time when it comes to listening and responding to
+              commands. This emphasis will teach your dog to listen closely without dilemma.
             </Card.Text>
           </Card.Body>
         </Card>

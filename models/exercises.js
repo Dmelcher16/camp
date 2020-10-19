@@ -7,21 +7,19 @@ const ExerciseSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  exercises: [
-    {
-      type: {
-        type: String,
-        trim: true,
-        enum: [
-          "Stay/Sit",
-          "Leash Training",
-          "Completed Commands",
-          "Chewing/Biting",
-          "Potty Training",
-        ],
-        required: "Type of excercise is required",
-      },
-      name: {
+      // type: {
+      //   type: String,
+      //   trim: true,
+      //   enum: [
+      //     "Stay/Sit",
+      //     "Leash Training",
+      //     "Completed Commands",
+      //     "Chewing/Biting",
+      //     "Potty Training",
+      //   ],
+      //   required: "Type of excercise is required",
+      // },
+      Exercises: {
         type: String,
         array: [
           "Stay/Sit",
@@ -69,10 +67,8 @@ const ExerciseSchema = new Schema({
         type: Number,
         required: "Number of successful potty breaks required",
       },
-    },
-  ],
 });
 
-const Exercise = mongoose.model("Exercise", ExerciseSchema);
+const Exercise = mongoose.model("Exercises", ExerciseSchema);
 
 module.exports = Exercise;

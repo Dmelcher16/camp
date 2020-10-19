@@ -28,6 +28,10 @@ const DogSchema = new Schema({
     trim: true,
     required: "Last Name is Required",
   },
+  image: {
+    type: String,
+    default: "https://www.zurn.com/media-library/images-(1)/product_400x400/image-placeholder-400x400?maxsidesize=330"
+  },
   exercises: [
     {
       type: Schema.Types.ObjectId,
@@ -40,7 +44,7 @@ const DogSchema = new Schema({
 
 DogSchema.methods.setOwnerFullName = function () {
   this.ownerFullName = `${this.ownerFirstName} ${this.ownerLastName}`;
-  console.log(this.ownerFullName)
+  console.log(this.ownerFullName);
   return this.ownerFullName;
 };
 
