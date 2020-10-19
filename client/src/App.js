@@ -7,8 +7,10 @@ import AboutPage from "./components/AboutPage/AboutPage.js";
 import HomePage from "./components/HomePage/HomePage.js";
 import loginPage from "./components/loginPage/loginPage";
 import FormPage from "./components/FormPage/FormPage";
-import Chart from './components/ChartPage/dogCharts'
+import Chart from './components/ChartPage/dogChartsOld'
 import ExercisePage from './components/ExercisePage/exercises'
+import ChartNew from "./components/ChartPage/dogCharts";
+import populateChart from "./components/ChartPage/stats";
 
 const App = () => {
   return (
@@ -17,7 +19,7 @@ const App = () => {
       <Route exact path="/home" component={HomePage} />
       <Route exact path="/about" component={AboutPage} />
       <Route exact path="/form" component={FormPage} />
-      <Route exact path="/chart" component={Chart} />
+      <Route exact path="/chart" component={ChartNew} />
       <Route exact path="/exercise" component={ExercisePage} />
       <Footer />
     </Router>

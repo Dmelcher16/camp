@@ -1,19 +1,30 @@
 import React, { Component } from "react";
-import { Bar, Line, Pie } from "react-chartjs-2";
-import AppNav from '../AppNav/AppNav.js'
-import './dogCharts.css'
 import {CanvasJSChart} from 'canvasjs-react-charts'
-// var CanvasJSReact = require('./canvasjs.react');
-// var CanvasJS = CanvasJSReact.CanvasJS;
-// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import API from '../../utils/exerciseAPI'
+
+fetch("/api/exercises/" + id)
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    populateChart(data);
+  });
 
 
-class ChartNew extends Component {
-    render() {
+API.getExercise(id);
+
+function populateChart(data){
+//     let durations = duration(data);
+//   let pounds = calculateTotalWeight(data);
+//   let workouts = workoutNames(data);
+  const Exercises = exercise(data)
+  const sitStayAttempts = sitStayAttempts(data)
+  constsitStaySuccess = sitStaySuccess(data)
+    function render() {
 		const options = {
 			animationEnabled: true,
 			title:{
-				text: "Monthly Sales - 2017"
+				text: Exercises
 			},
 			axisX: {
 				valueFormatString: "MMM"
@@ -50,7 +61,7 @@ class ChartNew extends Component {
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
 		);
-	}
+	};
 }
 
-export default ChartNew;
+export default populateChart;

@@ -44,6 +44,8 @@ function Homepage() {
                         <Card.Body key={dog._id}>
                           <Card.Title key={dog.name}>{dog.name}</Card.Title>
                           <Link to="/exercise">Add daily exercises</Link>
+                          <br></br>
+                          <Link to="/chart">View progress</Link>
                         </Card.Body>
                       </Card>
                     </Col>

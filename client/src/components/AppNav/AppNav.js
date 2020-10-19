@@ -18,9 +18,9 @@ export default function AppNav() {
           <Nav className="ml-auto" id="link-name">
             <Link id="link-name" to="/about">About</Link>
             <Link id="link-name" to="/">Home</Link>
-            <Link id="link-name" to="/form">Form</Link>
-            <Link id="link-name" to="/chart">Chart</Link>
-            <Link id="link-name" to="/exercise">Exercises</Link>
+            {/* <Link disabled id="link-name" to="/form">Form</Link> */}
+            {/* <Link id="link-name" to="/chart">Chart</Link> */}
+            {/* <Link id="link-name" to="/exercise">Exercises</Link> */}
             <Nav.Link>
             <AmplifySignOut>
             <AuthStateApp/>
