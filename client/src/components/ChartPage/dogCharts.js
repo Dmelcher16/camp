@@ -1,22 +1,14 @@
 import React, { Component } from "react";
-import { Bar, Line, Pie } from "react-chartjs-2";
-import AppNav from '../AppNav/AppNav.js'
-import './dogCharts.css'
-
+import { Line } from "react-chartjs-2";
+// import AppNav from "../AppNav/AppNav.js";
+import "./dogCharts.css";
 
 class Chart extends Component {
   constructor(props) {
     super(props);
     this.state = {
       chartData: {
-        labels: [
-          "13th",
-          "14th",
-          "15th",
-          "16th",
-          "17th",
-          "18th",
-        ],
+        labels: ["13th", "14th", "15th", "16th", "17th", "18th"],
         datasets: [
           {
             label: "Sit/Stays",
@@ -41,35 +33,33 @@ class Chart extends Component {
     };
   }
 
-
   render() {
     return (
-        <div className="chartBG">
+      <div className="chartBG">
         <div className="chart">
-        <Line
-          data={this.state.chartData}
-          //   width={}
-          //   height={}
-          options={{
+          <Line
+            data={this.state.chartData}
+            //   width={}
+            //   height={}
+            options={{
               title: {
-                  display: true,
-                  text: "Sits/Stays",
-                  fontSize: 25,
+                display: true,
+                text: "Sits/Stays",
+                fontSize: 25,
+              },
+              legend: {
+                display: true,
+                position: "right",
+                labels: {
+                  fontColor: "#000",
                 },
-                legend: {
-                    display: true,
-                    position: "right",
-                    labels: {
-                        fontColor: "#000",
-                    },
-                },
+              },
             }}
-            />
+          />
+        </div>
       </div>
-            </div>
     );
   }
-  
 }
 
 export default Chart;
