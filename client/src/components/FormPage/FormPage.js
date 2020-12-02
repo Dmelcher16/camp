@@ -40,6 +40,7 @@ export default function FormPage() {
     url,
   ]);
 
+  //uploads image to Cloudinary image database and returns URL for uploaded image.  Sets image URL to specific dog being added.
   const addDog = (e) => {
     e.preventDefault();
     const data = new FormData();

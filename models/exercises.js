@@ -19,7 +19,7 @@ const ExerciseSchema = new Schema({
       //   ],
       //   required: "Type of excercise is required",
       // },
-      Exercises: {
+      exercises: {
         type: String,
         array: [
           "Stay/Sit",

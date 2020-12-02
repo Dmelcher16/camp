@@ -4,8 +4,10 @@ import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
 import { Label, Input, Select, FormBtn } from "./createExerciseForm";
 import API from "../../utils/exerciseAPI";
+import { useHistory } from "react-router-dom";
 
 export default function ExercisePage() {
+  
   const [exercises, setExercises] = useState([]); // eslint-disable-line
   const [createExercise, setCreateExercise] = useState({
     Exercises: "",
@@ -19,6 +21,8 @@ export default function ExercisePage() {
     numPottyAccidents: "",
     numPottySuccesses: "",
   });
+
+  const history = useHistory();
 
   const exerciseTypeSelect = document.querySelector("#type");
   const leashTrainingForm = document.querySelector(".leash-training");
@@ -92,7 +96,7 @@ export default function ExercisePage() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (
-      createExercise.Exercises ||
+      createExercise.exercises ||
       createExercise.leashDuration ||
       createExercise.leashPullDuration ||
       createExercise.sitStayAttempts ||
@@ -104,7 +108,7 @@ export default function ExercisePage() {
       createExercise.numPottySuccesses
     ) {
       API.addExercise({
-        Exercises: createExercise.Exercises,
+        exercises: createExercise.exercises,
         leashDuration: createExercise.leashDuration,
         leashPullDuration: createExercise.leashPullDuration,
         sitStayAttempts: createExercise.sitStayAttempts,
@@ -115,8 +119,9 @@ export default function ExercisePage() {
         numPottyAccidents: createExercise.numPottyAccidents,
         numPottySuccesses: createExercise.numPottySuccesses,
       })
-        .then(alert(`${createExercise.Exercise} has been added to your list!`))
-        .then((res) => loadDogExercises())
+        .then(alert(`${createExercise.Exercises} has been added to your list!`))
+        .then(history.push("/home"))
+        // .then((res) => loadDogExercises())
         .catch((err) => console.log(err));
     }
   }
