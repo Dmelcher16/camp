@@ -3,10 +3,10 @@ import React from "react";
 export default function ExerciseList() {
   return (
     <>
-      <option>Stay/Sit</option>
+      <option>Sit/Stay</option>
       <option>Leash Training</option>
-      <option>Completed Commands</option>
-      <option>Chewing/Biting</option>
+      <option>Commands</option>
+      <option>Chewing</option>
       <option>Potty Training</option>
     </>
   );
