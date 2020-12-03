@@ -4,8 +4,10 @@ import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
 import { Label, Input, Select, FormBtn } from "./createExerciseForm";
 import API from "../../utils/exerciseAPI";
+import { useHistory } from "react-router-dom";
 
 export default function ExercisePage() {
+  
   const [exercises, setExercises] = useState([]); // eslint-disable-line
   const [createExercise, setCreateExercise] = useState({
     exercises: "",
@@ -19,6 +21,8 @@ export default function ExercisePage() {
     numPottyAccidents: "",
     numPottySuccesses: "",
   });
+
+  const history = useHistory();
 
   const exerciseTypeSelect = document.querySelector("#type");
   const leashTrainingForm = document.querySelector(".leash-training");
@@ -116,7 +120,8 @@ export default function ExercisePage() {
         numPottySuccesses: createExercise.numPottySuccesses,
       })
         .then(alert(`${createExercise.exercises} has been added to your list!`))
-        .then((res) => loadDogExercises())
+        .then(history.push("/home"))
+        // .then((res) => loadDogExercises())
         .catch((err) => console.log(err));
     }
   }
