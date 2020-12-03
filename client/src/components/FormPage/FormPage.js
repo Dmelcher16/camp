@@ -61,6 +61,7 @@ export default function FormPage() {
   };
 
   function handleInputChange(event) {
+    event.preventDefault();
     const { name, value } = event.target;
     setCreateDog({ ...createDog, [name]: value });
   }

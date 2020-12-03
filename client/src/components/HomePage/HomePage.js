@@ -21,6 +21,8 @@ function Homepage() {
       .catch((err) => console.log(err));
   }
 
+  loadDogs();
+
   return (
     <div className="HomePageImg">
       <AppNav />
