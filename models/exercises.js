@@ -32,40 +32,40 @@ const exerciseSchema = new Schema({
   },
   leashDuration: {
     type: Number,
-    required: "Duration of leash time is required",
+    default: 0,
   },
   leashPullDuration: {
     type: Number,
-    required: "Time spent pulling on the leash required",
+    default: 0,
   },
   sitStayAttempts: {
     type: Number,
-    required: "Number of attempted sit/stay commands is required",
+    default: 0,
   },
   sitStaySuccess: {
     type: Number,
-    required: "Number of times successfully sit/stayed required",
+    default: 0,
   },
   commandsAttempted: {
     type: Number,
-    required: "Number of commands attempted required",
+    default: 0,
   },
 
   commandsCompleted: {
     type: Number,
-    required: "Number of commands completed required",
+    default: 0,
   },
   chewing: {
     type: Number,
-    required: "Number of items chewed up today required",
+    default: 0,
   },
   numPottyAccidents: {
     type: Number,
-    required: "Number of accidents today required",
+    default: 0,
   },
   numPottySuccesses: {
     type: Number,
-    required: "Number of successful potty breaks required",
+    default: 0,
   },
 });
 
