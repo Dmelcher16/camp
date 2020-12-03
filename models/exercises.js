@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const exerciseSchema = new Schema({
+  dog: {
+    type: Schema.Types.ObjectId,
+    ref: "Dog"
+  },
   day: {
     type: Date,
     default: Date.now,

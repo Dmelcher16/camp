@@ -43,3 +43,7 @@ h1 {
 .dogName {
   color: white;
 }
+
+.cardLink:hover{
+  color: #85c872;
+}

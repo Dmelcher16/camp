@@ -9,6 +9,7 @@ export default function ExercisePage() {
   
   const [exercises, setExercises] = useState([]); // eslint-disable-line
   const [createExercise, setCreateExercise] = useState({
+    dog: "",
     exercises: "",
     leashDuration: "",
     leashPullDuration: "",

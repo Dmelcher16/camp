@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const DogSchema = new Schema({
+  _id: Schema.Types.ObjectId,
   name: {
     type: String,
     trim: true,
@@ -26,7 +27,7 @@ const DogSchema = new Schema({
   ownerLastName: {
     type: String,
     trim: true,
-    required: "Last Name is Required",
+    required: "Please enter the last name of the owner",
   },
   image: {
     type: String,
