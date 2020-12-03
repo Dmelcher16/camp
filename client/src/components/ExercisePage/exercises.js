@@ -8,7 +8,7 @@ import API from "../../utils/exerciseAPI";
 export default function ExercisePage() {
   const [exercises, setExercises] = useState([]); // eslint-disable-line
   const [createExercise, setCreateExercise] = useState({
-    Exercises: "",
+    exercises: "",
     leashDuration: "",
     leashPullDuration: "",
     sitStayAttempts: "",
@@ -92,7 +92,7 @@ export default function ExercisePage() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (
-      createExercise.Exercises ||
+      createExercise.exercises ||
       createExercise.leashDuration ||
       createExercise.leashPullDuration ||
       createExercise.sitStayAttempts ||
@@ -104,7 +104,7 @@ export default function ExercisePage() {
       createExercise.numPottySuccesses
     ) {
       API.addExercise({
-        Exercises: createExercise.Exercises,
+        exercises: createExercise.exercises,
         leashDuration: createExercise.leashDuration,
         leashPullDuration: createExercise.leashPullDuration,
         sitStayAttempts: createExercise.sitStayAttempts,
@@ -115,7 +115,7 @@ export default function ExercisePage() {
         numPottyAccidents: createExercise.numPottyAccidents,
         numPottySuccesses: createExercise.numPottySuccesses,
       })
-        .then(alert(`${createExercise.Exercise} has been added to your list!`))
+        .then(alert(`${createExercise.exercises} has been added to your list!`))
         .then((res) => loadDogExercises())
         .catch((err) => console.log(err));
     }
@@ -124,7 +124,7 @@ export default function ExercisePage() {
   return (
     <div className="FormPageImg">
       <AppNav />
-      <h1>Add your exercises!</h1>
+      <h1>Add Your Exercises!</h1>
       <Row className="justify-content-center">
         <Col md="6">
           <Container fluid className="form-container">
@@ -133,8 +133,8 @@ export default function ExercisePage() {
                 <Label>Exercise:</Label>
                 <Select
                   onChange={handleInputChange}
-                  value={createExercise.Exercises}
-                  name="Exercises"
+                  value={createExercise.exercises}
+                  name="exercises"
                   placeholder="Exercise Name (required)"
                   id="type"
                 />
@@ -215,7 +215,7 @@ export default function ExercisePage() {
               <FormBtn
                 disabled={
                   !(
-                    createExercise.Exercises ??
+                    createExercise.exercises ??
                     createExercise.leashDuration ??
                     createExercise.leashPullDuration ??
                     createExercise.sitStayAttempts ??
