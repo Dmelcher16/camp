@@ -21,11 +21,7 @@ h1 {
   color: white;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 13vw;
-  object-fit: cover;
-}
+
 
 #mapRow {
   justify-content: center;
@@ -46,4 +42,14 @@ h1 {
 
 .cardLink:hover{
   color: #85c872;
+}
+
+img {
+  cursor: pointer;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 15rem;
 }

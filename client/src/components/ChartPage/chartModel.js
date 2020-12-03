@@ -1,11 +1,11 @@
 import React from "react";
-import PChart from './pottyChart'
-import Chart from './dogCharts'
+import PChart from "./pottyChart";
+import Chart from "./dogCharts";
 import AppNav from "../AppNav/AppNav";
 
 function chartPage() {
   return (
-    <div>
+    <div style={{backgroundColor: "darkgray"}}>
       <AppNav />
       <PChart />
       <Chart />
@@ -13,4 +13,4 @@ function chartPage() {
   );
 }
 
-export default chartPage
+export default chartPage;
