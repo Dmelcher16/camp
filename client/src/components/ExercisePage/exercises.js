@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import "../FormPage/FormPage.css";
 import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
 import { Label, Input, Select, FormBtn } from "./createExerciseForm";
