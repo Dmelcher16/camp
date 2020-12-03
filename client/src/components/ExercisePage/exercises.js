@@ -129,7 +129,7 @@ export default function ExercisePage() {
   return (
     <div className="FormPageImg">
       <AppNav />
-      <h1>Add your exercises!</h1>
+      <h1>Add Your Exercises!</h1>
       <Row className="justify-content-center">
         <Col md="6">
           <Container fluid className="form-container">
@@ -139,7 +139,7 @@ export default function ExercisePage() {
                 <Select
                   onChange={handleInputChange}
                   value={createExercise.exercises}
-                  name="Exercises"
+                  name="exercises"
                   placeholder="Exercise Name (required)"
                   id="type"
                 />
