@@ -10,7 +10,7 @@ export default function ExercisePage() {
   
   const [exercises, setExercises] = useState([]); // eslint-disable-line
   const [createExercise, setCreateExercise] = useState({
-    Exercises: "",
+    exercises: "",
     leashDuration: "",
     leashPullDuration: "",
     sitStayAttempts: "",
@@ -119,7 +119,7 @@ export default function ExercisePage() {
         numPottyAccidents: createExercise.numPottyAccidents,
         numPottySuccesses: createExercise.numPottySuccesses,
       })
-        .then(alert(`${createExercise.Exercises} has been added to your list!`))
+        .then(alert(`${createExercise.exercises} has been added to your list!`))
         .then(history.push("/home"))
         // .then((res) => loadDogExercises())
         .catch((err) => console.log(err));
@@ -138,7 +138,7 @@ export default function ExercisePage() {
                 <Label>Exercise:</Label>
                 <Select
                   onChange={handleInputChange}
-                  value={createExercise.Exercises}
+                  value={createExercise.exercises}
                   name="Exercises"
                   placeholder="Exercise Name (required)"
                   id="type"
@@ -220,7 +220,7 @@ export default function ExercisePage() {
               <FormBtn
                 disabled={
                   !(
-                    createExercise.Exercises ??
+                    createExercise.exercises ??
                     createExercise.leashDuration ??
                     createExercise.leashPullDuration ??
                     createExercise.sitStayAttempts ??
