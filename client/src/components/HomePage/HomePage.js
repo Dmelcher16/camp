@@ -25,7 +25,7 @@ function Homepage() {
     <div className="HomePageImg">
       <AppNav />
       <Container>
-        {/* <div className="card-container"> */}
+        <div className="card-container">
         <h1>
           My Kennel{" "}
           <Link to="/form">
@@ -75,7 +75,7 @@ function Homepage() {
             </CardGroup>
           </Col>
         </Row>
-        {/* </div> */}
+        </div>
       </Container>
     </div>
   );

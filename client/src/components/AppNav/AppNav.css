@@ -10,21 +10,15 @@ body {
 
 a {
   text-decoration: none;
-  
 }
 
 .navbar {
- background-color: rgba(0,0,255,0);
+  background-color: rgba(0, 0, 255, 0);
 }
 
 #link-name {
-    color: white;
-    font-size:25px;
-    padding-right: 20px;
-    vertical-align: middle;
-    
-    
+  color: white;
+  font-size: 25px;
+  padding-right: 20px;
+  vertical-align: middle;
 }
-
-
-

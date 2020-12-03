@@ -15,6 +15,7 @@ const App = () => {
   return (
     <Router>
       <Route exact path="/" component={loginPage} />
+      
       <Route exact path="/home" component={HomePage} />
       <Route exact path="/about" component={AboutPage} />
       <Route exact path="/form" component={FormPage} />
