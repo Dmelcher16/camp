@@ -15,7 +15,16 @@ module.exports = {
   },
   create: function (req, res) {
     db.Exercises.create(req.body)
-      .then((exercise) => res.json(exercise))
+      .then((_id) =>
+        db.Dog.findOneAndUpdate(
+          {},
+          { $push: { exercises: _id } },
+          { new: true }
+        )
+      )
+      .then((dbDog) => {
+        res.json(dbDog);
+      })
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
