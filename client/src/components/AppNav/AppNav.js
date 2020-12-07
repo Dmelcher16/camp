@@ -16,14 +16,14 @@ export default function AppNav() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto" id="link-name">
             <Nav.Item>
-              <Nav.Link id="link-name" to="/about">
+              <Link id="link-name" to="/about">
                 About
-              </Nav.Link>
+              </Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link id="link-name" to="/">
+              <Link id="link-name" to="/">
                 Home
-              </Nav.Link>
+              </Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link>

@@ -7,8 +7,6 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-
-
 //requiring morgan to use as dev tool
 const logger = require("morgan");
 
@@ -25,24 +23,17 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 app.use(logger("dev"));
 
-
 //Connect to Mongo Database
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/campK9", {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  }
-)
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campK9", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
-
-
-
-app.get("*", function (req, res) {
-  res.send("Hello!")
-})
-
-
+app.get("/*", function (req, res) {
+  // res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.send("Hello!");
+});
 
 app.listen(PORT, () => console.log(`App listening on PORT: ${PORT}`));
