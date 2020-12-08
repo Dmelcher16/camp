@@ -9,9 +9,12 @@ export default function AppNav() {
   return (
     <div>
       <Navbar variant="light" bg="dander" expand="sm">
-        <Navbar.Brand href="/">
+
+        <span className="navbar-brand mb-1 h1">
+          <Link to="/">
           <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
-        </Navbar.Brand>
+          </Link>
+        </span>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto" id="link-name">
