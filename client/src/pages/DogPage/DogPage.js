@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Container, Row, Col, Jumbotron, Card } from "react-bootstrap";
-import AppNav from "../AppNav/AppNav.js";
+import AppNav from "../../components/AppNav/AppNav.js";
 import API from "../../utils/API";
 import "./DogPage.css";
 

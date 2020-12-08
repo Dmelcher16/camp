@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./FormPage.css";
 import { Col, Row, Container } from "react-bootstrap";
-import AppNav from "../AppNav/AppNav.js";
-import { Label, Input, Select, FormBtn } from "../CreateDogForm/CreateDogForm";
+import AppNav from "../../components/AppNav/AppNav.js";
+import { Label, Input, Select, FormBtn } from "../../components/CreateDogForm/CreateDogForm";
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom";
 

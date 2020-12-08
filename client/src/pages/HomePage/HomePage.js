@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./HomePage.css";
 import { Card, Container, Row, Col, CardGroup } from "react-bootstrap";
 import { IoIosAddCircleOutline } from "react-icons/io";
-import AppNav from "../AppNav/AppNav.js";
+import AppNav from "../../components/AppNav/AppNav.js";
 import API from "../../utils/API";
 
 function Homepage() {
