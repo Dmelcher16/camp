@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Container, Row, Col, Jumbotron, Card } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import API from "../../utils/API";
 import "./DogPage.css";
 
 function DogPage(props) {
   const [dog, setDog] = useState({});
+  const [exerciseForm, showExerciseForm] = useState(false);
 
   //when component mounts get dog with _id of props.match.params.id
   const { id } = useParams();

@@ -6,7 +6,6 @@ import API from "../../utils/exerciseAPI";
 import { useHistory } from "react-router-dom";
 
 export default function ExercisePage() {
-  
   const [exercises, setExercises] = useState([]); // eslint-disable-line
   const [createExercise, setCreateExercise] = useState({
     dog: "",

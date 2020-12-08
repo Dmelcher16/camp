@@ -28,6 +28,15 @@ export default function FormPage() {
         .then(history.push("/home"))
 
         .catch((err) => console.log(err));
+    } else {
+      API.addDog({
+        name: createDog.name,
+        age: createDog.age,
+        breed: createDog.breed,
+        ownerFirstName: createDog.ownerFirstName,
+        ownerLastName: createDog.ownerLastName,
+      })
+
     }
     // eslint-disable-next-line
   }, [
