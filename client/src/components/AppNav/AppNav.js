@@ -4,14 +4,15 @@ import { AmplifySignOut } from "@aws-amplify/ui-react";
 import AuthStateApp from "../Login/authstate";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg"
 
 export default function AppNav() {
   return (
-    <div>
+    <div id="app-nav">
       <Navbar variant="light" bg="dander" expand="sm">
         <span className="navbar-brand mb-1 h1">
           <Link to="/">
-            <img src="BlueCampK9Logo.jpeg" alt="logo"></img>
+            <img src={BlueCampK9Logo} alt="Brand Logo"></img>
           </Link>
         </span>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

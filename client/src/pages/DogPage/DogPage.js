@@ -5,7 +5,7 @@ import AppNav from "../../components/AppNav/AppNav.js";
 import API from "../../utils/API";
 import "./DogPage.css";
 
-function DogPage(props) {
+function DogPage() {
   const [dog, setDog] = useState({});
   const [exerciseForm, showExerciseForm] = useState(false);
 

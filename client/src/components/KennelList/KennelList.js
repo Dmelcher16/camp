@@ -11,6 +11,18 @@ function KennelList() {
   const [state, dispatch] = useStoreContext();
   // const [dogs, setDogs] = useState([]);
 
+  
+  const removeDogs = (id) => {
+    API.deleteDog(id)
+    .then(() => {
+      dispatch({
+        type: REMOVE_DOG,
+        _id: id,
+      });
+    })
+    .catch((err) => console.log(err));
+  };
+  
   const loadDogs = () => {
     dispatch({ type: LOADING });
     API.getDogs()
@@ -22,19 +34,7 @@ function KennelList() {
       })
       .catch((err) => console.log(err));
   };
-
-  const removeDogs = (id) => {
-    API.deleteDog(id)
-      .then(() => {
-        dispatch({
-          type: REMOVE_DOG,
-          _id: id,
-        });
-      })
-      .catch((err) => console.log(err));
-  };
-
-  //load all the dogs and store them with setDogs
+  //load all the dogs from database
   useEffect(() => {
     loadDogs();
   }, []);
