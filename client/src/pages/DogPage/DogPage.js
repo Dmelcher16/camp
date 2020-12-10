@@ -19,29 +19,32 @@ function DogPage() {
 
   return (
     <div className="HomePageImg">
-      <AppNav />
-      <Container>
-        <Row>
-          <Col md={12}>
-            <Card id="mainDogCard">
-              <Card.Title>
-                <h1>{dog.name}</h1>
-              </Card.Title>
-              <Card.Body>
-                <Row className="justify-content-center">
-                  <Col>
-                    <img id="detailImage" src={dog.image} alt={dog.name} />
-                  </Col>
-                </Row>
-              </Card.Body>
-              <Card.Footer>
-                <Link to="/">← Back to Your Kennel</Link>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
-        <Row></Row>
-      </Container>
+      <div className="overlay"></div>
+      <div className="content">
+        <AppNav />
+        <Container>
+          <Row>
+            <Col md={12}>
+              <Card id="mainDogCard">
+                <Card.Title>
+                  <h1>{dog.name}</h1>
+                </Card.Title>
+                <Card.Body>
+                  <Row className="justify-content-center">
+                    <Col>
+                      <img id="detailImage" src={dog.image} alt={dog.name} />
+                    </Col>
+                  </Row>
+                </Card.Body>
+                <Card.Footer>
+                  <Link to="/">← Back to Your Kennel</Link>
+                </Card.Footer>
+              </Card>
+            </Col>
+          </Row>
+          <Row></Row>
+        </Container>
+      </div>
     </div>
   );
 }
