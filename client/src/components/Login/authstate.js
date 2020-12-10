@@ -29,7 +29,7 @@ const AuthStateApp = () => {
               }
         });
     }, );
-    // console.log(user)
+    console.log(user)
 
     
 

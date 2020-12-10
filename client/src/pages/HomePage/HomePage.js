@@ -1,33 +1,50 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 import { Container, Row } from "react-bootstrap";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../../components/AppNav/AppNav.js";
 import KennelList from "../../components/KennelList/KennelList";
+import { Auth } from "aws-amplify";
 
-function Homepage() {
-  return (
-    <div className="HomePageImg">
-      <div className="overlay"></div>
-      <div className="content">
-        <AppNav />
-        <Container>
-          <div className="card-container">
-            <h1>
-              My Kennel{" "}
-              <Link to="/form">
-                <IoIosAddCircleOutline />{" "}
-              </Link>
-            </h1>
-            <Row className="row justify-content-center">
-              <KennelList />
-            </Row>
-          </div>
-        </Container>
+class Homepage extends Component {
+  state = {
+    username: "",
+  };
+
+  componentDidMount() {
+    Auth.currentUserInfo()
+      .then((data) => {
+        this.setState({
+          username: data.attributes.email,
+        });
+      })
+      .catch((err) => console.log("error: ", err));
+  }
+
+  render() {
+    return (
+      <div className="HomePageImg">
+        <div className="overlay"></div>
+        <div className="content">
+          <AppNav />
+          <Container>
+            <div className="card-container">
+              <h1>
+               Welcome {this.state.username}!{" "}
+                <Link to="/form">
+                  <IoIosAddCircleOutline />{" "}
+                </Link>
+              </h1>
+              <Row className="row justify-content-center">
+                <KennelList />
+              </Row>
+            </div>
+          </Container>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Homepage;
