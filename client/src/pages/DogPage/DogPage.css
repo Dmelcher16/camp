@@ -1,6 +1,10 @@
 #detailImage {
   height: 300px;
-  width: auto;
+  max-width: initial;
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #mainDogCard {

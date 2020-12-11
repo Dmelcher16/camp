@@ -13,6 +13,7 @@ const logger = require("morgan");
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 app.use(cors());
 
 // Serve up static assets (usually on heroku)

@@ -30,12 +30,13 @@ class Homepage extends Component {
           <AppNav />
           <Container>
             <div className="card-container">
-              <h1>
-               Welcome {this.state.username}!{" "}
+              <h1>Welcome, {this.state.username}! </h1>
+              <Row className="justify-content-center">
                 <Link to="/form">
-                  <IoIosAddCircleOutline />{" "}
+                  <IoIosAddCircleOutline />
+                  {"Add A Dog"}
                 </Link>
-              </h1>
+              </Row>
               <Row className="row justify-content-center">
                 <KennelList />
               </Row>

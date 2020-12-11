@@ -30,9 +30,16 @@ function DogPage() {
                   <h1>{dog.name}</h1>
                 </Card.Title>
                 <Card.Body>
-                  <Row className="justify-content-center">
+                  <Row>
                     <Col>
                       <img id="detailImage" src={dog.image} alt={dog.name} />
+                    </Col>
+                    <Col>
+                    <ul>
+                      <li>{dog.age}</li>
+                      <li>{dog.breed}</li>
+                      <li>{dog.ownerFirstName} {dog.ownerLastName}</li>
+                    </ul>
                     </Col>
                   </Row>
                 </Card.Body>

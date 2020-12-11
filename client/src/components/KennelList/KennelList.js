@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Col, Row, CardGroup, Card } from "react-bootstrap";
+import { Col, Row, Card } from "react-bootstrap";
 import API from "../../utils/API";
 import { LOADING, REMOVE_DOG, UPDATE_DOGS } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
@@ -42,7 +42,7 @@ function KennelList() {
   return (
     <Col>
       {state.dogs.length ? (
-        <CardGroup>
+        
           <Row id="mapRow">
             {state.dogs.map((dog) => (
               <div key={dog._id} className="card-deck">
@@ -77,7 +77,7 @@ function KennelList() {
               </div>
             ))}
           </Row>
-        </CardGroup>
+        
       ) : (
         <Row className="row justify-content-center">
           <Col className="text-center">
