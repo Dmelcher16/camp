@@ -1,12 +1,26 @@
-#detailImage {
-  height: 300px;
-  max-width: initial;
+#dog-detail-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+
+#detail-image {
+  max-height: 250px;
   position: relative;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
 }
 
-#mainDogCard {
+#main-dog-card {
   margin-top: 75px;
+ 
+}
+
+.attributes {
+  vertical-align: middle;
+}
+
+.no-border {
+  align-items: center;
 }
