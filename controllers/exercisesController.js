@@ -13,11 +13,14 @@ module.exports = {
       .then((exercise) => res.json(exercise))
       .catch((err) => res.status(422).json(err));
   },
-  create: function (req, res) {
+  create: async (req, res) => {
+    console.log(req.params);
+    dog = req.params;
+    id = dog.id;
     db.Exercises.create(req.body)
-      .then((_id) =>
+      .then((id) =>
         db.Dog.findOneAndUpdate(
-          {},
+          {dog: id},
           { $push: { exercises: _id } },
           { new: true }
         )

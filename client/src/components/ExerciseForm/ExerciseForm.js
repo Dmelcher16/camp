@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
-import { Label, Input, Select, FormBtn } from "./createExerciseForm";
+import { Label, Input, Select, FormBtn } from "./CreateExerciseForm";
 import API from "../../utils/exerciseAPI";
 import { useHistory } from "react-router-dom";
 
