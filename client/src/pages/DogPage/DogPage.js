@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
+import ExerciseForm from "../../components/ExerciseForm/ExerciseForm";
 import API from "../../utils/API";
 import "./DogPage.css";
 
 function DogPage() {
   const [dog, setDog] = useState({});
   const [exerciseForm, showExerciseForm] = useState(false);
+  
 
   //when component mounts get dog with _id of props.match.params.id
   const { id } = useParams();
@@ -16,6 +18,7 @@ function DogPage() {
       .then((res) => setDog(res.data))
       .catch((err) => console.log(err));
   }, [id]);
+  console.log(dog)
 
   return (
     <div className="HomePageImg">
@@ -26,9 +29,9 @@ function DogPage() {
           <Row className="justify-content-md-center">
             <Col md>
               <Card id="main-dog-card">
-                <Card.Title>
+                <Card.Header>
                   <h1 id="dog-detail-title">{dog.name}</h1>
-                </Card.Title>
+                </Card.Header>
                 <Card.Body>
                   <Row className="justify-content-center">
                     <Col md="auto">
@@ -50,12 +53,22 @@ function DogPage() {
                             Owner: {dog.ownerFirstName} {dog.ownerLastName}
                           </ListGroup.Item>
                         </ListGroup>
+                        <Button id="add-exercise-btn" variant="outline-success">
+                          + Add Exercise
+                        </Button>
                       </div>
                     </Col>
                   </Row>
+                  <Row>
+                    <ExerciseForm />
+                  </Row>
                 </Card.Body>
                 <Card.Footer>
-                  <Link to="/">← Back to Your Kennel</Link>
+                  <Button id="to-kennel" variant="outline-success">
+                    <Link id="link-font" to="/">
+                      ← Back to Your Kennel
+                    </Link>
+                  </Button>
                 </Card.Footer>
               </Card>
             </Col>

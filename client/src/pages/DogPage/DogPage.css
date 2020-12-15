@@ -14,7 +14,43 @@
 
 #main-dog-card {
   margin-top: 75px;
- 
+}
+
+#dog-name {
+  color: #85c872;
+  margin-left: 100px;
+  flex-wrap: wrap;
+}
+
+.card-header {
+  display: inline;
+  text-align: center;
+  flex-wrap: nowrap;
+}
+
+#to-kennel {
+  float: right;
+  position: relative;
+}
+
+#add-exercise-btn {
+  color: #85c872;
+  float: inherit;
+  margin-top: 40px;
+}
+
+#add-exercise-btn:hover {
+  color: #285a84;
+}
+
+#link-font {
+  color: #85c872;
+  text-decoration: none;
+}
+
+#link-font:hover {
+  color: #285a84;
+  text-decoration: none;
 }
 
 .attributes {

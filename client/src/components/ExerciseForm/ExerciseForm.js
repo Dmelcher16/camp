@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../AppNav/AppNav.js";
-import { Label, Input, Select, FormBtn } from "./createExerciseForm";
+import { Label, Input, Select, FormBtn } from "./CreateExerciseForm";
 import API from "../../utils/exerciseAPI";
 import { useHistory } from "react-router-dom";
+import { useStoreContext } from "../../utils/GlobalState";
 
-export default function ExercisePage() {
+export default function ExerciseForm() {
+  const [state, dispatch] = useStoreContext();
+
   const [exercises, setExercises] = useState([]); // eslint-disable-line
   const [createExercise, setCreateExercise] = useState({
     dog: "",
@@ -44,7 +47,7 @@ export default function ExercisePage() {
     const { name, value } = event.target;
     setCreateExercise({ ...createExercise, [name]: value });
   }
-  console.log(createExercise);
+  // console.log(createExercise);
 
   function handleExerciseChange(event) {
     const exerciseType = event.target.value;
@@ -107,6 +110,7 @@ export default function ExercisePage() {
       createExercise.numPottySuccesses
     ) {
       API.addExercise({
+        dog: this.dog._id,
         exercises: createExercise.exercises,
         leashDuration: createExercise.leashDuration,
         leashPullDuration: createExercise.leashPullDuration,
@@ -126,10 +130,10 @@ export default function ExercisePage() {
   }
 
   return (
-    <div className="FormPageImg">
-      <AppNav />
-      <h1>Add Your Exercises!</h1>
-      <Row className="justify-content-center">
+    // <div className="FormPageImg">
+    //   <AppNav />
+    //   <h1>Add Your Exercises!</h1>
+    //   <Row className="justify-content-center">
         <Col md="6">
           <Container fluid className="form-container">
             <form>
@@ -238,7 +242,7 @@ export default function ExercisePage() {
             </form>
           </Container>
         </Col>
-      </Row>
-    </div>
+    //   </Row>
+    // </div>
   );
 }
