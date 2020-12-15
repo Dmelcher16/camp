@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
+const Dog = require("./Dog");
 
 const exerciseSchema = new Schema({
   day: {
@@ -55,6 +56,10 @@ const exerciseSchema = new Schema({
     type: Number,
     default: 0,
   },
+  dog: {
+    type: Schema.Types.ObjectId,
+    ref: "Dog",
+  }
 });
 
 const Exercise = mongoose.model("Exercises", exerciseSchema);

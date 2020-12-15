@@ -4,9 +4,11 @@ import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import ExerciseForm from "../../components/ExerciseForm/ExerciseForm";
 import API from "../../utils/API";
+// import { useStoreContext } from "../../utils/GlobalState";
 import "./DogPage.css";
 
 function DogPage() {
+  // const [state, dispatch] = useStoreContext();
   const [dog, setDog] = useState({});
   const [exerciseForm, showExerciseForm] = useState(false);
   
