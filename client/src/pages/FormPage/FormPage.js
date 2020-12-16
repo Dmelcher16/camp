@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./FormPage.css";
 import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
-import { Label, Input, Select, FormBtn } from "../../components/CreateDogForm/CreateDogForm";
+import {
+  Label,
+  Input,
+  Select,
+  FormBtn,
+} from "../../components/CreateDogForm/CreateDogForm";
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom";
 
@@ -23,20 +28,12 @@ export default function FormPage() {
         ownerFirstName: createDog.ownerFirstName,
         ownerLastName: createDog.ownerLastName,
         image: url,
+        exercises: [],
       })
         .then(alert(`${createDog.name} has been added to your kennel!`))
         .then(history.push("/home"))
 
         .catch((err) => console.log(err));
-    } else {
-      API.addDog({
-        name: createDog.name,
-        age: createDog.age,
-        breed: createDog.breed,
-        ownerFirstName: createDog.ownerFirstName,
-        ownerLastName: createDog.ownerLastName,
-      })
-
     }
     // eslint-disable-next-line
   }, [

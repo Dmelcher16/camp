@@ -9,13 +9,13 @@ import FormPage from "./pages/FormPage/FormPage";
 // import chartPage from "./pages/ChartPage/chartModel";
 // import dataPage from "./components/ChartPage/dataPage";
 import DogPage from "./pages/DogPage/DogPage";
-import { StoreProvider } from "./utils/GlobalState";
+// import { StoreProvider } from "./utils/GlobalState";
 
 const App = () => {
   return (
     <Router>
       <div>
-        <StoreProvider>
+        {/* <StoreProvider> */}
           <Route exact path="/" component={loginPage} />
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
@@ -25,7 +25,7 @@ const App = () => {
           {/* <Route exact path="/exercise" component={ExercisePage} /> */}
           <Route exact path="/dog/:id" component={DogPage} />
           <Footer />
-        </StoreProvider>
+        {/* </StoreProvider> */}
       </div>
     </Router>
   );

@@ -34,7 +34,8 @@ const DogSchema = new Schema({
   },
   image: {
     type: String,
-    default: "https://www.zurn.com/media-library/images-(1)/product_400x400/image-placeholder-400x400?maxsidesize=330"
+    default:
+      "https://www.zurn.com/media-library/images-(1)/product_400x400/image-placeholder-400x400?maxsidesize=330",
   },
   exercises: [
     {
