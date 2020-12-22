@@ -1,4 +1,5 @@
 const db = require("../models");
+const dogsController = require("./dogsController");
 
 //defining methods for Exercises Controller
 module.exports = {
@@ -16,8 +17,8 @@ module.exports = {
   create: function (req, res) {
     db.Exercises.create(req.body)
       .then((_id) =>
-        db.Dog.findOneAndUpdate(
-          {},
+        db.Dog.findById(
+          { id: { exercises: dog } },
           { $push: { exercises: _id } },
           { new: true }
         )

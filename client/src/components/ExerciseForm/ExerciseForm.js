@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Col, Row, Container } from "react-bootstrap";
 import { Label, Input, Select, FormBtn } from "./CreateExerciseForm";
+
 import API from "../../utils/exerciseAPI";
+import dogAPI from "../../utils/API";
 
 function ExerciseForm() {
-  const [exercises, setExercises] = useState([]); // eslint-disable-line
+  const [updateDog, setUpdateDog] = useState({});
+
   const [createExercise, setCreateExercise] = useState({
     dog: "",
     exercises: "",
@@ -18,6 +22,16 @@ function ExerciseForm() {
     numPottyAccidents: "",
     numPottySuccesses: "",
   });
+
+  const { id } = useParams();
+  useEffect(() => {
+    dogAPI
+      .getDog(id)
+      .then((res) => setUpdateDog(res.data))
+      .catch((err) => console.log(err));
+  }, [id]);
+
+  console.log(updateDog._id);
 
   // const history = useHistory();
 
@@ -37,7 +51,13 @@ function ExerciseForm() {
   function handleExerciseChange(event) {
     const exerciseType = event.target.value;
 
-    if (exerciseType === "Sit/Stay") {
+    if (exerciseType === "") {
+      pottyForm.classList.add("d-none");
+      sitStayForm.classList.add("d-none");
+      leashTrainingForm.classList.add("d-none");
+      commandsForm.classList.add("d-none");
+      chewingForm.classList.add("d-none");
+    } else if (exerciseType === "Sit/Stay") {
       sitStayForm.classList.remove("d-none");
       leashTrainingForm.classList.add("d-none");
       commandsForm.classList.add("d-none");
@@ -67,12 +87,6 @@ function ExerciseForm() {
       leashTrainingForm.classList.add("d-none");
       commandsForm.classList.add("d-none");
       chewingForm.classList.add("d-none");
-    } else {
-      pottyForm.classList.add("d-none");
-      sitStayForm.classList.add("d-none");
-      leashTrainingForm.classList.add("d-none");
-      commandsForm.classList.add("d-none");
-      chewingForm.classList.add("d-none");
     }
   }
 
@@ -80,9 +94,31 @@ function ExerciseForm() {
     exerciseTypeSelect.addEventListener("change", handleExerciseChange);
   }
 
+  function clearExerciseForm() {
+    setCreateExercise({
+      dog: "",
+      exercises: "",
+      leashDuration: "",
+      leashPullDuration: "",
+      sitStayAttempts: "",
+      sitStaySuccess: "",
+      commandsAttempted: "",
+      commandsCompleted: "",
+      chewing: "",
+      numPottyAccidents: "",
+      numPottySuccesses: "",
+    });
+    pottyForm.classList.add("d-none");
+    sitStayForm.classList.add("d-none");
+    leashTrainingForm.classList.add("d-none");
+    commandsForm.classList.add("d-none");
+    chewingForm.classList.add("d-none");
+  }
+
   function handleFormSubmit(event) {
     event.preventDefault();
     if (
+      updateDog._id ||
       createExercise.exercises ||
       createExercise.leashDuration ||
       createExercise.leashPullDuration ||
@@ -95,6 +131,7 @@ function ExerciseForm() {
       createExercise.numPottySuccesses
     ) {
       API.addExercise({
+        dog: updateDog._id,
         exercises: createExercise.exercises,
         leashDuration: createExercise.leashDuration,
         leashPullDuration: createExercise.leashPullDuration,
@@ -108,15 +145,20 @@ function ExerciseForm() {
       })
         .then(alert(`${createExercise.exercises} has been added to your list!`))
         // .then(history.push("/home"))
+        .then(clearExerciseForm())
 
         .catch((err) => console.log(err));
     }
-    
   }
 
   return (
     <Col md="6">
-      <Container fluid className="form-container">
+      <Container
+        fluid
+        className="form-container"
+        name="dog"
+        value={updateDog._id}
+      >
         <form>
           <div>
             <Label>Exercise:</Label>

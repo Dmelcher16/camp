@@ -7,10 +7,11 @@ import API from "../../utils/API";
 // import { useStoreContext } from "../../utils/GlobalState";
 import "./DogPage.css";
 
-function DogPage() {
+function DogPage(props) {
   // const [state, dispatch] = useStoreContext();
   const [dog, setDog] = useState({});
   const [exerciseForm, showExerciseForm] = useState(false);
+  
   
 
   //when component mounts get dog with _id of props.match.params.id

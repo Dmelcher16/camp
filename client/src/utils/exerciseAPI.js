@@ -17,4 +17,4 @@ export default {
   addExercise: function (exerciseData) {
     return axios.post("/api/exercises", exerciseData);
   }
-};
+}; 

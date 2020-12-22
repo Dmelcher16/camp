@@ -9,6 +9,10 @@ export default {
   getDog: function (id) {
     return axios.get("/api/dogs/" + id);
   },
+  //updates dog by id
+  updateDog: function (id) {
+    return axios.put("/api/dogs" + id);
+  },
   //deletes dog by id
   deleteDog: function (id) {
     return axios.delete("/api/dogs/" + id);
