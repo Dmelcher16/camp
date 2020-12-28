@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-const Dog = require("./Dog");
+// const Dog = require("./Dog");
 
 const exerciseSchema = new Schema({
   day: {

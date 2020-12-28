@@ -11,6 +11,7 @@ router
 router
   .route("/:id")
   .get(dogsController.findById)
+  .post(dogsController.create)
   .put(dogsController.update)
   .delete(dogsController.remove);
   

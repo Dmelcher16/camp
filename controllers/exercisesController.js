@@ -1,42 +1,43 @@
 const db = require("../models");
-const dogsController = require("./dogsController");
 
 //defining methods for Exercises Controller
 module.exports = {
   findAll: function (req, res) {
     db.Exercises.find(req.query)
       .sort({ day: -1 })
-      .then((exercises) => res.json(exercises))
+      .then((dbExercises) => res.json(dbExercises))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
     db.Exercises.find(req.params.id)
-      .then((exercise) => res.json(exercise))
+      .then((dbExercise) => res.json(dbExercise))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
     db.Exercises.create(req.body)
-      .then((_id) =>
-        db.Dog.findById(
-          { id: { exercises: dog } },
-          { $push: { exercises: _id } },
+      .then(function (dbExercise) {
+        return db.Dog.findOneAndUpdate(
+          // _id: { exercises: dog }
+          { _id: dbExercise.dog },
+          { $push: { exercises: dbExercise._id } },
           { new: true }
-        )
-      )
-      .then((dbDog) => {
+        );
+      })
+      .then(function (dbDog) {
         res.json(dbDog);
+        console.log(dbDog);
       })
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
     db.Exercises.findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then((exercise) => res.json(exercise))
+      .then((dbExercise) => res.json(dbExercise))
       .catch((err) => res.status(422).json(err));
   },
   remove: function (req, res) {
     db.Exercises.findById({ _id: req.params.id })
-      .then((exercises) => exercises.remove())
-      .then((exercises) => res.json(exercises))
+      .then((dbExercises) => dbExercises.remove())
+      .then((dbExercises) => res.json(dbExercises))
       .catch((err) => res.status(422).json(err));
   },
 };

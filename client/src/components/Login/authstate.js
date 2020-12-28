@@ -16,7 +16,7 @@ const AuthStateApp = () => {
             setAuthState(nextAuthState);
             setUser(authData)
             // console.log(authData)
-            console.log(nextAuthState)
+            // console.log(nextAuthState)
             switch(nextAuthState) {
                 case "signedin":
                   history.push("/home")
@@ -29,7 +29,7 @@ const AuthStateApp = () => {
               }
         });
     }, );
-    console.log(user)
+    // console.log(user)
 
     
 

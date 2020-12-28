@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { Col, Row, Container } from "react-bootstrap";
 import { Label, Input, Select, FormBtn } from "./CreateExerciseForm";
 
-import API from "../../utils/exerciseAPI";
-import dogAPI from "../../utils/API";
+import API from "../../utils/API";
+
 
 function ExerciseForm() {
   const [updateDog, setUpdateDog] = useState({});
@@ -25,7 +25,7 @@ function ExerciseForm() {
 
   const { id } = useParams();
   useEffect(() => {
-    dogAPI
+    API
       .getDog(id)
       .then((res) => setUpdateDog(res.data))
       .catch((err) => console.log(err));

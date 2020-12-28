@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Card } from "react-bootstrap";
 import API from "../../utils/API";
-// import { LOADING, REMOVE_DOG, UPDATE_DOGS } from "../../utils/actions";
-// import { useStoreContext } from "../../utils/GlobalState";
 import { Link } from "react-router-dom";
 import "./KennelList.css";
 
@@ -66,13 +64,6 @@ function KennelList() {
                     <Card.Title className="dogName text-center" key={dog._id}>
                       {dog.name}
                     </Card.Title>
-                    {/* <Link className="cardLink" to="/exercise">
-                              Add daily exercises
-                            </Link>
-                            <br></br>
-                            <Link className="cardLink" to="/chart">
-                              View progress
-                            </Link> */}
                   </Card.Body>
                 </Card>
               </Col>
