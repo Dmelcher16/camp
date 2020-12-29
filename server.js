@@ -32,9 +32,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campK9", {
   useCreateIndex: true,
 });
 
-app.get("/*", function (req, res) {
-  // res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  res.send("Hello!");
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.listen(PORT, () => console.log(`App listening on PORT: ${PORT}`));
