@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 import { Label, Input, Select, FormBtn } from "./CreateExerciseForm";
 
 import API from "../../utils/API";
-
 
 function ExerciseForm() {
   const [updateDog, setUpdateDog] = useState({});
@@ -25,15 +24,12 @@ function ExerciseForm() {
 
   const { id } = useParams();
   useEffect(() => {
-    API
-      .getDog(id)
+    API.getDog(id)
       .then((res) => setUpdateDog(res.data))
       .catch((err) => console.log(err));
   }, [id]);
 
   console.log(updateDog._id);
-
-  // const history = useHistory();
 
   const exerciseTypeSelect = document.querySelector("#type");
   const leashTrainingForm = document.querySelector(".leash-training");
@@ -152,7 +148,7 @@ function ExerciseForm() {
   }
 
   return (
-    <Col md="6">
+    <Col md="6" className="exercise-form">
       <Container
         fluid
         className="form-container"

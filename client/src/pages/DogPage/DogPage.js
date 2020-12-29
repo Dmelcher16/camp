@@ -7,12 +7,13 @@ import API from "../../utils/API";
 // import { useStoreContext } from "../../utils/GlobalState";
 import "./DogPage.css";
 
-function DogPage(props) {
-  // const [state, dispatch] = useStoreContext();
+function DogPage() {
+  //set iniitial state
   const [dog, setDog] = useState({});
-  const [exerciseForm, showExerciseForm] = useState(false);
-  
-  
+  // const [show, setShow] = useState(false);
+
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   //when component mounts get dog with _id of props.match.params.id
   const { id } = useParams();
@@ -21,7 +22,7 @@ function DogPage(props) {
       .then((res) => setDog(res.data))
       .catch((err) => console.log(err));
   }, [id]);
-  console.log(dog)
+  console.log(dog);
 
   return (
     <div className="HomePageImg">
@@ -56,14 +57,18 @@ function DogPage(props) {
                             Owner: {dog.ownerFirstName} {dog.ownerLastName}
                           </ListGroup.Item>
                         </ListGroup>
-                        <Button id="add-exercise-btn" variant="outline-success">
+                        <Button
+                          id="add-exercise-btn"
+                          variant="outline-success"
+                          // onClick={handleShow}
+                        >
                           + Add Exercise
                         </Button>
                       </div>
                     </Col>
                   </Row>
                   <Row>
-                    <ExerciseForm />
+                    <ExerciseForm  />
                   </Row>
                 </Card.Body>
                 <Card.Footer>
