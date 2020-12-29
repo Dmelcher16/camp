@@ -2,7 +2,7 @@ import React from "react";
 import ExerciseList from "./ExerciseList";
 import "./CreateExerciseForm.css";
 
-export function Label(props) {
+export default function Label(props) {
   return (
     <div className="form-group">
       <label className="form-label" {...props} />
@@ -10,7 +10,7 @@ export function Label(props) {
   );
 }
 
-export function Input(props) {
+export default function Input(props) {
   return (
     <div className="form-group">
       <input className="form-control" {...props} />
@@ -18,7 +18,7 @@ export function Input(props) {
   );
 }
 
-export function Select(props) {
+export default function Select(props) {
   return (
     <div className="form-group">
       <select className="form-control" {...props}>
@@ -29,7 +29,7 @@ export function Select(props) {
   );
 }
 
-export function FormBtn(props) {
+export default function FormBtn(props) {
   return (
     <button
       {...props}
