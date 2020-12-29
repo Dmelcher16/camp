@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container } from "react-bootstrap";
-import { Label, Input, Select, FormBtn } from "./CreateExerciseForm";
+import { Label, Input, Select, FormBtn } from "../CreateExerciseForm/CreateExerciseForm.js";
 
 import API from "../../utils/API";
 
