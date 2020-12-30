@@ -5,7 +5,6 @@ const routes = require("./routes");
 const cors = require("cors");
 const app = express();
 
-
 const PORT = process.env.PORT || 8080;
 
 //requiring morgan to use as dev tool
@@ -29,11 +28,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campK9", {
   useCreateIndex: true,
 });
 
-// Serve up static assets 
+// Serve up static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", function (req, res) {
-    res.sendFile(path.resolve(__dirname + "/client/build"));
+    res.sendFile(path.resolve(__dirname + "/client/build/index.html"));
   });
 }
 
