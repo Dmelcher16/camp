@@ -22,7 +22,7 @@ app.use(routes);
 app.use(logger("dev"));
 
 //Connect to Mongo Database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campk9", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campK9", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
