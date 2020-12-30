@@ -1,9 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 const routes = require("./routes");
 const cors = require("cors");
 const app = express();
-// const cors = require("cors");
+
 
 const PORT = process.env.PORT || 8080;
 
@@ -16,10 +17,6 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(cors());
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 // Add routes, both API and view
 app.use(routes);
 app.use(logger("dev"));
@@ -32,8 +29,12 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campk9", {
   useCreateIndex: true,
 });
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// Serve up static assets 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", function (req, res) {
+    res.sendFile(path.resolve(__dirname + "/client/build"));
+  });
+}
 
 app.listen(PORT, () => console.log(`App listening on PORT: ${PORT}`));
