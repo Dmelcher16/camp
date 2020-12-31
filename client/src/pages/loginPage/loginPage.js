@@ -9,7 +9,7 @@ export default function loginPage() {
     <div>
       <style type="text/css">{`#app-nav {display: none}`}</style>
       <div className="loginPageImg">
-        <img className="logo" src={BlueCampK9Logo} fluid />
+        <img className="logo" src={BlueCampK9Logo} alt="logo" fluid="true" />
         <Login />
       </div>
     </div>
