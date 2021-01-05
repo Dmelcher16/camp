@@ -13,6 +13,10 @@ module.exports = {
       .then((dbDog) => res.json(dbDog))
       .catch((err) => res.status(422).json(err));
   },
+  //TODO:  Add property to get all exercises associated with an individual dog
+  // getExercsises: function (req, res) {
+  //   return db.Dog.
+  // },
   create: function (req, res) {
     db.Dog.create(req.body)
       .then((dbDog) => res.json(dbDog))

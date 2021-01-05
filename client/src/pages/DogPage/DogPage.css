@@ -4,6 +4,10 @@
   padding-bottom: 0;
 }
 
+.info-col {
+  padding-top: 10px;
+}
+
 #detail-image {
   max-height: 250px;
   position: relative;

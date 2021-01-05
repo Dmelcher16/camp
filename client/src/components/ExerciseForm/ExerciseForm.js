@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container } from "react-bootstrap";
-import { Label, Input, Select, FormBtn } from "../CreateExerciseForm/CreateExerciseForm.js";
+import {
+  Label,
+  Input,
+  Select,
+  FormBtn,
+} from "../CreateExerciseForm/CreateExerciseForm.js";
 
 import API from "../../utils/API";
 
@@ -142,7 +147,6 @@ function ExerciseForm() {
         .then(alert(`${createExercise.exercises} has been added to your list!`))
         // .then(history.push("/home"))
         .then(clearExerciseForm())
-
         .catch((err) => console.log(err));
     }
   }
