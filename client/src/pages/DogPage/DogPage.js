@@ -12,6 +12,10 @@ function DogPage() {
   const [dog, setDog] = useState({});
   const [show, setShow] = useState(false);
 
+  const hideForm = () => {
+    setShow(false);
+  };
+
   function loadDog() {
     API.getDog(id)
       .then((res) => setDog(res.data))
@@ -22,8 +26,8 @@ function DogPage() {
   const { id } = useParams();
   useEffect(() => {
     loadDog(id);
-  }, [id]);
-  console.log(dog)
+  }, []);
+  console.log(dog);
 
   return (
     <div className="HomePageImg">
@@ -58,6 +62,7 @@ function DogPage() {
                             Owner: {dog.ownerFirstName} {dog.ownerLastName}
                           </ListGroup.Item>
                         </ListGroup>
+                        {show ? <ExerciseForm onSubmit={hideForm} /> : null}
                         <Button
                           id="add-exercise-btn"
                           variant="outline-success"
@@ -67,10 +72,17 @@ function DogPage() {
                         >
                           + Add Exercise
                         </Button>
+                        <Button
+                          id="add-exercise-btn"
+                          variant="outline-danger"
+                          onClick={hideForm}
+                        >
+                          Cancel
+                        </Button>
                       </div>
                     </Col>
                   </Row>
-                  <Row>{show ? <ExerciseForm /> : null}</Row>
+                  <Row></Row>
                   {/* <Row>
 
                   </Row> */}

@@ -1,0 +1,15 @@
+.form-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
+
+div.exercise-form {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#exercise-label {
+  padding-top: 8px;
+  margin-bottom: 0px
+}

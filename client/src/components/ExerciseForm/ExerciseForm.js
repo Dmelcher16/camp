@@ -9,8 +9,9 @@ import {
 } from "../CreateExerciseForm/CreateExerciseForm.js";
 
 import API from "../../utils/API";
+import "./ExerciseForm.css";
 
-function ExerciseForm() {
+function ExerciseForm(props) {
   const [updateDog, setUpdateDog] = useState({});
 
   const [createExercise, setCreateExercise] = useState({
@@ -152,7 +153,7 @@ function ExerciseForm() {
   }
 
   return (
-    <Col md="6" className="exercise-form">
+    <Col className="exercise-form">
       <Container
         fluid
         className="form-container"
@@ -161,7 +162,7 @@ function ExerciseForm() {
       >
         <form>
           <div>
-            <Label>Exercise:</Label>
+            <Label id="exercise-label">Exercise:</Label>
             <Select
               onChange={handleInputChange}
               value={createExercise.exercises}
