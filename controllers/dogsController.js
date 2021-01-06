@@ -8,15 +8,23 @@ module.exports = {
       .then((dbDogs) => res.json(dbDogs))
       .catch((err) => res.status(422).json(err));
   },
-  findById: function (req, res) {
-    db.Dog.findById(req.params.id)
-      .then((dbDog) => res.json(dbDog))
-      .catch((err) => res.status(422).json(err));
-  },
-  //TODO:  Add property to get all exercises associated with an individual dog
-  // getExercsises: function (req, res) {
-  //   return db.Dog.
+  // findById: function (req, res) {
+  //   db.Dog.findById({ _id: req.params.id })
+  //     .then((dbDog) => res.json(dbDog))
+  //     .catch((err) => res.status(422).json(err));
   // },
+  //TODO:  Add property to get all exercises associated with an individual dog
+  findById: function (req, res) {
+    db.Dog.findById({ _id: req.params.id })
+      .populate("exercises")
+      .exec(function (err, dbDog) {
+        if (err) {
+          return console.error(err);
+        }
+        console.log(dbDog);
+        res.json(dbDog);
+      });
+  },
   create: function (req, res) {
     db.Dog.create(req.body)
       .then((dbDog) => res.json(dbDog))

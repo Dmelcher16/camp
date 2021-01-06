@@ -8,6 +8,11 @@ module.exports = {
       .then((dbExercises) => res.json(dbExercises))
       .catch((err) => res.status(422).json(err));
   },
+  findByDogID: function (req, res) {
+    db.Exercises.find({ dog: req.params.id })
+      .then((dbExercise) => res.json(dbExercise))
+      .catch((err) => res.status(422).json(err));
+  },
   findById: function (req, res) {
     db.Exercises.find(req.params.id)
       .then((dbExercise) => res.json(dbExercise))
