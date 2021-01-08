@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
-import ExerciseForm from "../../components/ExerciseForm/ExerciseForm";
 import {
   Label,
   Input,
@@ -34,6 +33,7 @@ function DogPage() {
     numPottySuccesses: "",
   });
 
+  //defining inputs of exercise form
   const exerciseTypeSelect = document.querySelector("#type");
   const leashTrainingForm = document.querySelector(".leash-training");
   const sitStayForm = document.querySelector(".sit-stay-form");
@@ -163,18 +163,18 @@ function DogPage() {
     }
   }
 
-  function loadDog() {
+  const { id } = useParams();
+  const loadDog = useCallback(() => {
     API.getDog(id, exercises)
       .then((res) => setDog(res.data))
       .then((res) => setExercises(res.data.exercises))
       .catch((err) => console.log(err));
-  }
+  }, [id, exercises]);
 
   //when component mounts get dog with _id of props.match.params.id
-  const { id } = useParams();
   useEffect(() => {
-    loadDog(id, exercises)
-  }, [exercises]);
+    loadDog(id, exercises);
+  }, [loadDog, id, exercises]);
   console.log(dog);
   console.log(dog.exercises);
 
