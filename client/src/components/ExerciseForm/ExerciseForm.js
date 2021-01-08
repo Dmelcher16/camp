@@ -146,7 +146,6 @@ function ExerciseForm(props) {
         numPottySuccesses: createExercise.numPottySuccesses,
       })
         .then(alert(`${createExercise.exercises} has been added to your list!`))
-        // .then(history.push("/home"))
         .then(clearExerciseForm())
         .catch((err) => console.log(err));
     }

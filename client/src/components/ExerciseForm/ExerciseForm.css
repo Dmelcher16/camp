@@ -1,7 +1,6 @@
 .form-container {
   margin-top: 10px;
   margin-bottom: 10px;
-  
 }
 
 div.exercise-form {
@@ -11,5 +10,13 @@ div.exercise-form {
 
 #exercise-label {
   padding-top: 8px;
-  margin-bottom: 0px
+  margin-bottom: 0px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
