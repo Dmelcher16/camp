@@ -158,7 +158,7 @@ function DogPage() {
       })
         .then(alert(`${createExercise.exercises} has been added to your list!`))
         .then(clearExerciseForm())
-        .then(loadDog(exercises))
+        .then(loadDog())
         .catch((err) => console.log(err));
     }
   }
@@ -166,15 +166,17 @@ function DogPage() {
   const { id } = useParams();
   const loadDog = useCallback(() => {
     API.getDog(id, exercises)
-      .then((res) => setDog(res.data))
-      .then((res) => setExercises(res.data.exercises))
+      .then(function (res) {
+        setDog(res.data);
+      })
       .catch((err) => console.log(err));
+    return setExercises(dog.exercises);
   }, [id, exercises]);
 
   //when component mounts get dog with _id of props.match.params.id
   useEffect(() => {
-    loadDog(id, exercises);
-  }, [loadDog, id, exercises]);
+    loadDog();
+  }, [loadDog]);
   console.log(dog);
   console.log(dog.exercises);
 
