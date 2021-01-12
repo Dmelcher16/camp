@@ -36,7 +36,6 @@ export function FormBtn(props) {
       {...props}
       style={{ float: "center", marginBottom: 10 }}
       className="btn"
-      // variant="outline-success"
     >
       {props.children}
     </Button>

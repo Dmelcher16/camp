@@ -323,15 +323,16 @@ function DogPage() {
                                         createExercise.numPottySuccesses
                                       )
                                     }
-                                    variant="outline-success"
+                                    // variant="outline-success"
                                     onClick={handleFormSubmit}
                                   >
                                     Submit
                                   </FormBtn>
                                   <FormBtn
-                                    className="cancel-btn"
+                                    id="cancel-btn"
                                     variant="danger"
                                     onClick={() => {
+                                      clearExerciseForm();
                                       setShow(false);
                                     }}
                                   >
