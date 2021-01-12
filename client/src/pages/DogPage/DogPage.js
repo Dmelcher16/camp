@@ -157,8 +157,11 @@ function DogPage() {
         numPottySuccesses: createExercise.numPottySuccesses,
       })
         .then(alert(`${createExercise.exercises} has been added to your list!`))
-        .then(clearExerciseForm())
-        .then(loadDog())
+        .then(() => {
+          clearExerciseForm();
+          setShow(false);
+          loadDog();
+        })
         .catch((err) => console.log(err));
     }
   }
