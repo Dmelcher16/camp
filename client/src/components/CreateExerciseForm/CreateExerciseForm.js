@@ -1,5 +1,6 @@
 import React from "react";
 import ExerciseList from "../ExerciseList/ExerciseList";
+import { Button } from "react-bootstrap";
 import "./CreateExerciseForm.css";
 
 export function Label(props) {
@@ -31,12 +32,13 @@ export function Select(props) {
 
 export function FormBtn(props) {
   return (
-    <button
+    <Button
       {...props}
       style={{ float: "center", marginBottom: 10 }}
-      className="btn btn-success"
+      className="btn"
+      // variant="outline-success"
     >
       {props.children}
-    </button>
+    </Button>
   );
 }

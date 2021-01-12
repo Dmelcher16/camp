@@ -51,8 +51,42 @@
 
 #add-exercise-btn:hover {
   color: #285a84;
+  text-decoration: none;
 }
 
+.form-container {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+div.exercise-form {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#exercise-submit-btn {
+  position: relative;
+  color: white;
+  background-color: #285a84;
+  text-decoration: none;
+  display: inline;
+}
+
+#exercise-submit-btn:disabled:hover {
+  color: white;
+  background-color: #285a84;
+  text-decoration: none;
+}
+
+#exercise-submit-btn:hover {
+  color: white;
+  background-color: #28a745;
+  text-decoration: none;
+}
+
+.cancel-btn {
+  display: inline-block;
+}
 
 .attributes {
   vertical-align: middle;

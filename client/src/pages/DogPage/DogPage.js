@@ -47,10 +47,6 @@ function DogPage() {
   }
   console.log(createExercise);
 
-  const hideForm = () => {
-    setShow(false);
-  };
-
   function handleButtonShow(event) {
     console.log(this.state.show);
     let show = event.target.value;
@@ -311,42 +307,44 @@ function DogPage() {
                                     placeholder="Number of successful potty breaks (Required)"
                                   />
                                 </div>
-                                <FormBtn
-                                  disabled={
-                                    !(
-                                      createExercise.exercises ??
-                                      createExercise.leashDuration ??
-                                      createExercise.leashPullDuration ??
-                                      createExercise.sitStayAttempts ??
-                                      createExercise.sitStaySuccess ??
-                                      createExercise.commandsAttempted ??
-                                      createExercise.commandsCompleted ??
-                                      createExercise.chewing ??
-                                      createExercise.numPottyAccidents ??
-                                      createExercise.numPottySuccesses
-                                    )
-                                  }
-                                  onClick={handleFormSubmit}
-                                >
-                                  Submit
-                                </FormBtn>
+                                <div className="mb-2">
+                                  <FormBtn
+                                    id="exercise-submit-btn"
+                                    disabled={
+                                      !(
+                                        createExercise.leashDuration ||
+                                        createExercise.leashPullDuration ||
+                                        createExercise.sitStayAttempts ||
+                                        createExercise.sitStaySuccess ||
+                                        createExercise.commandsAttempted ||
+                                        createExercise.commandsCompleted ||
+                                        createExercise.chewing ||
+                                        createExercise.numPottyAccidents ||
+                                        createExercise.numPottySuccesses
+                                      )
+                                    }
+                                    variant="outline-success"
+                                    onClick={handleFormSubmit}
+                                  >
+                                    Submit
+                                  </FormBtn>
+                                  <FormBtn
+                                    className="cancel-btn"
+                                    variant="danger"
+                                    onClick={() => {
+                                      setShow(false);
+                                    }}
+                                  >
+                                    Cancel
+                                  </FormBtn>
+                                </div>
                               </form>
                             </Container>
                           </Col>
                         ) : null}
-                        {show ? (
+                        {show ? null : (
                           <Button
-                            className="cancel-btn"
-                            variant="outline-danger"
-                            onClick={() => {
-                              setShow(false);
-                            }}
-                          >
-                            Cancel
-                          </Button>
-                        ) : (
-                          <Button
-                            className="add-exercise-btn"
+                            id="add-exercise-btn"
                             variant="outline-success"
                             onClick={() => {
                               setShow(true);
