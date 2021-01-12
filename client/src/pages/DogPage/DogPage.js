@@ -334,24 +334,28 @@ function DogPage() {
                             </Container>
                           </Col>
                         ) : null}
-                        <Button
-                          className="add-exercise-btn"
-                          variant="outline-success"
-                          onClick={() => {
-                            setShow(true);
-                          }}
-                          onChange={handleButtonShow}
-                        >
-                          + Add Exercise
-                        </Button>
-                        <Button
-                          className="cancel-btn d-none"
-                          variant="outline-danger"
-                          onClick={hideForm}
-                          onChange={handleButtonShow}
-                        >
-                          Cancel
-                        </Button>
+                        {show ? (
+                          <Button
+                            className="cancel-btn"
+                            variant="outline-danger"
+                            onClick={() => {
+                              setShow(false);
+                            }}
+                          >
+                            Cancel
+                          </Button>
+                        ) : (
+                          <Button
+                            className="add-exercise-btn"
+                            variant="outline-success"
+                            onClick={() => {
+                              setShow(true);
+                            }}
+                            onChange={handleButtonShow}
+                          >
+                            + Add Exercise
+                          </Button>
+                        )}
                       </div>
                     </Col>
                   </Row>
