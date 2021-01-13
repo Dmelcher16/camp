@@ -8,17 +8,17 @@ import {
   Select,
   FormBtn,
 } from "../../components/CreateExerciseForm/CreateExerciseForm";
+import BarChart from "../../components/BarChart/BarChart.js";
 import API from "../../utils/API";
 // import { useStoreContext } from "../../utils/GlobalState";
 import "./DogPage.css";
+
 
 function DogPage() {
   //set iniitial state
   const [dog, setDog] = useState({});
   const [exercises, setExercises] = useState([]);
   const [show, setShow] = useState(false);
-  const cancelBtn = document.querySelector(".cancel-btn");
-  const addExerciseBtn = document.querySelector(".add-exercise-btn");
   const [createExercise, setCreateExercise] = useState({
     dog: "",
     exercises: "",
@@ -33,6 +33,10 @@ function DogPage() {
     numPottySuccesses: "",
   });
 
+  //
+  const cancelBtn = document.querySelector(".cancel-btn");
+  const addExerciseBtn = document.querySelector(".add-exercise-btn");
+
   //defining inputs of exercise form
   const exerciseTypeSelect = document.querySelector("#type");
   const leashTrainingForm = document.querySelector(".leash-training");
@@ -45,16 +49,16 @@ function DogPage() {
     const { name, value } = event.target;
     setCreateExercise({ ...createExercise, [name]: value });
   }
-  console.log(createExercise);
+  // console.log(createExercise);
 
   function handleButtonShow(event) {
-    console.log(this.state.show);
     let show = event.target.value;
     if (show === true) {
       cancelBtn.classList.remove("d-none");
       addExerciseBtn.classlist.add("d-none");
     }
   }
+  console.log(show);
 
   function handleExerciseChange(event) {
     const exerciseType = event.target.value;
@@ -102,6 +106,7 @@ function DogPage() {
     exerciseTypeSelect.addEventListener("change", handleExerciseChange);
   }
 
+  //clears values of exercise form inputs
   function clearExerciseForm() {
     setCreateExercise({
       dog: "",
@@ -165,11 +170,14 @@ function DogPage() {
   const { id } = useParams();
   const loadDog = useCallback(() => {
     API.getDog(id, exercises)
-      .then(function (res) {
+      .then((res) => {
         setDog(res.data);
       })
       .catch((err) => console.log(err));
-    return setExercises(dog.exercises);
+    return () => {
+      setExercises(dog.exercises);
+    };
+    // eslint-disable-next-line
   }, [id, exercises]);
 
   //when component mounts get dog with _id of props.match.params.id
@@ -177,7 +185,8 @@ function DogPage() {
     loadDog();
   }, [loadDog]);
   console.log(dog);
-  console.log(dog.exercises);
+  console.log(exercises);
+  // console.log(dog.exercises);
 
   return (
     <div className="HomePageImg">
@@ -332,7 +341,6 @@ function DogPage() {
                                     id="cancel-btn"
                                     variant="danger"
                                     onClick={() => {
-                                      clearExerciseForm();
                                       setShow(false);
                                     }}
                                   >
@@ -358,10 +366,11 @@ function DogPage() {
                       </div>
                     </Col>
                   </Row>
-                  <Row></Row>
-                  {/* <Row>
-
-                  </Row> */}
+                  <Row>
+                    <Col md={6}>
+                    <BarChart />
+                    </Col>
+                  </Row>
                 </Card.Body>
                 <Card.Footer>
                   <Link id="link-font" to="/">
