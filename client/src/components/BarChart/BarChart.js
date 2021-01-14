@@ -1,5 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import "./BarChart.css";
 
 function BarChart() {
   const data = {
@@ -27,11 +28,9 @@ function BarChart() {
   };
 
   return (
-    <Bar
-      data={data}
-      height={75}
-      width={150}
-    />
+    <div id="main-chart-div">
+      <Bar data={data} height={75} width={150} />
+    </div>
   );
 }
 
