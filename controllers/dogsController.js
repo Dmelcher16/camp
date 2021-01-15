@@ -22,7 +22,7 @@ module.exports = {
           return console.error(err);
         }
         // console.log(dbDog);
-        res.json(dbDog);
+        return res.json(dbDog);
       });
   },
   create: function (req, res) {

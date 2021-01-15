@@ -11,7 +11,6 @@ import {
   FormBtn,
 } from "../../components/CreateExerciseForm/CreateExerciseForm";
 import BarChart from "../../components/BarChart/BarChart.js";
-// import { useStoreContext } from "../../utils/GlobalState";
 import "./DogPage.css";
 
 function DogPage() {
@@ -33,6 +32,26 @@ function DogPage() {
     numPottyAccidents: "",
     numPottySuccesses: "",
   });
+
+  //when component mounts get dog with _id of props.match.params.id
+  useEffect(() => {
+    loadDog();
+    // eslint-disable-next-line
+  }, []);
+  console.log(exercises);
+  // console.log(dog);
+  // console.log(dog.exercises[0]);
+  // console.log(dog.exercises);
+
+  const { id } = useParams();
+  function loadDog() {
+    API.getDog(id)
+      .then((res) => {
+        setDog(res.data);
+        setExercises(res.data.exercises);
+      })
+      .catch((err) => console.log(err));
+  }
 
   //
   const cancelBtn = document.querySelector(".cancel-btn");
@@ -62,6 +81,7 @@ function DogPage() {
   console.log(show);
 
   function handleExerciseChange(event) {
+    event.preventDefault();
     const exerciseType = event.target.value;
 
     if (exerciseType === "") {
@@ -131,8 +151,6 @@ function DogPage() {
 
   //saves newly created exercise data to exercise db and current dog's exercises array
   function handleFormSubmit(event) {
-    const todaysDate = Date.now();
-    const today = new Date(todaysDate);
     event.preventDefault();
     if (
       dog._id ||
@@ -149,7 +167,6 @@ function DogPage() {
     ) {
       API.addExercise({
         dog: dog._id,
-        day: today.toDateString(),
         exercises: createExercise.exercises,
         leashDuration: createExercise.leashDuration,
         leashPullDuration: createExercise.leashPullDuration,
@@ -170,26 +187,6 @@ function DogPage() {
         .catch((err) => console.log(err));
     }
   }
-
-  const { id } = useParams();
-  function loadDog() {
-    API.getDog(id)
-      .then((res) => {
-        setDog(res.data);
-        setExercises(res.data.exercises);
-      })
-      .catch((err) => console.log(err));
-  }
-
-  //when component mounts get dog with _id of props.match.params.id
-  useEffect(() => {
-    loadDog();
-    // eslint-disable-next-line
-  }, []);
-  // console.log(dog);
-  // console.log(dog.exercises[0]);
-  console.log(exercises);
-  // console.log(dog.exercises);
 
   return (
     <DogContext.Provider value={{ dog }}>

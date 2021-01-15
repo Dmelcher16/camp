@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-// const Dog = require("./Dog");
+
+const todaysDate = Date.now();
+const today = new Date(todaysDate);
 
 const exerciseSchema = new Schema({
   day: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: today.toDateString(),
   },
   exercises: {
     type: String,
@@ -59,7 +61,7 @@ const exerciseSchema = new Schema({
   dog: {
     type: Schema.Types.ObjectId,
     ref: "Dog",
-  }
+  },
 });
 
 const Exercise = mongoose.model("Exercise", exerciseSchema);
