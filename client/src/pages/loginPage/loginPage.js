@@ -1,7 +1,6 @@
 import React from "react";
 import Login from "../../components/Login/Login";
 import "./loginPage.css";
-// import { Image } from "react-bootstrap";
 import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg"
 
 export default function loginPage() {

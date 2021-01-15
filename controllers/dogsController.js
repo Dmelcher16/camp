@@ -21,7 +21,7 @@ module.exports = {
         if (err) {
           return console.error(err);
         }
-        console.log(dbDog);
+        // console.log(dbDog);
         res.json(dbDog);
       });
   },
