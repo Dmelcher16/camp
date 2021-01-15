@@ -20,6 +20,7 @@ function DogPage() {
   const [exercises, setExercises] = useState([]);
   const [show, setShow] = useState(false);
   const [createExercise, setCreateExercise] = useState({
+    date: "",
     dog: "",
     exercises: "",
     leashDuration: "",
@@ -130,6 +131,8 @@ function DogPage() {
 
   //saves newly created exercise data to exercise db and current dog's exercises array
   function handleFormSubmit(event) {
+    const todaysDate = Date.now();
+    const today = new Date(todaysDate);
     event.preventDefault();
     if (
       dog._id ||
@@ -146,6 +149,7 @@ function DogPage() {
     ) {
       API.addExercise({
         dog: dog._id,
+        day: today.toDateString(),
         exercises: createExercise.exercises,
         leashDuration: createExercise.leashDuration,
         leashPullDuration: createExercise.leashPullDuration,
@@ -168,19 +172,14 @@ function DogPage() {
   }
 
   const { id } = useParams();
-  const loadDog = useCallback(() => {
-    API.getDog(id, exercises)
+  function loadDog() {
+    API.getDog(id)
       .then((res) => {
         setDog(res.data);
-        setExercises(res.data.exercises)
+        setExercises(res.data.exercises);
       })
       .catch((err) => console.log(err));
-    return () => {
-      console.log(dog);
-      console.log(exercises)
-    };
-    
-  }, [id, exercises,dog]);
+  }
 
   //when component mounts get dog with _id of props.match.params.id
   useEffect(() => {
@@ -188,7 +187,8 @@ function DogPage() {
     // eslint-disable-next-line
   }, []);
   // console.log(dog);
-  // console.log(dog.exercises);
+  // console.log(dog.exercises[0]);
+  console.log(exercises);
   // console.log(dog.exercises);
 
   return (

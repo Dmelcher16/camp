@@ -5,7 +5,9 @@ import "./BarChart.css";
 
 function BarChart() {
   const { dog } = useContext(DogContext);
-  console.log(dog.exercises);
+  // console.log(dog.exercises[0]);
+  // console.log(dog.exercises.day).toDateString();
+  
 
   const data = {
     labels: [
