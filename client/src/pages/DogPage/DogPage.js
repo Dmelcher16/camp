@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import DogContext from "../../utils/dogContext";
 import { Link, useParams } from "react-router-dom";
@@ -33,25 +33,19 @@ function DogPage() {
     numPottySuccesses: "",
   });
 
+  const { id } = useParams();
+
   //when component mounts get dog with _id of props.match.params.id
   useEffect(() => {
+    async function loadDog() {
+      const res = await API.getDog(id);
+      setDog(res.data);
+      setExercises(res.data.exercises);
+    }
     loadDog();
-    // eslint-disable-next-line
-  }, []);
-  console.log(exercises);
-  // console.log(dog);
-  // console.log(dog.exercises[0]);
-  // console.log(dog.exercises);
-
-  const { id } = useParams();
-  function loadDog() {
-    API.getDog(id)
-      .then((res) => {
-        setDog(res.data);
-        setExercises(res.data.exercises);
-      })
-      .catch((err) => console.log(err));
-  }
+  }, [id]);
+  console.log(dog);
+  console.log(exercises)
 
   //
   const cancelBtn = document.querySelector(".cancel-btn");
@@ -66,6 +60,7 @@ function DogPage() {
   const pottyForm = document.querySelector(".potty-form");
 
   function handleInputChange(event) {
+    event.preventDefault();
     const { name, value } = event.target;
     setCreateExercise({ ...createExercise, [name]: value });
   }
@@ -78,7 +73,6 @@ function DogPage() {
       addExerciseBtn.classlist.add("d-none");
     }
   }
-  console.log(show);
 
   function handleExerciseChange(event) {
     event.preventDefault();
@@ -182,7 +176,7 @@ function DogPage() {
         .then(() => {
           clearExerciseForm();
           setShow(false);
-          loadDog();
+          // loadDog();
         })
         .catch((err) => console.log(err));
     }

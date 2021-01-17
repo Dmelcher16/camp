@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import DogContext from "../../utils/dogContext";
 import { Bar } from "react-chartjs-2";
 import "./BarChart.css";
 
 function BarChart() {
   const { dog } = useContext(DogContext);
-  // console.log(dog.exercises[0]);
-  // console.log(dog.exercises.day).toDateString();
   
+  useEffect(() => {
+    console.log(dog.exercises);
+  });
 
   const data = {
     labels: [

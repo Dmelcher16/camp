@@ -10,6 +10,7 @@ const DogContext = React.createContext({
   ownerLastName: "",
   startDate: "",
   _id: "",
+  loadDog: () => {}
 });
 
 export default DogContext;
