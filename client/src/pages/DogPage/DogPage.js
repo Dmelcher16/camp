@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import DogContext from "../../utils/dogContext";
-import ExerciseContext from "../../utils/exerciseContext"
+import ExerciseContext from "../../utils/exerciseContext";
 import { Link, useParams } from "react-router-dom";
 import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
@@ -11,7 +11,8 @@ import {
   Select,
   FormBtn,
 } from "../../components/CreateExerciseForm/CreateExerciseForm";
-import BarChart from "../../components/BarChart/BarChart.js";
+import CommandsChart from "../../components/ExerciseCharts/CommandsChart";
+import LeashChart from "../../components/ExerciseCharts/LeashChart";
 import "./DogPage.css";
 
 function DogPage() {
@@ -374,7 +375,10 @@ function DogPage() {
                       </Row>
                       <Row>
                         <Col md={6}>
-                          <BarChart />
+                          <CommandsChart />
+                        </Col>
+                        <Col md={6}>
+                          <LeashChart />
                         </Col>
                       </Row>
                     </Card.Body>

@@ -1,24 +1,22 @@
 import React, { useContext, useState, useEffect } from "react";
 import ExerciseContext from "../../utils/exerciseContext";
 import { Bar } from "react-chartjs-2";
-import "./BarChart.css";
+import "./Chart.css";
 
-function BarChart() {
+function LeashChart() {
   const { exercises } = useContext(ExerciseContext);
   const [chartData, setChartData] = useState({});
 
   function createChart() {
     console.log(exercises);
     let exerciseDate = [];
-    let attempts = [];
-    let successes = [];
+    let walkDuration = [];
+    let pullDuration = [];
     for (const dataObj of exercises) {
-      exerciseDate.push(dataObj.day);
-      if (dataObj.commandsAttempted !== null) {
-        attempts.push(dataObj.commandsAttempted);
-      }
-      if (dataObj.commandsCompleted !== null) {
-        successes.push(dataObj.commandsCompleted);
+      if (dataObj.exercises === "Leash Training") {
+        exerciseDate.push(dataObj.day);
+        walkDuration.push(dataObj.leashDuration);
+        pullDuration.push(dataObj.leashPullDuration);
       }
     }
 
@@ -26,17 +24,18 @@ function BarChart() {
       labels: exerciseDate,
       datasets: [
         {
-          label: "Attempts",
+          label: "Walk Duration",
           backgroundColor: "blue",
-          data: attempts,
+          data: walkDuration,
         },
         {
-          label: "Successes",
+          label: "Leash Pull Duration",
           backgroundColor: "green",
-          data: successes,
+          data: pullDuration,
         },
       ],
     });
+    console.log(pullDuration)
   }
   useEffect(() => {
     createChart();
@@ -51,4 +50,4 @@ function BarChart() {
   );
 }
 
-export default BarChart;
+export default LeashChart;
