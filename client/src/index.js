@@ -14,12 +14,12 @@ const history = createBrowserHistory();
 Amplify.configure(awsconfig);
 
 ReactDOM.render(
-  <Router history={history}>
-    <App />
-  </Router>,
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
+  <React.StrictMode>
+    <Router history={history}>
+      <App />
+    </Router>
+    ,
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

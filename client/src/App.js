@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import AboutPage from "./pages/AboutPage/AboutPage.js";
 import HomePage from "./pages/HomePage/HomePage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 import FormPage from "./pages/FormPage/FormPage";
 import DogPage from "./pages/DogPage/DogPage";
+import loginPage from "./pages/LoginPage/LoginPage";
 // import { StoreProvider } from "./utils/GlobalState";
 
 const App = () => {
@@ -14,21 +14,11 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" >
-            <LoginPage />
-          </Route>
-          <Route path="/home">
-            <HomePage />
-          </Route>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-          <Route path="/form">
-            <FormPage />
-          </Route>
-          <Route path="/dog/:id">
-            <DogPage />
-          </Route>
+          <Route exact path="/" component={loginPage} />
+          <Route exact path="/home" component={HomePage} />
+          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/form" component={FormPage} />
+          <Route exact path="/dog/:id" component={DogPage} />
         </Switch>
         <Footer />
       </div>

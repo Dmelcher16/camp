@@ -1,42 +1,52 @@
-import React, { useContext, useEffect } from "react";
-import DogContext from "../../utils/dogContext";
+import React, { useContext, useState, useEffect } from "react";
+import ExerciseContext from "../../utils/exerciseContext";
 import { Bar } from "react-chartjs-2";
 import "./BarChart.css";
 
 function BarChart() {
-  const { dog } = useContext(DogContext);
-  
-  useEffect(() => {
-    console.log(dog.exercises);
-  });
+  const { exercises } = useContext(ExerciseContext);
+  const [chartData, setChartData] = useState({});
 
-  const data = {
-    labels: [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ],
-    datasets: [
-      {
-        label: "Attempts",
-        backgroundColor: "blue",
-        data: [10, 20, 30, 40, 50, 60, 70],
-      },
-      {
-        label: "Successes",
-        backgroundColor: "green",
-        data: [5, 10, 15, 20, 25, 30, 35],
-      },
-    ],
-  };
+  function createChart() {
+    console.log(exercises);
+    let exerciseDate = [];
+    let attempts = [];
+    let successes = [];
+    for (const dataObj of exercises) {
+      exerciseDate.push(dataObj.day);
+      if (dataObj.commandsAttempted !== null) {
+        attempts.push(dataObj.commandsAttempted);
+      }
+      if (dataObj.commandsCompleted !== null) {
+        successes.push(dataObj.commandsCompleted);
+      }
+    }
+
+    setChartData({
+      labels: exerciseDate,
+      datasets: [
+        {
+          label: "Attempts",
+          backgroundColor: "blue",
+          data: attempts,
+        },
+        {
+          label: "Successes",
+          backgroundColor: "green",
+          data: successes,
+        },
+      ],
+    });
+  }
+  useEffect(() => {
+    createChart();
+  }, [exercises]);
+
+  // height={75} width={150}
 
   return (
     <div id="main-chart-div">
-      <Bar data={data} height={75} width={150} />
+      <Bar data={chartData} height={75} width={150} />
     </div>
   );
 }
