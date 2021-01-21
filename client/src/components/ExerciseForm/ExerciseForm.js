@@ -6,7 +6,7 @@ import {
   Input,
   Select,
   FormBtn,
-} from "../CreateExerciseForm/CreateExerciseForm.js";
+} from "../ExerciseFormInputs/ExerciseFormInputs.js";
 
 import API from "../../utils/API";
 import "./ExerciseForm.css";

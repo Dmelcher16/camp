@@ -1,7 +1,7 @@
 import React from "react";
 import ExerciseList from "../ExerciseList/ExerciseList";
 import { Button } from "react-bootstrap";
-import "./CreateExerciseForm.css";
+import "./ExerciseFormInputs.css";
 
 export function Label(props) {
   return (

@@ -11,7 +11,7 @@ import {
   Input,
   Select,
   FormBtn,
-} from "../../components/CreateExerciseForm/CreateExerciseForm";
+} from "../../components/ExerciseFormInputs/ExerciseFormInputs";
 import CommandsChart from "../../components/ExerciseCharts/CommandsChart";
 import LeashChart from "../../components/ExerciseCharts/LeashChart";
 import "./DogPage.css";
@@ -84,8 +84,8 @@ function DogPage() {
     }
   }
 
-  function handleExerciseChange(event) {
-    const exerciseType = event.target.value;
+  function handleExerciseChange(e) {
+    const exerciseType = e.target.value;
 
     if (exerciseType === "Choose...") {
       pottyForm.classList.add("d-none");
