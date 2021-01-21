@@ -2,3 +2,7 @@ canvas {
   background-color: white;
   border-radius: 2px;
 }
+
+.chart-col {
+  padding: 15px;
+}

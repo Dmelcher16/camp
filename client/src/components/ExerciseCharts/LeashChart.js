@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import ExerciseContext from "../../utils/exerciseContext";
+import { Col } from "react-bootstrap";
 import { Bar } from "react-chartjs-2";
 import "./Chart.css";
 
@@ -35,6 +36,10 @@ function LeashChart() {
         },
       ],
       options: {
+        title: {
+          display: true,
+          text: "Leash Training",
+        },
         scales: {
           yAxes: [
             {
@@ -56,14 +61,16 @@ function LeashChart() {
   // height={75} width={150}
 
   return (
-    <div id="main-chart-div">
-      <Bar
-        data={chartData}
-        options={chartData.options}
-        height={75}
-        width={150}
-      />
-    </div>
+    <Col md={6} className="chart-col">
+      <div id="main-chart-div">
+        <Bar
+          data={chartData}
+          options={chartData.options}
+          height={75}
+          width={150}
+        />
+      </div>
+    </Col>
   );
 }
 

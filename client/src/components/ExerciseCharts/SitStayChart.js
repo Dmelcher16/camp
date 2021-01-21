@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 import { Bar } from "react-chartjs-2";
 import "./Chart.css";
 
-function CommandsChart() {
+function SitStayChart() {
   const { exercises } = useContext(ExerciseContext);
   const [chartData, setChartData] = useState({});
 
@@ -16,8 +16,8 @@ function CommandsChart() {
     for (const dataObj of exercises) {
       if (dataObj.exercises === "Commands") {
         exerciseDate.push(dataObj.day);
-        attempts.push(dataObj.commandsAttempted);
-        successes.push(dataObj.commandsCompleted);
+        attempts.push(dataObj.sitStayAttempts);
+        successes.push(dataObj.sitStaySuccess);
       }
     }
 
@@ -38,7 +38,7 @@ function CommandsChart() {
       options: {
         title: {
           display: true,
-          text: "Commands",
+          text: "Sit/Stay Training",
         },
         scales: {
           yAxes: [
@@ -72,4 +72,4 @@ function CommandsChart() {
   );
 }
 
-export default CommandsChart;
+export default SitStayChart;

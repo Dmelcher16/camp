@@ -14,6 +14,7 @@ import {
 } from "../../components/ExerciseFormInputs/ExerciseFormInputs";
 import CommandsChart from "../../components/ExerciseCharts/CommandsChart";
 import LeashChart from "../../components/ExerciseCharts/LeashChart";
+import SitStayChart from "../../components/ExerciseCharts/SitStayChart";
 import "./DogPage.css";
 
 function DogPage() {
@@ -387,12 +388,11 @@ function DogPage() {
                         </Col>
                       </Row>
                       <Row>
-                        <Col md={6}>
-                          <CommandsChart />
-                        </Col>
-                        <Col md={6}>
-                          <LeashChart />
-                        </Col>
+                        <CommandsChart />
+
+                        <LeashChart />
+
+                        <SitStayChart />
                       </Row>
                     </Card.Body>
                     <Card.Footer>
@@ -405,7 +405,6 @@ function DogPage() {
                   </Card>
                 </Col>
               </Row>
-              <Row></Row>
             </Container>
           </div>
         </div>
