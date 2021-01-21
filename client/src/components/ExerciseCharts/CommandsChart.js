@@ -35,6 +35,17 @@ function CommandsChart() {
           data: successes,
         },
       ],
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
     });
   }
   useEffect(() => {
@@ -45,7 +56,12 @@ function CommandsChart() {
 
   return (
     <div id="main-chart-div">
-      <Bar data={chartData}  height={75} width={150} />
+      <Bar
+        data={chartData}
+        options={chartData.options}
+        height={75}
+        width={150}
+      />
     </div>
   );
 }

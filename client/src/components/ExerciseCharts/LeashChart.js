@@ -34,8 +34,20 @@ function LeashChart() {
           data: pullDuration,
         },
       ],
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                min: 0,
+              },
+            },
+          ],
+        },
+      },
     });
-    console.log(pullDuration)
+    console.log(pullDuration);
   }
   useEffect(() => {
     createChart();
@@ -45,7 +57,12 @@ function LeashChart() {
 
   return (
     <div id="main-chart-div">
-      <Bar data={chartData} height={75} width={150} />
+      <Bar
+        data={chartData}
+        options={chartData.options}
+        height={75}
+        width={150}
+      />
     </div>
   );
 }
