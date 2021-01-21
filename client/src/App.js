@@ -6,7 +6,7 @@ import AboutPage from "./pages/AboutPage/AboutPage.js";
 import HomePage from "./pages/HomePage/HomePage";
 import FormPage from "./pages/FormPage/FormPage";
 import DogPage from "./pages/DogPage/DogPage";
-import LoginPage from "./pages/loginPage/LoginPage";
+import LoginPage from "./pages/loginPage/loginPage.js";
 // import { StoreProvider } from "./utils/GlobalState";
 
 const App = () => {

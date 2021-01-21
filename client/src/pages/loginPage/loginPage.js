@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "../../components/Login/Login";
-import "./LoginPage.css";
+import "./loginPage.css";
 import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg";
 
 function LoginPage() {
