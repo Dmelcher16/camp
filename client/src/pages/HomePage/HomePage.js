@@ -6,19 +6,21 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../../components/AppNav/AppNav.js";
 import KennelList from "../../components/KennelList/KennelList";
 import { Auth } from "aws-amplify";
+import useIsMountedRef from "../../components/IsMountedRefHook/index";
 
 function Homepage() {
-  const [username, setUsername] = useState("")
+  const [username, setUsername] = useState("");
+  const isMountedRef = useIsMountedRef();
 
   useEffect(() => {
     Auth.currentUserInfo()
       .then((res) => {
-        setUsername(
-          res.attributes.email,
-        );
+        if (isMountedRef.current) {
+          setUsername(res.attributes.email);
+        }
       })
       .catch((err) => console.log("error: ", err));
-  }, []);
+  }, [isMountedRef]);
 
   return (
     <div className="HomePageImg">

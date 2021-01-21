@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useIsMountedRef from "../../components/IsMountedRefHook/index";
 import API from "../../utils/API";
 import DogContext from "../../utils/dogContext";
 import ExerciseContext from "../../utils/exerciseContext";
@@ -17,6 +18,7 @@ import "./DogPage.css";
 
 function DogPage() {
   //set iniitial state
+  const isMountedRef = useIsMountedRef();
   const [dog, setDog] = useState({});
   const [show, setShow] = useState(false);
   const [exercises, setExercises] = useState([]);
@@ -39,16 +41,17 @@ function DogPage() {
   const { id } = useParams();
   useEffect(() => {
     loadDog();
-    // eslint-disable-next-line
   }, []);
 
   function loadDog() {
     return new Promise((resolve, reject) => {
       API.getDog(id)
         .then((res) => {
-          setDog(res.data);
-          setExercises(res.data.exercises);
-          resolve(res);
+          if (isMountedRef.current) {
+            setDog(res.data);
+            setExercises(res.data.exercises);
+            resolve(res);
+          }
         })
         .catch((err) => reject(err));
     });
@@ -82,10 +85,9 @@ function DogPage() {
   }
 
   function handleExerciseChange(event) {
-    event.preventDefault();
     const exerciseType = event.target.value;
 
-    if (exerciseType === "") {
+    if (exerciseType === "Choose...") {
       pottyForm.classList.add("d-none");
       sitStayForm.classList.add("d-none");
       leashTrainingForm.classList.add("d-none");
@@ -124,30 +126,30 @@ function DogPage() {
     }
   }
 
-  if (exerciseTypeSelect) {
-    exerciseTypeSelect.addEventListener("change", handleExerciseChange);
-  }
-
   //clears values of exercise form inputs
+  // function clearExerciseForm() {
+  //   setCreateExercise({
+  //     dog: "",
+  //     exercises: "",
+  //     leashDuration: "",
+  //     leashPullDuration: "",
+  //     sitStayAttempts: "",
+  //     sitStaySuccess: "",
+  //     commandsAttempted: "",
+  //     commandsCompleted: "",
+  //     chewing: "",
+  //     numPottyAccidents: "",
+  //     numPottySuccesses: "",
+  //   });
+  //   pottyForm.classList.add("d-none");
+  //   sitStayForm.classList.add("d-none");
+  //   leashTrainingForm.classList.add("d-none");
+  //   commandsForm.classList.add("d-none");
+  //   chewingForm.classList.add("d-none");
+  // }
+
   function clearExerciseForm() {
-    setCreateExercise({
-      dog: "",
-      exercises: "",
-      leashDuration: "",
-      leashPullDuration: "",
-      sitStayAttempts: "",
-      sitStaySuccess: "",
-      commandsAttempted: "",
-      commandsCompleted: "",
-      chewing: "",
-      numPottyAccidents: "",
-      numPottySuccesses: "",
-    });
-    pottyForm.classList.add("d-none");
-    sitStayForm.classList.add("d-none");
-    leashTrainingForm.classList.add("d-none");
-    commandsForm.classList.add("d-none");
-    chewingForm.classList.add("d-none");
+    document.getElementById("create-exercise-form").reset();
   }
 
   //saves newly created exercise data to exercise db and current dog's exercises array
@@ -235,17 +237,27 @@ function DogPage() {
                                   name="dog"
                                   value={dog._id}
                                 >
-                                  <form>
+                                  <form id="create-exercise-form">
                                     <div>
                                       <Label id="exercise-label">
                                         Exercise:
                                       </Label>
                                       <Select
-                                        onChange={handleInputChange}
+                                        onChange={(event) => {
+                                          if (exerciseTypeSelect) {
+                                            exerciseTypeSelect.addEventListener(
+                                              "select",
+                                              handleExerciseChange
+                                            );
+                                            handleExerciseChange(event);
+                                          }
+                                          handleInputChange(event);
+                                        }}
                                         value={createExercise.exercises}
                                         name="exercises"
                                         placeholder="Exercise Name (required)"
                                         id="type"
+                                        default="Choose..."
                                       />
                                     </div>
                                     <div className="d-none leash-training">
@@ -348,6 +360,7 @@ function DogPage() {
                                         id="cancel-btn"
                                         variant="danger"
                                         onClick={() => {
+                                          clearExerciseForm();
                                           setShow(false);
                                         }}
                                       >

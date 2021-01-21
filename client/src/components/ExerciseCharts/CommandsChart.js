@@ -21,6 +21,7 @@ function CommandsChart() {
     }
 
     setChartData({
+      title: "Commands",
       labels: exerciseDate,
       datasets: [
         {
@@ -44,7 +45,7 @@ function CommandsChart() {
 
   return (
     <div id="main-chart-div">
-      <Bar data={chartData} height={75} width={150} />
+      <Bar data={chartData}  height={75} width={150} />
     </div>
   );
 }
