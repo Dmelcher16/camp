@@ -1,9 +1,9 @@
 import React from "react";
 import Login from "../../components/Login/Login";
 import "./LoginPage.css";
-import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg"
+import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg";
 
-export default function LoginPage() {
+function LoginPage() {
   return (
     <div>
       <style type="text/css">{`#app-nav {display: none}`}</style>
@@ -14,3 +14,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+export default LoginPage;
