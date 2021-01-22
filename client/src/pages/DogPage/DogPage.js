@@ -15,6 +15,7 @@ import {
 import CommandsChart from "../../components/ExerciseCharts/CommandsChart";
 import LeashChart from "../../components/ExerciseCharts/LeashChart";
 import SitStayChart from "../../components/ExerciseCharts/SitStayChart";
+import PottyTrainingChart from "../../components/ExerciseCharts/PottyTrainingChart";
 import "./DogPage.css";
 
 function DogPage() {
@@ -393,6 +394,8 @@ function DogPage() {
                         <LeashChart />
 
                         <SitStayChart />
+
+                        <PottyTrainingChart />
                       </Row>
                     </Card.Body>
                     <Card.Footer>

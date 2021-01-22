@@ -6,7 +6,7 @@ import AboutPage from "./pages/AboutPage/AboutPage.js";
 import HomePage from "./pages/HomePage/HomePage";
 import FormPage from "./pages/FormPage/FormPage";
 import DogPage from "./pages/DogPage/DogPage";
-import LoginPage from "./pages/loginPage/loginPage.js";
+import LoginPage from "./pages/loginPage/loginPage";
 // import { StoreProvider } from "./utils/GlobalState";
 
 const App = () => {
@@ -14,11 +14,11 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-        <Route exact path="/" component={LoginPage} />
-        <Route exact path="/home" component={HomePage} />
-        <Route exact path="/about" component={AboutPage} />
-        <Route exact path="/form" component={FormPage} />
-        <Route exact path="/dog/:id" component={DogPage} />
+          <Route exact path="/" component={LoginPage} />
+          <Route exact path="/home" component={HomePage} />
+          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/form" component={FormPage} />
+          <Route exact path="/dog/:id" component={DogPage} />
         </Switch>
         <Footer />
       </div>
