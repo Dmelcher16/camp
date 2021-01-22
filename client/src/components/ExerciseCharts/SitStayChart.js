@@ -14,7 +14,7 @@ function SitStayChart() {
     let attempts = [];
     let successes = [];
     for (const dataObj of exercises) {
-      if (dataObj.exercises === "Commands") {
+      if (dataObj.exercises === "Sit/Stay") {
         exerciseDate.push(dataObj.day);
         attempts.push(dataObj.sitStayAttempts);
         successes.push(dataObj.sitStaySuccess);

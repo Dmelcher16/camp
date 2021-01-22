@@ -49,6 +49,7 @@ function PottyTrainingChart() {
             {
               ticks: {
                 beginAtZero: true,
+                precision: 0,
               },
             },
           ],
