@@ -26,12 +26,15 @@ function SitStayChart() {
       datasets: [
         {
           label: "Attempts",
-          backgroundColor: "blue",
+          backgroundColor: "rgba(255, 159, 64, 0.8)",
+          borderColor: "rgb(255, 159, 64)",
+          borderWidth: 2,
           data: attempts,
         },
         {
           label: "Successes",
-          backgroundColor: "green",
+          backgroundColor: "rgba(1, 117, 1, 0.7)",
+          borderColor: "rgb(1, 117, 1)",
           data: successes,
         },
       ],
@@ -62,6 +65,7 @@ function SitStayChart() {
     <Col md={6} className="chart-col">
       <div id="main-chart-div">
         <Bar
+          aria-label="Sit/Stay Training Chart"
           data={chartData}
           options={chartData.options}
           height={75}
