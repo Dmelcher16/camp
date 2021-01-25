@@ -53,8 +53,6 @@ function ChewingChart() {
     createChart();
   }, [exercises]);
 
-  // height={75} width={150}
-
   return (
     <Col md={6} className="chart-col">
       <div id="main-chart-div">

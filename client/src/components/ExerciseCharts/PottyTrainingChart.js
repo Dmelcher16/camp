@@ -9,7 +9,6 @@ function PottyTrainingChart() {
   const [chartData, setChartData] = useState({});
 
   function createChart() {
-    console.log(exercises);
     let exerciseDate = [];
     let accidents = [];
     let successes = [];
@@ -60,8 +59,6 @@ function PottyTrainingChart() {
   useEffect(() => {
     createChart();
   }, [exercises]);
-
-  // height={75} width={150}
 
   return (
     <Col md={6} className="chart-col">

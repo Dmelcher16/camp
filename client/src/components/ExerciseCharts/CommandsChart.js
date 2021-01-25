@@ -9,7 +9,7 @@ function CommandsChart() {
   const [chartData, setChartData] = useState({});
 
   function createChart() {
-    console.log(exercises);
+    console.log(exercises)
     let exerciseDate = [];
     let attempts = [];
     let successes = [];
@@ -58,8 +58,6 @@ function CommandsChart() {
   useEffect(() => {
     createChart();
   }, [exercises]);
-
-  // height={75} width={150}
 
   return (
     <Col md={6} className="chart-col">
