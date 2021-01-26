@@ -9,17 +9,56 @@ function CommandsChart() {
   const [chartData, setChartData] = useState({});
 
   function createChart() {
-    console.log(exercises)
+    console.log(exercises);
+
+    const result = [];
     let exerciseDate = [];
     let attempts = [];
     let successes = [];
-    for (const dataObj of exercises) {
-      if (dataObj.exercises === "Commands") {
-        exerciseDate.push(dataObj.day);
-        attempts.push(dataObj.commandsAttempted);
-        successes.push(dataObj.commandsCompleted);
+
+    exercises.reduce(function (res, value) {
+      if (!res[value.day]) {
+        res[value.day] = {
+          day: value.day,
+          commandsAttempted: 0,
+          commandsCompleted: 0,
+        };
+        result.push(res[value.day]);
       }
+      res[value.day].commandsAttempted += value.commandsAttempted;
+      res[value.day].commandsCompleted += value.commandsCompleted;
+
+      return res;
+    }, {});
+
+    console.log(result);
+
+    // const groupBy = function (arr, key) {
+    //   return arr.reduce(function (curr, acc) {
+    //     (curr[acc[key]] = curr[acc[key]] || []).push(acc);
+    //     return curr;
+    //   }, {});
+    // };
+
+    // exerciseDate.push(groupBy(exercises, "day"));
+    // console.log(exerciseDate);
+
+    for (const dataObj of result) {
+      console.log(dataObj.day);
+      if (dataObj.commandsCompleted === 0 && dataObj.commandsAttempted === 0) {
+        continue;
+      }
+      exerciseDate.push(dataObj.day);
+      attempts.push(dataObj.commandsAttempted);
+      successes.push(dataObj.commandsCompleted);
     }
+
+    // const talliedExercises = Object.values(exercises.reduce((acc, {day, commandsAttempted, commandsCompleted, ...r}) => {
+    //   const key = JSON.stringify(r);
+    //   acc[key] = (acc[key]  || {...r, commandsAttempted: 0});
+    //   return (acc[key].commandsAttempted += commandsAttempted, acc);
+    // }, {}));
+    // console.log(talliedExercises);
 
     setChartData({
       labels: exerciseDate,
@@ -57,6 +96,7 @@ function CommandsChart() {
   }
   useEffect(() => {
     createChart();
+    // eslint-disable-next-line
   }, [exercises]);
 
   return (

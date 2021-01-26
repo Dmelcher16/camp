@@ -18,7 +18,6 @@ module.exports = {
     db.Dog.findById({ _id: req.params.id })
       .populate("exercises")
       .exec(function (err, dbDog) {
-        console.log(dbDog.exercises)
         if (err) {
           return console.error(err);
         }

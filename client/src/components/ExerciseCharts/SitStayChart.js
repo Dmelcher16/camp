@@ -56,6 +56,7 @@ function SitStayChart() {
   }
   useEffect(() => {
     createChart();
+    // eslint-disable-next-line
   }, [exercises]);
 
   return (

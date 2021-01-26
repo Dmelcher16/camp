@@ -58,6 +58,7 @@ function PottyTrainingChart() {
   }
   useEffect(() => {
     createChart();
+    // eslint-disable-next-line
   }, [exercises]);
 
   return (

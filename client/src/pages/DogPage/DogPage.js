@@ -44,6 +44,7 @@ function DogPage() {
   const { id } = useParams();
   useEffect(() => {
     loadDog();
+    // eslint-disable-next-line
   }, []);
 
   function loadDog() {
