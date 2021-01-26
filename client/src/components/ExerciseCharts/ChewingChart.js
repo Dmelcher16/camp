@@ -9,13 +9,30 @@ function ChewingChart() {
   const [chartData, setChartData] = useState({});
 
   function createChart() {
+    const result = [];
     let exerciseDate = [];
     let itemsChewed = [];
-    for (const dataObj of exercises) {
-      if (dataObj.exercises === "Chewing") {
-        exerciseDate.push(dataObj.day);
-        itemsChewed.push(dataObj.chewing);
+
+    //reduce array and tally total number of items chewed by each individual day
+    exercises.reduce(function (res, value) {
+      if (!res[value.day]) {
+        res[value.day] = {
+          day: value.day,
+          chewing: 0,
+        };
+        result.push(res[value.day]);
       }
+      res[value.day].chewing += value.chewing;
+
+      return res;
+    }, {});
+
+    for (const dataObj of result) {
+      if (dataObj.chewing === 0) {
+        continue;
+      }
+      exerciseDate.push(dataObj.day);
+      itemsChewed.push(dataObj.chewing);
     }
 
     setChartData({
@@ -34,7 +51,7 @@ function ChewingChart() {
       options: {
         title: {
           display: true,
-          text: "Leash Training",
+          text: "# of Non-Toys Chewed/Destroyed",
         },
         scales: {
           yAxes: [

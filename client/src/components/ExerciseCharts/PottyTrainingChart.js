@@ -9,15 +9,34 @@ function PottyTrainingChart() {
   const [chartData, setChartData] = useState({});
 
   function createChart() {
+    const result = [];
     let exerciseDate = [];
     let accidents = [];
     let successes = [];
-    for (const dataObj of exercises) {
-      if (dataObj.exercises === "Potty Training") {
-        exerciseDate.push(dataObj.day);
-        accidents.push(dataObj.numPottyAccidents);
-        successes.push(dataObj.numPottySuccesses);
+
+    //reduce array and sum total number of accidents and successful potty breaks by each individual day
+    exercises.reduce(function (res, value) {
+      if (!res[value.day]) {
+        res[value.day] = {
+          day: value.day,
+          numPottyAccidents: 0,
+          numPottySuccesses: 0,
+        };
+        result.push(res[value.day]);
       }
+      res[value.day].numPottyAccidents += value.numPottyAccidents;
+      res[value.day].numPottySuccesses += value.numPottySuccesses;
+
+      return res;
+    }, {});
+
+    for (const dataObj of result) {
+      if (dataObj.numPottyAccidents === 0 && dataObj.numPottySuccesses === 0) {
+        continue;
+      }
+      exerciseDate.push(dataObj.day);
+      accidents.push(dataObj.numPottyAccidents);
+      successes.push(dataObj.numPottySuccesses);
     }
 
     setChartData({

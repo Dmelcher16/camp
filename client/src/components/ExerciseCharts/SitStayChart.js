@@ -9,15 +9,34 @@ function SitStayChart() {
   const [chartData, setChartData] = useState({});
 
   function createChart() {
+    const result = [];
     let exerciseDate = [];
     let attempts = [];
     let successes = [];
-    for (const dataObj of exercises) {
-      if (dataObj.exercises === "Sit/Stay") {
-        exerciseDate.push(dataObj.day);
-        attempts.push(dataObj.sitStayAttempts);
-        successes.push(dataObj.sitStaySuccess);
+
+    //reduce array and tally total number of commandsAttempted and commandsCompleted by each individual day
+    exercises.reduce(function (res, value) {
+      if (!res[value.day]) {
+        res[value.day] = {
+          day: value.day,
+          sitStayAttempts: 0,
+          sitStaySuccess: 0,
+        };
+        result.push(res[value.day]);
       }
+      res[value.day].sitStayAttempts += value.sitStayAttempts;
+      res[value.day].sitStaySuccess += value.sitStaySuccess;
+
+      return res;
+    }, {});
+
+    for (const dataObj of result) {
+      if (dataObj.sitStayAttempts === 0 && dataObj.sitStaySuccess === 0) {
+        continue;
+      }
+      exerciseDate.push(dataObj.day);
+      attempts.push(dataObj.sitStayAttempts);
+      successes.push(dataObj.sitStaySuccess);
     }
 
     setChartData({

@@ -9,15 +9,34 @@ function LeashChart() {
   const [chartData, setChartData] = useState({});
 
   function createChart() {
+    const result = [];
     let exerciseDate = [];
     let walkDuration = [];
     let pullDuration = [];
-    for (const dataObj of exercises) {
-      if (dataObj.exercises === "Leash Training") {
-        exerciseDate.push(dataObj.day);
-        walkDuration.push(dataObj.leashDuration);
-        pullDuration.push(dataObj.leashPullDuration);
+    
+    //reduce array and tally total duration of walks and time spent pulling on the leash in each individual day
+    exercises.reduce(function (res, value) {
+      if (!res[value.day]) {
+        res[value.day] = {
+          day: value.day,
+          leashDuration: 0,
+          leashPullDuration: 0,
+        };
+        result.push(res[value.day]);
       }
+      res[value.day].leashDuration += value.leashDuration;
+      res[value.day].leashPullDuration += value.leashPullDuration;
+
+      return res;
+    }, {});
+
+    for (const dataObj of result) {
+      if (dataObj.leashDuration === 0 && dataObj.leashPullDuration === 0) {
+        continue;
+      }
+      exerciseDate.push(dataObj.day);
+      walkDuration.push(dataObj.leashDuration);
+      pullDuration.push(dataObj.leashPullDuration);
     }
 
     setChartData({

@@ -60,9 +60,8 @@ function DogPage() {
         .catch((err) => reject(err));
     });
   }
-  console.log(exercises);
 
-  //
+  
   const cancelBtn = document.querySelector(".cancel-btn");
   const addExerciseBtn = document.querySelector(".add-exercise-btn");
 
