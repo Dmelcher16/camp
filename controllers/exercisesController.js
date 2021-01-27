@@ -30,7 +30,6 @@ module.exports = {
       })
       .then(function (dbDog) {
         res.json(dbDog);
-        // console.log(dbDog);
       })
       .catch((err) => res.status(422).json(err));
   },

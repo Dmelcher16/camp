@@ -8,7 +8,7 @@ const today = new Date(todaysDate);
 const exerciseSchema = new Schema({
   day: {
     type: String,
-    default: today.toDateString(),
+    default: today.toLocaleDateString(),
   },
   exercises: {
     type: String,

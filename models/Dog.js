@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const todaysDate = Date.now();
+const today = new Date(todaysDate);
+
 const DogSchema = new Schema({
   startDate: {
-    type: Date,
-    default: Date.now.toDateString,
+    type: String,
+    default: today.toLocaleDateString(),
   },
   name: {
     type: String,

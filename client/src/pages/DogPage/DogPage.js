@@ -193,6 +193,7 @@ function DogPage() {
         .catch((err) => console.log(err));
     }
   }
+  console.log(dog)
 
   return (
     <DogContext.Provider value={{ dog }}>
@@ -229,6 +230,9 @@ function DogPage() {
                               </ListGroup.Item>
                               <ListGroup.Item>
                                 Owner: {dog.ownerFirstName} {dog.ownerLastName}
+                              </ListGroup.Item>
+                              <ListGroup.Item>
+                                Training Start Date: {dog.startDate}
                               </ListGroup.Item>
                             </ListGroup>
                             {/* {show ? <ExerciseForm onSubmit={hideForm} /> : null} */}

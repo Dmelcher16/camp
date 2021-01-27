@@ -8,12 +8,6 @@ module.exports = {
       .then((dbDogs) => res.json(dbDogs))
       .catch((err) => res.status(422).json(err));
   },
-  // findById: function (req, res) {
-  //   db.Dog.findById({ _id: req.params.id })
-  //     .then((dbDog) => res.json(dbDog))
-  //     .catch((err) => res.status(422).json(err));
-  // },
-  //TODO:  Add property to get all exercises associated with an individual dog
   findById: function (req, res) {
     db.Dog.findById({ _id: req.params.id })
       .populate("exercises")
