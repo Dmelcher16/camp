@@ -61,7 +61,6 @@ function DogPage() {
     });
   }
 
-  
   const cancelBtn = document.querySelector(".cancel-btn");
   const addExerciseBtn = document.querySelector(".add-exercise-btn");
 
@@ -73,9 +72,51 @@ function DogPage() {
   const chewingForm = document.querySelector(".chewing");
   const pottyForm = document.querySelector(".potty-form");
 
+  if (exerciseTypeSelect) {
+    exerciseTypeSelect.addEventListener("select", handleInputChange);
+  }
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setCreateExercise({ ...createExercise, [name]: value });
+  }
+
+  if (createExercise.exercises === "Sit/Stay") {
+    sitStayForm.classList.remove("d-none");
+    leashTrainingForm.classList.add("d-none");
+    commandsForm.classList.add("d-none");
+    chewingForm.classList.add("d-none");
+    pottyForm.classList.add("d-none");
+  } else if (createExercise.exercises === "Leash Training") {
+    leashTrainingForm.classList.remove("d-none");
+    sitStayForm.classList.add("d-none");
+    commandsForm.classList.add("d-none");
+    chewingForm.classList.add("d-none");
+    pottyForm.classList.add("d-none");
+  } else if (createExercise.exercises === "Commands") {
+    commandsForm.classList.remove("d-none");
+    sitStayForm.classList.add("d-none");
+    leashTrainingForm.classList.add("d-none");
+    chewingForm.classList.add("d-none");
+    pottyForm.classList.add("d-none");
+  } else if (createExercise.exercises === "Chewing") {
+    chewingForm.classList.remove("d-none");
+    sitStayForm.classList.add("d-none");
+    commandsForm.classList.add("d-none");
+    pottyForm.classList.add("d-none");
+    leashTrainingForm.classList.add("d-none");
+  } else if (createExercise.exercises === "Potty Training") {
+    pottyForm.classList.remove("d-none");
+    sitStayForm.classList.add("d-none");
+    leashTrainingForm.classList.add("d-none");
+    commandsForm.classList.add("d-none");
+    chewingForm.classList.add("d-none");
+  } else if (createExercise.exercises === "Choose...") {
+    pottyForm.classList.add("d-none");
+    sitStayForm.classList.add("d-none");
+    leashTrainingForm.classList.add("d-none");
+    commandsForm.classList.add("d-none");
+    chewingForm.classList.add("d-none");
   }
   // console.log(createExercise);
 
@@ -87,73 +128,31 @@ function DogPage() {
     }
   }
 
-  function handleExerciseChange(e) {
-    const exerciseType = e.target.value;
-
-    if (exerciseType === "Choose...") {
-      pottyForm.classList.add("d-none");
-      sitStayForm.classList.add("d-none");
-      leashTrainingForm.classList.add("d-none");
-      commandsForm.classList.add("d-none");
-      chewingForm.classList.add("d-none");
-    } else if (exerciseType === "Sit/Stay") {
-      sitStayForm.classList.remove("d-none");
-      leashTrainingForm.classList.add("d-none");
-      commandsForm.classList.add("d-none");
-      chewingForm.classList.add("d-none");
-      pottyForm.classList.add("d-none");
-    } else if (exerciseType === "Leash Training") {
-      leashTrainingForm.classList.remove("d-none");
-      sitStayForm.classList.add("d-none");
-      commandsForm.classList.add("d-none");
-      chewingForm.classList.add("d-none");
-      pottyForm.classList.add("d-none");
-    } else if (exerciseType === "Commands") {
-      commandsForm.classList.remove("d-none");
-      sitStayForm.classList.add("d-none");
-      leashTrainingForm.classList.add("d-none");
-      chewingForm.classList.add("d-none");
-      pottyForm.classList.add("d-none");
-    } else if (exerciseType === "Chewing") {
-      chewingForm.classList.remove("d-none");
-      sitStayForm.classList.add("d-none");
-      commandsForm.classList.add("d-none");
-      pottyForm.classList.add("d-none");
-      leashTrainingForm.classList.add("d-none");
-    } else if (exerciseType === "Potty Training") {
-      pottyForm.classList.remove("d-none");
-      sitStayForm.classList.add("d-none");
-      leashTrainingForm.classList.add("d-none");
-      commandsForm.classList.add("d-none");
-      chewingForm.classList.add("d-none");
-    }
-  }
-
   //clears values of exercise form inputs
-  // function clearExerciseForm() {
-  //   setCreateExercise({
-  //     dog: "",
-  //     exercises: "",
-  //     leashDuration: "",
-  //     leashPullDuration: "",
-  //     sitStayAttempts: "",
-  //     sitStaySuccess: "",
-  //     commandsAttempted: "",
-  //     commandsCompleted: "",
-  //     chewing: "",
-  //     numPottyAccidents: "",
-  //     numPottySuccesses: "",
-  //   });
-  //   pottyForm.classList.add("d-none");
-  //   sitStayForm.classList.add("d-none");
-  //   leashTrainingForm.classList.add("d-none");
-  //   commandsForm.classList.add("d-none");
-  //   chewingForm.classList.add("d-none");
-  // }
-
   function clearExerciseForm() {
-    document.getElementById("create-exercise-form").reset();
+    setCreateExercise({
+      dog: "",
+      exercises: "",
+      leashDuration: "",
+      leashPullDuration: "",
+      sitStayAttempts: "",
+      sitStaySuccess: "",
+      commandsAttempted: "",
+      commandsCompleted: "",
+      chewing: "",
+      numPottyAccidents: "",
+      numPottySuccesses: "",
+    });
+    pottyForm.classList.add("d-none");
+    sitStayForm.classList.add("d-none");
+    leashTrainingForm.classList.add("d-none");
+    commandsForm.classList.add("d-none");
+    chewingForm.classList.add("d-none");
   }
+
+  // function clearExerciseForm() {
+  //   document.getElementById("create-exercise-form").reset();
+  // }
 
   //saves newly created exercise data to exercise db and current dog's exercises array
   function handleFormSubmit(event) {
@@ -193,7 +192,6 @@ function DogPage() {
         .catch((err) => console.log(err));
     }
   }
-  // console.log(dog)
 
   return (
     <DogContext.Provider value={{ dog }}>
@@ -250,16 +248,7 @@ function DogPage() {
                                         Exercise:
                                       </Label>
                                       <Select
-                                        onChange={(event) => {
-                                          if (exerciseTypeSelect) {
-                                            exerciseTypeSelect.addEventListener(
-                                              "select",
-                                              handleExerciseChange
-                                            );
-                                            handleExerciseChange(event);
-                                          }
-                                          handleInputChange(event);
-                                        }}
+                                        onChange={handleInputChange}
                                         value={createExercise.exercises}
                                         name="exercises"
                                         placeholder="Exercise Name (required)"
