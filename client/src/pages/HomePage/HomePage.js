@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import AppNav from "../../components/AppNav/AppNav.js";
 import KennelList from "../../components/KennelList/KennelList";
@@ -29,7 +29,11 @@ function Homepage() {
         <AppNav />
         <Container>
           <div className="card-container">
-            <h1 id="welcome-h1">Welcome, {username}! </h1>
+            <Row>
+              <Col md>
+                <h1 id="welcome-h1">Welcome, {username}! </h1>
+              </Col>
+            </Row>
             <Row className="justify-content-center">
               <Link to="/form">
                 <IoIosAddCircleOutline />
