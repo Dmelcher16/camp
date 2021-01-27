@@ -193,7 +193,7 @@ function DogPage() {
         .catch((err) => console.log(err));
     }
   }
-  console.log(dog)
+  // console.log(dog)
 
   return (
     <DogContext.Provider value={{ dog }}>
