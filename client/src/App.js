@@ -4,10 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import AboutPage from "./pages/AboutPage/AboutPage.js";
 import HomePage from "./pages/HomePage/HomePage";
-import FormPage from "./pages/FormPage/FormPage";
+import AddDogPage from "./pages/AddDogPage/AddDogPage";
 import DogPage from "./pages/DogPage/DogPage";
 import LoginPage from "./pages/loginPage/loginPage";
-// import { StoreProvider } from "./utils/GlobalState";
 
 const App = () => {
   return (
@@ -17,7 +16,7 @@ const App = () => {
           <Route exact path="/" component={LoginPage} />
           <Route exact path="/home" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
-          <Route exact path="/form" component={FormPage} />
+          <Route exact path="/form" component={AddDogPage} />
           <Route exact path="/dog/:id" component={DogPage} />
         </Switch>
         <Footer />

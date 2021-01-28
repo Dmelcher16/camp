@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./FormPage.css";
+import "./AddDogPage.css";
 import { Col, Row, Container } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import {
@@ -11,7 +11,7 @@ import {
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom";
 
-export default function FormPage() {
+export default function AddDogPage() {
   //setting initial state
   const [createDog, setCreateDog] = useState({});
   const [image, setImage] = useState("");
