@@ -50,7 +50,7 @@ function KennelList() {
           {dogs.map((dog) => (
             <div key={dog._id} className="card-deck">
               <Col key={dog._id} mb="3">
-                <Card key={dog._id} style={{ width: "18rem", text: "center" }}>
+                <Card id="dog-card" key={dog._id} style={{ width: "18rem", text: "center" }}>
                   <Link to={"/dog/" + dog._id}>
                     <img
                       key={dog._id}

@@ -31,22 +31,25 @@
 #welcome-h1 {
   color: #285a84;
   font-size: 4vw;
+  margin-bottom: 0px;
+}
+
+#add-dog-btn {
+  color: #285a84;
+  background-color: #85c872;
+}
+
+#add-dog-btn:hover {
+  background-color: #4ca049;
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-container {
   margin-top: 8em;
 }
 
-h1 {
-  text-align: center;
-  color: white;
-}
-
 #mapRow {
   justify-content: center;
 }
 
-/* .card {
-  margin-bottom: 15px;
-  text-align: center;
-} */

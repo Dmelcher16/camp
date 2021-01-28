@@ -87,7 +87,7 @@ export default function AddDogPage() {
                   name="name"
                   placeholder="Name (required)"
                 />
-                <Label>Age:</Label>
+                <Label>Age (months):</Label>
                 <Input
                   onChange={handleInputChange}
                   name="age"

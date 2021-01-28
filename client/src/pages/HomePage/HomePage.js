@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import { Container, Row, Col } from "react-bootstrap";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import KennelList from "../../components/KennelList/KennelList";
 import { Auth } from "aws-amplify";
@@ -36,8 +35,9 @@ function Homepage() {
             </Row>
             <Row className="justify-content-center">
               <Link to="/form">
-                <IoIosAddCircleOutline />
-                {"Add A Dog"}
+                <Button id="add-dog-btn" >
+                  + Add New Dog
+                </Button>
               </Link>
             </Row>
             <Row className="row justify-content-center">
