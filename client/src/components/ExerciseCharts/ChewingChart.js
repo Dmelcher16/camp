@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 import { Line } from "react-chartjs-2";
 import "./Chart.css";
 
-function ChewingChart() {
+export function ChewingChart() {
   const { exercises } = useContext(ExerciseContext);
   const [chartData, setChartData] = useState({});
 
@@ -85,5 +85,3 @@ function ChewingChart() {
     </Col>
   );
 }
-
-export default ChewingChart;

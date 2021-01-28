@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 import { Bar } from "react-chartjs-2";
 import "./Chart.css";
 
-function LeashChart() {
+export function LeashChart() {
   const { exercises } = useContext(ExerciseContext);
   const [chartData, setChartData] = useState({});
 
@@ -13,7 +13,7 @@ function LeashChart() {
     let exerciseDate = [];
     let walkDuration = [];
     let pullDuration = [];
-    
+
     //reduce array and tally total duration of walks and time spent pulling on the leash in each individual day
     exercises.reduce(function (res, value) {
       if (!res[value.day]) {
@@ -93,5 +93,3 @@ function LeashChart() {
     </Col>
   );
 }
-
-export default LeashChart;

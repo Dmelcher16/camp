@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 import { Bar } from "react-chartjs-2";
 import "./Chart.css";
 
-function PottyTrainingChart() {
+export function PottyTrainingChart() {
   const { exercises } = useContext(ExerciseContext);
   const [chartData, setChartData] = useState({});
 
@@ -94,5 +94,3 @@ function PottyTrainingChart() {
     </Col>
   );
 }
-
-export default PottyTrainingChart;

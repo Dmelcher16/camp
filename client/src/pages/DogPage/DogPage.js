@@ -12,11 +12,13 @@ import {
   Select,
   FormBtn,
 } from "../../components/ExerciseFormInputs/ExerciseFormInputs";
-import CommandsChart from "../../components/ExerciseCharts/CommandsChart";
-import LeashChart from "../../components/ExerciseCharts/LeashChart";
-import SitStayChart from "../../components/ExerciseCharts/SitStayChart";
-import PottyTrainingChart from "../../components/ExerciseCharts/PottyTrainingChart";
-import ChewingChart from "../../components/ExerciseCharts/ChewingChart";
+import {
+  ChewingChart,
+  LeashChart,
+  SitStayChart,
+  PottyTrainingChart,
+  CommandsChart,
+} from "../../components/ExerciseCharts";
 import "./DogPage.css";
 
 function DogPage() {
@@ -222,7 +224,9 @@ function DogPage() {
                         <Col className="info-col">
                           <div className="text-center align-self-center">
                             <ListGroup variant="flush" className="attributes">
-                              <ListGroup.Item>Age: {dog.age}</ListGroup.Item>
+                              <ListGroup.Item>
+                                Age: {dog.age} mo(s)
+                              </ListGroup.Item>
                               <ListGroup.Item>
                                 Breed: {dog.breed}
                               </ListGroup.Item>
@@ -384,11 +388,8 @@ function DogPage() {
                       </Row>
                       <Row>
                         <CommandsChart />
-
                         <LeashChart />
-
                         <SitStayChart />
-
                         <PottyTrainingChart />
                         <ChewingChart />
                       </Row>

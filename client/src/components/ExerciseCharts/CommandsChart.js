@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 import { Bar } from "react-chartjs-2";
 import "./Chart.css";
 
-function CommandsChart() {
+export function CommandsChart() {
   const { exercises } = useContext(ExerciseContext);
   const [chartData, setChartData] = useState({});
 
@@ -93,5 +93,3 @@ function CommandsChart() {
     </Col>
   );
 }
-
-export default CommandsChart;

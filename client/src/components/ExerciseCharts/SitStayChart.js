@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 import { Bar } from "react-chartjs-2";
 import "./Chart.css";
 
-function SitStayChart() {
+export function SitStayChart() {
   const { exercises } = useContext(ExerciseContext);
   const [chartData, setChartData] = useState({});
 
@@ -92,5 +92,3 @@ function SitStayChart() {
     </Col>
   );
 }
-
-export default SitStayChart;
