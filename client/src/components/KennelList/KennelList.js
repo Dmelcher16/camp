@@ -1,36 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Card } from "react-bootstrap";
+import { Col, Row, Card, Button, Alert } from "react-bootstrap";
+
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import "./KennelList.css";
 
 function KennelList() {
   //set initial state
-  // const [state, dispatch] = useStoreContext();
   const [dogs, setDogs] = useState([]);
-
-  // const removeDogs = (id) => {
-  //   API.deleteDog(id)
-  //     .then(() => {
-  //       dispatch({
-  //         type: REMOVE_DOG,
-  //         _id: id,
-  //       });
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // const loadDogs = () => {
-  //   dispatch({ type: LOADING });
-  //   API.getDogs()
-  //     .then((res) => {
-  //       dispatch({
-  //         type: UPDATE_DOGS,
-  //         dogs: res.data,
-  //       });
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  const [showConfirm, setShowConfirm] = useState(false);
 
   function loadDogs() {
     API.getDogs()
@@ -47,25 +27,57 @@ function KennelList() {
     <Col>
       {dogs.length ? (
         <Row id="mapRow">
+          <Alert show={showConfirm} variant="danger">
+            <Alert.Heading>
+              This Will Permanantly Delete This Dog From Your Kennel!
+            </Alert.Heading>
+            <p>Do You Wish To Proceed?</p>
+            <hr />
+            <Row className="d-flex justify-content-end">
+              <Button
+                onClick={() => setShowConfirm(false)}
+                variant="outline-danger"
+              >
+                Cancel
+              </Button>
+            </Row>
+          </Alert>
           {dogs.map((dog) => (
             <div key={dog._id} className="card-deck">
               <Col key={dog._id} mb="3">
-                <Card id="dog-card" key={dog._id} style={{ width: "18rem", text: "center" }}>
-                  <Link to={"/dog/" + dog._id}>
-                    <img
-                      key={dog._id}
-                      alt={dog.name}
-                      variant="top"
-                      src={dog.image}
-                      className="card-img-top"
-                    />
-                  </Link>
-                  <Card.Body key={dog._id}>
-                    <Card.Title className="dogName text-center" key={dog._id}>
-                      {dog.name}
-                    </Card.Title>
-                  </Card.Body>
-                </Card>
+                <div className="card-box">
+                  <Card
+                    id="dog-card"
+                    key={dog._id}
+                    style={{ width: "18rem", text: "center" }}
+                  >
+                    <Link id="img-link" to={"/dog/" + dog._id}>
+                      <img
+                        key={dog._id}
+                        alt={dog.name}
+                        variant="top"
+                        src={dog.image}
+                        className="card-img-top"
+                      />
+                    </Link>
+                    <Card.Body key={dog._id}>
+                      <Card.Title className="dogName text-center" key={dog._id}>
+                        {dog.name}
+                        {!showConfirm && (
+                          <span
+                            id="delete-icon"
+                            title="Delete From Kennel"
+                            onClick={() => setShowConfirm(true)}
+                          >
+                            <FontAwesomeIcon
+                              icon={faTrashAlt}
+                            ></FontAwesomeIcon>
+                          </span>
+                        )}
+                      </Card.Title>
+                    </Card.Body>
+                  </Card>
+                </div>
               </Col>
             </div>
           ))}

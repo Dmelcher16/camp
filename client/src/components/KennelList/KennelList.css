@@ -2,6 +2,30 @@ img {
   cursor: pointer;
 }
 
+#img-link {
+  position: relative;
+}
+
+.card-box {
+  position: relative;
+}
+
+#delete-icon {
+  left: 85%;
+  bottom: 88%;
+  position: absolute;
+  color: red;
+  background-color: rgba(0, 0, 0, 0);
+  transform: translate(68%, -25%);
+  z-index: 100;
+  border: none;
+}
+
+#delete-icon:hover {
+  transform: translate(68%, -25%) scale(1.5);
+  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); */
+}
+
 .card-img-top {
   object-fit: fill;
   width: 100%;
