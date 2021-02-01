@@ -17,13 +17,22 @@ img {
   color: red;
   background-color: rgba(0, 0, 0, 0);
   transform: translate(68%, -25%);
-  z-index: 100;
+  z-index: 10;
   border: none;
 }
 
 #delete-icon:hover {
   transform: translate(68%, -25%) scale(1.5);
   /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); */
+}
+
+div.alert {
+  margin-bottom: 0px;
+}
+
+.modal-btn {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card-img-top {

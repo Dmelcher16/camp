@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Card, Button, Alert } from "react-bootstrap";
-
+import { Col, Row, Card } from "react-bootstrap";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,15 +9,22 @@ import "./KennelList.css";
 function KennelList() {
   //set initial state
   const [dogs, setDogs] = useState([]);
-  const [showConfirm, setShowConfirm] = useState(false);
 
+  // Loads all dogs and sets them to dogs
   function loadDogs() {
     API.getDogs()
       .then((res) => setDogs(res.data))
       .catch((err) => console.log(err));
   }
 
-  //load all the dogs from database
+  //deletes selected dog from db based on id, then reloads dogs from db
+  function deleteDog(id) {
+    API.deleteDog(id)
+      .then((res) => loadDogs())
+      .catch((err) => console.log(err));
+  }
+
+  // Load all dogs and store them with setDogs
   useEffect(() => {
     loadDogs();
   }, []);
@@ -27,22 +33,14 @@ function KennelList() {
     <Col>
       {dogs.length ? (
         <Row id="mapRow">
-          <Alert show={showConfirm} variant="danger">
-            <Alert.Heading>
-              This Will Permanantly Delete This Dog From Your Kennel!
-            </Alert.Heading>
-            <p>Do You Wish To Proceed?</p>
-            <hr />
-            <Row className="d-flex justify-content-end">
-              <Button
-                onClick={() => setShowConfirm(false)}
-                variant="outline-danger"
-              >
-                Cancel
-              </Button>
-            </Row>
-          </Alert>
           {dogs.map((dog) => (
+            // <DogCard
+            //   key={dog._id}
+            //   id={dog._id}
+            //   name={dog.name}
+            //   image={dog.image}
+            // />
+
             <div key={dog._id} className="card-deck">
               <Col key={dog._id} mb="3">
                 <div className="card-box">
@@ -60,20 +58,25 @@ function KennelList() {
                         className="card-img-top"
                       />
                     </Link>
+
+                    <span
+                      id="delete-icon"
+                      title={"Delete " + dog.name + " From Kennel"}
+                      onClick={() => {
+                        if (
+                          window.confirm(
+                            "Are you sure you wish to delete this dog?"
+                          )
+                        )
+                          deleteDog(dog._id);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
+                    </span>
+
                     <Card.Body key={dog._id}>
                       <Card.Title className="dogName text-center" key={dog._id}>
                         {dog.name}
-                        {!showConfirm && (
-                          <span
-                            id="delete-icon"
-                            title="Delete From Kennel"
-                            onClick={() => setShowConfirm(true)}
-                          >
-                            <FontAwesomeIcon
-                              icon={faTrashAlt}
-                            ></FontAwesomeIcon>
-                          </span>
-                        )}
                       </Card.Title>
                     </Card.Body>
                   </Card>
