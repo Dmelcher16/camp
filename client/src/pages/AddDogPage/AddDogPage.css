@@ -15,18 +15,30 @@
   margin-left: 6em;
   margin-right: 6em;
   margin-bottom: 20em;
- 
 }
 
 .form-container {
-  margin-left: 6em;
-  margin-right: 6em;
-  background-color: white;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  /* background-color: #285a84; */
+}
+
+label.form-label {
+  color: white;
+}
+
+.new-dog-form {
+  background-color: #285a84;
+}
+
+.form-group {
+  background-color: #285a84;
 }
 
 h1 {
   text-align: center;
   padding-bottom: 15px;
+  color: white;
 }
 
 #submit {
@@ -36,4 +48,3 @@ h1 {
 #formRow {
   justify-content: center;
 }
-

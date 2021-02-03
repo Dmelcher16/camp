@@ -74,77 +74,80 @@ export default function AddDogPage() {
   }
 
   return (
-    <div className="FormPageImg">
-      <AppNav />
-      <Container fluid>
-        <h1>Add A Dog To Your Kennel</h1>
-        <Row id="formRow">
-          <Col md="6">
-            <Container className="form-container">
-              <form>
-                <Label>Name:</Label>
-                <Input
-                  onChange={handleInputChange}
-                  name="name"
-                  placeholder="Name (required)"
-                />
-                <Label>Age (months):</Label>
-                <Input
-                  onChange={handleInputChange}
-                  name="age"
-                  placeholder="Age (required)"
-                />
-                <Label>Breed:</Label>
-                <Select onChange={handleInputChange} name="breed" />
-                <Label>Owner's First Name:</Label>
-                <Input
-                  onChange={handleInputChange}
-                  name="ownerFirstName"
-                  placeholder="Owner's First Name (Required)"
-                />
-                <Label>Owner's Last Name:</Label>
-                <Input
-                  onChange={handleInputChange}
-                  name="ownerLastName"
-                  placeholder="Owner's Last Name (Required)"
-                />
-                <Label>Image:</Label>
-                <div className="form-group-inline">
+    <div className="HomePageImg">
+      <div className="overlay"></div>
+      <div className="content">
+        <AppNav />
+        <Container fluid>
+          <h1>Add A Dog To Your Kennel</h1>
+          <Row id="formRow">
+            <Col className="new-dog-form" md="6">
+              <Container className="form-container">
+                <form className="new-dog-form">
+                  <Label>Name:</Label>
                   <Input
-                    type="file"
-                    className="form-control-file"
-                    id="image"
-                    name="image"
-                    onChange={(e) => setImage(e.target.files[0])}
+                    onChange={handleInputChange}
+                    name="name"
+                    placeholder="Name (required)"
                   />
-                </div>
-                <div className="form-group-inline">
-                  <FormBtn
-                    className="form-btn"
-                    disabled={
-                      !(
-                        createDog.name &&
-                        createDog.age &&
-                        createDog.breed &&
-                        createDog.ownerFirstName &&
-                        createDog.ownerLastName
-                      )
-                    }
-                    onClick={addDog}
-                  >
-                    Submit
-                  </FormBtn>
-                  <Link to="/">
-                    <FormBtn className="form-btn danger" id="cancel-add-dog">
-                      Cancel
+                  <Label>Age (months):</Label>
+                  <Input
+                    onChange={handleInputChange}
+                    name="age"
+                    placeholder="Age (required)"
+                  />
+                  <Label>Breed:</Label>
+                  <Select onChange={handleInputChange} name="breed" />
+                  <Label>Owner's First Name:</Label>
+                  <Input
+                    onChange={handleInputChange}
+                    name="ownerFirstName"
+                    placeholder="Owner's First Name (Required)"
+                  />
+                  <Label>Owner's Last Name:</Label>
+                  <Input
+                    onChange={handleInputChange}
+                    name="ownerLastName"
+                    placeholder="Owner's Last Name (Required)"
+                  />
+                  <Label>Image:</Label>
+                  <div className="form-group-inline">
+                    <Input
+                      type="file"
+                      className="form-control-file"
+                      id="image"
+                      name="image"
+                      onChange={(e) => setImage(e.target.files[0])}
+                    />
+                  </div>
+                  <div className="form-group-inline">
+                    <FormBtn
+                      className="form-btn"
+                      disabled={
+                        !(
+                          createDog.name &&
+                          createDog.age &&
+                          createDog.breed &&
+                          createDog.ownerFirstName &&
+                          createDog.ownerLastName
+                        )
+                      }
+                      onClick={addDog}
+                    >
+                      Submit
                     </FormBtn>
-                  </Link>
-                </div>
-              </form>
-            </Container>
-          </Col>
-        </Row>
-      </Container>
+                    <Link to="/">
+                      <FormBtn className="form-btn danger" id="cancel-add-dog">
+                        Cancel
+                      </FormBtn>
+                    </Link>
+                  </div>
+                </form>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }
