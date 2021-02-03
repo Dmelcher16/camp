@@ -79,9 +79,9 @@ export default function AddDogPage() {
       <div className="content">
         <AppNav />
         <Container fluid>
-          <h1>Add A Dog To Your Kennel</h1>
           <Row id="formRow">
             <Col className="new-dog-form" md="6">
+              <h1 id="form-title">Add A Dog To Your Kennel</h1>
               <Container className="form-container">
                 <form className="new-dog-form">
                   <Label>Name:</Label>

@@ -29,15 +29,18 @@ label.form-label {
 
 .new-dog-form {
   background-color: #285a84;
+  border-radius: calc(0.25rem - 1px);
 }
 
 .form-group {
   background-color: #285a84;
 }
 
-h1 {
+#form-title {
   text-align: center;
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
+  margin-top: 15px;
+  margin-bottom: -20px;
   color: white;
 }
 
