@@ -28,19 +28,40 @@
   z-index: 1;
 }
 
-#welcome-h1 {
-  color: #285a84;
+#kennel-container {
+  background-color: #285a84;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* max-width: 70vw; */
+}
+
+#greeting-col {
+  padding-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#greeting {
+  color: white;
+  text-align: center;
   font-size: 4vw;
   margin-bottom: 0px;
 }
 
+#btn-row {
+  margin-bottom: 20px;
+}
+
 #add-dog-btn {
-  color: #285a84;
-  background-color: #85c872;
+  color: white;
+  background-color: #28a745;
+  border-color: #28a745;
 }
 
 #add-dog-btn:hover {
-  background-color: #4ca049;
+  background-color: #28a745;
+  border-color: #28a745;
+  font-weight: bold;
   transform: scale(1.05);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
@@ -52,4 +73,3 @@
 #mapRow {
   justify-content: center;
 }
-

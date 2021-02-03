@@ -8,6 +8,7 @@ import {
   Select,
   FormBtn,
 } from "../../components/CreateDogForm/CreateDogForm";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom";
 
@@ -109,7 +110,7 @@ export default function AddDogPage() {
                 />
                 <Label>Image:</Label>
                 <div className="form-group-inline">
-                  <input
+                  <Input
                     type="file"
                     className="form-control-file"
                     id="image"
@@ -117,20 +118,28 @@ export default function AddDogPage() {
                     onChange={(e) => setImage(e.target.files[0])}
                   />
                 </div>
-                <FormBtn
-                  disabled={
-                    !(
-                      createDog.name &&
-                      createDog.age &&
-                      createDog.breed &&
-                      createDog.ownerFirstName &&
-                      createDog.ownerLastName
-                    )
-                  }
-                  onClick={addDog}
-                >
-                  Add Dog
-                </FormBtn>
+                <div className="form-group-inline">
+                  <FormBtn
+                    className="form-btn"
+                    disabled={
+                      !(
+                        createDog.name &&
+                        createDog.age &&
+                        createDog.breed &&
+                        createDog.ownerFirstName &&
+                        createDog.ownerLastName
+                      )
+                    }
+                    onClick={addDog}
+                  >
+                    Submit
+                  </FormBtn>
+                  <Link to="/">
+                    <FormBtn className="form-btn danger" id="cancel-add-dog">
+                      Cancel
+                    </FormBtn>
+                  </Link>
+                </div>
               </form>
             </Container>
           </Col>

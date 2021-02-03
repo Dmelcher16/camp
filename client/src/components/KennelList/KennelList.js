@@ -34,20 +34,13 @@ function KennelList() {
       {dogs.length ? (
         <Row id="mapRow">
           {dogs.map((dog) => (
-            // <DogCard
-            //   key={dog._id}
-            //   id={dog._id}
-            //   name={dog.name}
-            //   image={dog.image}
-            // />
-
             <div key={dog._id} className="card-deck">
               <Col key={dog._id} mb="3">
                 <div className="card-box">
                   <Card
                     id="dog-card"
                     key={dog._id}
-                    style={{ width: "18rem", text: "center" }}
+                    style={{ width: "15rem", text: "center" }}
                   >
                     <Link id="img-link" to={"/dog/" + dog._id}>
                       <img
@@ -58,7 +51,6 @@ function KennelList() {
                         className="card-img-top"
                       />
                     </Link>
-
                     <span
                       id="delete-icon"
                       title={"Delete " + dog.name + " From Kennel"}
@@ -73,12 +65,16 @@ function KennelList() {
                     >
                       <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
                     </span>
-
-                    <Card.Body key={dog._id}>
-                      <Card.Title className="dogName text-center" key={dog._id}>
-                        {dog.name}
-                      </Card.Title>
-                    </Card.Body>
+                    <Link id="img-link" to={"/dog/" + dog._id}>
+                      <Card.Body className="kennel-card-body" key={dog._id}>
+                        <Card.Title
+                          className="dogName text-center"
+                          key={dog._id}
+                        >
+                          {dog.name}
+                        </Card.Title>
+                      </Card.Body>
+                    </Link>
                   </Card>
                 </div>
               </Col>

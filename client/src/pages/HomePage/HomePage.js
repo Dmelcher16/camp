@@ -27,23 +27,23 @@ function Homepage() {
       <div className="content">
         <AppNav />
         <Container>
-          <div className="card-container">
-            <Row>
-              <Col md>
-                <h1 id="welcome-h1">Welcome, {username}! </h1>
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-              <Link to="/form">
-                <Button id="add-dog-btn" >
-                  + Add New Dog
-                </Button>
-              </Link>
-            </Row>
-            <Row className="row justify-content-center">
-              <KennelList />
-            </Row>
-          </div>
+          <Row id="main-kennel-row" className="justify-content-center">
+            <div id="kennel-container" className="card-container card">
+              <Row>
+                <Col id="greeting-col" md>
+                  <h2 id="greeting">Welcome, {username}! </h2>
+                </Col>
+              </Row>
+              <Row id="btn-row" className="justify-content-center">
+                <Link to="/form">
+                  <Button id="add-dog-btn">+ Add New Dog</Button>
+                </Link>
+              </Row>
+              <Row className="row justify-content-center">
+                <KennelList />
+              </Row>
+            </div>
+          </Row>
         </Container>
       </div>
     </div>

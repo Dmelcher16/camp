@@ -19,7 +19,14 @@ export default {
   },
   //saves dog to database
   addDog: function (dogData) {
-    return axios.post("/api/dogs", dogData);
+    return axios({
+      url: "/api/dogs",
+      method: "POST",
+      data: dogData,
+      onUploadProgress(progress) {
+        console.log("upload progress:", progress);
+      },
+    });
   },
   getExercises: function () {
     return axios.get("/api/exercises");
@@ -36,4 +43,5 @@ export default {
   addExercise: function (exerciseData) {
     return axios.post("/api/exercises", exerciseData);
   },
+  onDownloadProgress: function (progress) {},
 };
