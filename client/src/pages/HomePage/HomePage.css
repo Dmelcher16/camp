@@ -30,13 +30,14 @@
 
 #kennel-container {
   background-color: #285a84;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   /* max-width: 70vw; */
 }
 
 #greeting-col {
   padding-top: 10px;
+  padding-bottom: 15px;
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -50,6 +51,7 @@
 
 #btn-row {
   margin-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 #add-dog-btn {

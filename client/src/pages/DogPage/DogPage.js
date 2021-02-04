@@ -145,11 +145,6 @@ function DogPage() {
       numPottyAccidents: "",
       numPottySuccesses: "",
     });
-    pottyForm.classList.add("d-none");
-    sitStayForm.classList.add("d-none");
-    leashTrainingForm.classList.add("d-none");
-    commandsForm.classList.add("d-none");
-    chewingForm.classList.add("d-none");
   }
 
   // function clearExerciseForm() {
@@ -206,9 +201,6 @@ function DogPage() {
               <Row className="justify-content-md-center">
                 <Col md>
                   <Card id="main-dog-card">
-                    <Card.Header>
-                      <h1 id="dog-detail-title">{dog.name}</h1>
-                    </Card.Header>
                     <Card.Body>
                       <Row className="justify-content-center">
                         <Col md="auto" className="info-col">
@@ -224,6 +216,7 @@ function DogPage() {
                         <Col className="info-col">
                           <div className="text-center align-self-center">
                             <ListGroup variant="flush" className="attributes">
+                              <ListGroup.Item>Name: {dog.name}</ListGroup.Item>
                               <ListGroup.Item>
                                 Age: {dog.age} mo(s)
                               </ListGroup.Item>
@@ -237,7 +230,6 @@ function DogPage() {
                                 Training Start Date: {dog.startDate}
                               </ListGroup.Item>
                             </ListGroup>
-                            {/* {show ? <ExerciseForm onSubmit={hideForm} /> : null} */}
                             {show ? (
                               <Col className="exercise-form">
                                 <Container
