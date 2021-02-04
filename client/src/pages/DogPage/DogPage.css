@@ -44,10 +44,15 @@
   color: #285a84;
   text-decoration: none;
 }
+
+#add-exercise-row {
+
+}
+
 #add-exercise-btn {
   color: #85c872;
   float: inherit;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 #add-exercise-btn:hover {
