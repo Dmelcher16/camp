@@ -4,6 +4,7 @@ img {
 
 #img-link {
   position: relative;
+  text-decoration: none;
 }
 
 .card-box {

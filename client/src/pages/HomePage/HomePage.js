@@ -36,7 +36,7 @@ function Homepage() {
               </Row>
               <Row id="btn-row" className="justify-content-center">
                 <Link to="/form">
-                  <Button id="add-dog-btn">+ Add New Dog</Button>
+                  <Button id="add-dog-btn" variant="outline-success">+ Add New Dog</Button>
                 </Link>
               </Row>
               <Row className="row justify-content-center">

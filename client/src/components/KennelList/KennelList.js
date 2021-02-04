@@ -57,7 +57,7 @@ function KennelList() {
                       onClick={() => {
                         if (
                           window.confirm(
-                            "Are you sure you wish to delete this dog?"
+                            "This will permanently delete all data associated with " + dog.name + " from your kennel.  Do you with to proceed?" 
                           )
                         )
                           deleteDog(dog._id);

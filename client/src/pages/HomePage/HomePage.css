@@ -55,15 +55,11 @@
 }
 
 #add-dog-btn {
-  color: white;
-  background-color: #28a745;
-  border-color: #28a745;
+  color: #85c872;
 }
 
 #add-dog-btn:hover {
-  background-color: #28a745;
-  border-color: #28a745;
-  font-weight: bold;
+  color: white;
   transform: scale(1.05);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
