@@ -32,7 +32,7 @@ function KennelList() {
   return (
     <Col>
       {dogs.length ? (
-        <Row id="mapRow">
+        <Row id="map-row" className="justify-content-center">
           {dogs.map((dog) => (
             <div key={dog._id} className="card-deck">
               <Col key={dog._id} mb="3">
@@ -40,7 +40,7 @@ function KennelList() {
                   <Card
                     id="dog-card"
                     key={dog._id}
-                    style={{ width: "15rem", text: "center" }}
+                    style={{ width: "16rem", text: "center" }}
                   >
                     <Link id="img-link" to={"/dog/" + dog._id}>
                       <img

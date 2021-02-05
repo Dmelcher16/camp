@@ -29,7 +29,7 @@ label.form-label {
 
 .new-dog-form {
   background-color: #285a84;
-  border-radius: calc(0.25rem - 1px);
+  border: none;
 }
 
 .form-group {

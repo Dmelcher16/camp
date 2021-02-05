@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import AppNav from "../../components/AppNav/AppNav.js";
 import KennelList from "../../components/KennelList/KennelList";
 import { Auth } from "aws-amplify";
@@ -29,18 +31,27 @@ function Homepage() {
         <Container>
           <Row id="main-kennel-row" className="justify-content-center">
             <div id="kennel-container" className="card-container card">
-              <Row>
+              <Row id="title-row" className="justify-content-center">
                 <Col id="greeting-col" md>
-                  <h2 id="greeting">Welcome, {username}! </h2>
+                  <h1 id="greeting">Your Kennel</h1>
                 </Col>
-              </Row>
-              <Row id="btn-row" className="justify-content-center">
-                <Link to="/form">
-                  <Button id="add-dog-btn" variant="outline-success">+ Add New Dog</Button>
-                </Link>
               </Row>
               <Row className="row justify-content-center">
                 <KennelList />
+              </Row>
+              <Row id="btn-row">
+                <Col>
+                  <Link to="/form">
+                    <span
+                      id="add-dog-icon"
+                      className="fa-stack fa-2x"
+                      title={"Add New Dog"}
+                    >
+                      <i className="fa fa-circle fa-stack-2x icon-background"></i>
+                      <i className="fa fa-plus fa-stack-1x"></i>
+                    </span>
+                  </Link>
+                </Col>
               </Row>
             </div>
           </Row>

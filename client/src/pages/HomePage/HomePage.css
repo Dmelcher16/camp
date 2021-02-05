@@ -1,5 +1,7 @@
-.row {
+div.row {
   margin-bottom: 1em;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .HomePageImg {
@@ -28,46 +30,75 @@
   z-index: 1;
 }
 
+#main-kennel-row {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 #kennel-container {
   background-color: #285a84;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-top: 50px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
   /* max-width: 70vw; */
 }
 
 #greeting-col {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 15px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 25%;
+  margin-left: 25%;
+  border-bottom: solid medium white;
+  border-bottom-left-radius: inherit;
+  display: inline-block;
 }
 
 #greeting {
   color: white;
   text-align: center;
-  font-size: 4vw;
+  /* font-size: 4vw; */
   margin-bottom: 0px;
 }
 
-#btn-row {
-  margin-bottom: 20px;
-  padding-bottom: 15px;
+#title-row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
-#add-dog-btn {
-  color: #85c872;
+#add-dog-icon {
+  float: right;
+  /* height: 20px;
+  width: 20px; */
+  /* margin-right: 50px;
+  margin-bottom: 30px; */
+
+  /* font-weight: bold; */
+  /* border-radius: 50%; */
+  position: relative;
+  /* left: 85vw;
+  bottom: 80vh; */
+  z-index: 2;
+  border-radius: 50%;
+  background-color: green;
 }
 
-#add-dog-btn:hover {
+.fa-plus {
+  /* z-index: 4; */
   color: white;
+  vertical-align: middle;
+  margin-left: 1px;
+  margin-top: 2px;
+}
+
+.icon-background {
+  color: green;
+}
+
+#add-dog-icon:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-container {
   margin-top: 8em;
-}
-
-#mapRow {
-  justify-content: center;
 }
