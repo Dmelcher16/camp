@@ -1,26 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 import { Container, Row, Col } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import KennelList from "../../components/KennelList/KennelList";
-import { Auth } from "aws-amplify";
-import useIsMountedRef from "../../components/IsMountedRefHook/index";
 
 function Homepage() {
-  const [username, setUsername] = useState("");
-  const isMountedRef = useIsMountedRef();
-
-  useEffect(() => {
-    Auth.currentUserInfo()
-      .then((res) => {
-        if (isMountedRef.current) {
-          setUsername(res.attributes.email);
-        }
-      })
-      .catch((err) => console.log("error: ", err));
-  }, [isMountedRef]);
-
   return (
     <div className="HomePageImg">
       <div className="overlay"></div>
@@ -29,8 +14,8 @@ function Homepage() {
         <Container>
           <Row id="main-kennel-row" className="justify-content-center">
             <div id="kennel-container" className="card-container card">
-            <Row id="btn-row">
-                <Col>
+              <Row id="btn-row">
+                <Col id="plus-btn-col">
                   <Link to="/form">
                     <span
                       id="add-dog-icon"
@@ -51,7 +36,6 @@ function Homepage() {
               <Row className="row justify-content-center">
                 <KennelList />
               </Row>
-              
             </div>
           </Row>
         </Container>

@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./AppNav.css";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
+import { Auth } from "aws-amplify";
+import useIsMountedRef from "../../components/IsMountedRefHook/index";
 import AuthStateApp from "../Login/authstate";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg"
+import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg";
 
 export default function AppNav() {
+  const [username, setUsername] = useState("");
+  const isMountedRef = useIsMountedRef();
+
+  useEffect(() => {
+    Auth.currentUserInfo()
+      .then((res) => {
+        if (isMountedRef.current) {
+          setUsername(res.attributes.email);
+        }
+      })
+      .catch((err) => console.log("error: ", err));
+  }, [isMountedRef]);
+
+  console.log(username);
+
   return (
     <div id="app-nav">
       <Navbar variant="light" bg="dander" expand="sm">
@@ -27,6 +44,9 @@ export default function AppNav() {
               <Link id="link-name" to="/">
                 Home
               </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <p id="status">Logged In: {username}</p>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link>

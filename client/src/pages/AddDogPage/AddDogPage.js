@@ -30,6 +30,9 @@ export default function AddDogPage() {
         ownerLastName: createDog.ownerLastName,
         image: url,
         exercises: [],
+        onUploadProgress(progress) {
+          console.log("upload progress:", progress);
+        },
       })
         .then(alert(`${createDog.name} has been added to your kennel!`))
         .then(history.push("/home"))

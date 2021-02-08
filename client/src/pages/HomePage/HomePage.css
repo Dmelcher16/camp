@@ -58,6 +58,10 @@ div.row {
   margin-bottom: 0px;
 }
 
+#plus-btn-col {
+  margin-bottom: -80px;
+}
+
 #title-row {
   margin-left: 0px;
   margin-right: 0px;
@@ -65,7 +69,6 @@ div.row {
 }
 
 .fa-plus {
-  /* z-index: 4; */
   color: white;
   vertical-align: middle;
   margin-left: 1px;

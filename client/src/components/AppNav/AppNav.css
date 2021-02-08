@@ -16,9 +16,16 @@ a {
   background-color: rgba(0, 0, 255, 0);
 }
 
+#status {
+  color: white;
+  font-size: 25px;
+  padding-right: 20px;
+  margin-top: 14px;
+}
+
 #link-name {
   color: white;
   font-size: 25px;
   padding-right: 20px;
-  vertical-align: middle;
+  margin-top: 14px;
 }
