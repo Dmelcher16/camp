@@ -44,8 +44,21 @@ label.form-label {
   color: white;
 }
 
+#image.custom-file-input {
+  z-index: 9;
+  cursor: pointer;
+}
+
+.form-btn {
+  margin-top: 16px;
+}
+
 #submit {
   float: center;
+}
+
+#cancel-add-dog {
+  margin-left: 10px;
 }
 
 #formRow {

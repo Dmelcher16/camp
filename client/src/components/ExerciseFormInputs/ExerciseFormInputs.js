@@ -41,3 +41,11 @@ export function FormBtn(props) {
     </Button>
   );
 }
+
+export function CustomInput(props) {
+  return (
+    <div className="form-group-inline custom-file">
+      <Input {...props} type="file" className="custom-file-input" />
+    </div>
+  );
+}

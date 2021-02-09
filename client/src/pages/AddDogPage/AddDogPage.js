@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./AddDogPage.css";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container, Button, Form } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import {
   Label,
   Input,
   Select,
-  FormBtn,
 } from "../../components/CreateDogForm/CreateDogForm";
 import { Link } from "react-router-dom";
+import bsCustomFileInput from "bs-custom-file-input";
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom";
 
@@ -18,9 +18,14 @@ export default function AddDogPage() {
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
   const history = useHistory();
+  // const fileInput = useRef(createDog.image);
 
   //setting hook to push data to db and redirect to homepage upon successful addition
   useEffect(() => {
+    // if (fileInput.current !== createDog.image) {
+    bsCustomFileInput.init();
+    //   fileInput.current = createDog.image;
+    // }
     if (url) {
       API.addDog({
         name: createDog.name,
@@ -114,17 +119,21 @@ export default function AddDogPage() {
                     placeholder="Owner's Last Name (Required)"
                   />
                   <Label>Image:</Label>
-                  <div className="form-group-inline">
-                    <Input
-                      type="file"
-                      className="form-control-file"
+                  <div className="form-group-inline custom-file ">
+                    <Form.File
+                      className="custom-file-label"
                       id="image"
                       name="image"
+                      label="Choose File..."
                       onChange={(e) => setImage(e.target.files[0])}
+                      custom
                     />
+                    {/* <label className="custom-file-label" htmlFor="image">
+                      Choose File...
+                    </label> */}
                   </div>
                   <div className="form-group-inline">
-                    <FormBtn
+                    <Button
                       className="form-btn"
                       disabled={
                         !(
@@ -138,11 +147,15 @@ export default function AddDogPage() {
                       onClick={addDog}
                     >
                       Submit
-                    </FormBtn>
+                    </Button>
                     <Link to="/">
-                      <FormBtn className="form-btn danger" id="cancel-add-dog">
+                      <Button
+                        className="form-btn"
+                        variant="danger"
+                        id="cancel-add-dog"
+                      >
                         Cancel
-                      </FormBtn>
+                      </Button>
                     </Link>
                   </div>
                 </form>

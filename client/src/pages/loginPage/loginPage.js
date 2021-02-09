@@ -6,7 +6,7 @@ import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg";
 function LoginPage() {
   return (
     <div>
-      <style type="text/css">{`#app-nav {display: none}`}</style>
+      {/* <style type="text/css">{`#app-nav {display: none}`}</style> */}
       <div className="loginPageImg">
         <img className="logo" src={BlueCampK9Logo} alt="logo" fluid="true" />
         <Login />
