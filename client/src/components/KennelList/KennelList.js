@@ -27,7 +27,7 @@ function KennelList() {
   // Load all dogs and store them with setDogs
   useEffect(() => {
     loadDogs();
-  }, []);
+  }, [dogs]);
 
   return (
     <Col>
@@ -44,6 +44,7 @@ function KennelList() {
                   >
                     <Link id="img-link" to={"/dog/" + dog._id}>
                       <img
+                        id={dog.name}
                         key={dog._id}
                         alt={dog.name}
                         variant="top"
@@ -57,7 +58,9 @@ function KennelList() {
                       onClick={() => {
                         if (
                           window.confirm(
-                            "This will permanently delete all data associated with " + dog.name + " from your kennel.  Do you with to proceed?" 
+                            "This will permanently delete all data associated with " +
+                              dog.name +
+                              " from your kennel.  Do you with to proceed?"
                           )
                         )
                           deleteDog(dog._id);

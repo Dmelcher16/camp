@@ -22,8 +22,6 @@ export default function AppNav() {
       .catch((err) => console.log("error: ", err));
   }, [isMountedRef]);
 
-  console.log(username);
-
   return (
     <div id="app-nav">
       <Navbar variant="light" expand="sm">

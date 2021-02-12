@@ -30,16 +30,12 @@ div.row {
   z-index: 1;
 }
 
-#main-kennel-row {
-  margin-left: 10px;
-  margin-right: 10px;
+#kennel-col {
+  padding: 0px;
 }
 
 #kennel-container {
   background-color: #285a84;
-  margin-top: 50px;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 #greeting-col {

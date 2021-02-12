@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
+import CreateDogForm from "../../components/CreateDogForm/CreateDogForm";
 import KennelList from "../../components/KennelList/KennelList";
 
 function Homepage() {
@@ -11,9 +12,11 @@ function Homepage() {
       <div className="overlay"></div>
       <div className="content">
         <AppNav />
-        <Container>
-          <Row id="main-kennel-row" className="justify-content-center">
-            <div id="kennel-container" className="card-container card">
+
+        <Row id="main-kennel-row" className="justify-content-center">
+          <CreateDogForm />
+          <Col id="kennel-col">
+            <div id="kennel-container">
               <Row id="btn-row">
                 <Col id="plus-btn-col">
                   <Link to="/form">
@@ -37,8 +40,8 @@ function Homepage() {
                 <KennelList />
               </Row>
             </div>
-          </Row>
-        </Container>
+          </Col>
+        </Row>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./AddDogPage.css";
-import { Col, Row, Container, Button, Form } from "react-bootstrap";
+import { Col, Row, Container, Button, Form, Spinner } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import {
   Label,
   Input,
   Select,
-} from "../../components/CreateDogForm/CreateDogForm";
+} from "../../components/CreateDogFormInputs/CreateDogFormInputs";
 import { Link } from "react-router-dom";
 import bsCustomFileInput from "bs-custom-file-input";
 import API from "../../utils/API";
@@ -18,32 +18,29 @@ export default function AddDogPage() {
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
   const history = useHistory();
-  // const fileInput = useRef(createDog.image);
+  const [loading, setLoading] = useState(false);
 
   //setting hook to push data to db and redirect to homepage upon successful addition
   useEffect(() => {
-    // if (fileInput.current !== createDog.image) {
     bsCustomFileInput.init();
-    //   fileInput.current = createDog.image;
-    // }
-    if (url) {
-      API.addDog({
-        name: createDog.name,
-        age: createDog.age,
-        breed: createDog.breed,
-        ownerFirstName: createDog.ownerFirstName,
-        ownerLastName: createDog.ownerLastName,
-        image: url,
-        exercises: [],
-        onUploadProgress(progress) {
-          console.log("upload progress:", progress);
-        },
-      })
-        .then(alert(`${createDog.name} has been added to your kennel!`))
-        .then(history.push("/home"))
 
-        .catch((err) => console.log(err));
-    }
+    // if (url) {
+    //   API.addDog({
+    //     name: createDog.name,
+    //     age: createDog.age,
+    //     breed: createDog.breed,
+    //     ownerFirstName: createDog.ownerFirstName,
+    //     ownerLastName: createDog.ownerLastName,
+    //     image: url,
+    //     exercises: [],
+    //   })
+    //     .then(() => setLoading(false))
+    //     .then(alert(`${createDog.name} has been added to your kennel!`))
+    //     .then(history.push("/home"))
+
+    //     .catch((err) => console.log(err));
+    // }
+    console.log(loading);
     // eslint-disable-next-line
   }, [
     createDog.age,
@@ -53,6 +50,7 @@ export default function AddDogPage() {
     createDog.ownerLastName,
     createDog.image,
     url,
+    loading,
   ]);
 
   //uploads image to Cloudinary image database and returns URL for uploaded image.  Sets image URL to specific dog being added.
@@ -70,10 +68,45 @@ export default function AddDogPage() {
       .then((data) => {
         setUrl(data.url);
       })
+      .then(setLoading(true))
       .catch((err) => {
         console.log(err);
       });
+
+    if (url) {
+      API.addDog({
+        name: createDog.name,
+        age: createDog.age,
+        breed: createDog.breed,
+        ownerFirstName: createDog.ownerFirstName,
+        ownerLastName: createDog.ownerLastName,
+        image: url,
+        exercises: [],
+      })
+        .then(() => setLoading(false))
+        .then(alert(`${createDog.name} has been added to your kennel!`))
+        .then(history.push("/home"))
+
+        .catch((err) => console.log(err));
+    }
   };
+
+  // if (url) {
+  //   API.addDog({
+  //     name: createDog.name,
+  //     age: createDog.age,
+  //     breed: createDog.breed,
+  //     ownerFirstName: createDog.ownerFirstName,
+  //     ownerLastName: createDog.ownerLastName,
+  //     image: url,
+  //     exercises: [],
+  //   })
+  //     .then(() => setLoading(false))
+  //     .then(alert(`${createDog.name} has been added to your kennel!`))
+  //     .then(history.push("/home"))
+
+  //     .catch((err) => console.log(err));
+  // }
 
   function handleInputChange(event) {
     event.preventDefault();
@@ -119,7 +152,7 @@ export default function AddDogPage() {
                     placeholder="Owner's Last Name (Required)"
                   />
                   <Label>Image:</Label>
-                  <div className="form-group-inline custom-file ">
+                  <div className="form-group-inline custom-file">
                     <Form.File
                       className="custom-file-label"
                       id="image"
@@ -135,13 +168,15 @@ export default function AddDogPage() {
                   <div className="form-group-inline">
                     <Button
                       className="form-btn"
+                      variant="success"
                       disabled={
                         !(
                           createDog.name &&
                           createDog.age &&
                           createDog.breed &&
                           createDog.ownerFirstName &&
-                          createDog.ownerLastName
+                          createDog.ownerLastName &&
+                          image
                         )
                       }
                       onClick={addDog}
@@ -159,6 +194,11 @@ export default function AddDogPage() {
                     </Link>
                   </div>
                 </form>
+                {loading ? (
+                  <Spinner animation="border" role="status" variant="success">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                ) : null}
               </Container>
             </Col>
           </Row>
