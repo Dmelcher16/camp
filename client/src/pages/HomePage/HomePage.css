@@ -1,18 +1,21 @@
+.main {
+  background-color: #9ebfdb;
+}
+
 div.row {
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   margin-left: 0px;
   margin-right: 0px;
 }
 
-.HomePageImg {
-  background-image: url("../../images/DoghouseImage.jpg");
-  background-size: auto;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  padding-bottom: 80px;
-  position: relative;
+div.main-homepage {
+  background-color: #9ebfdb;
+  height: calc(100% - 48px);
+  margin-left: 400px !important;
+}
+
+#main-kennel-row {
+  height: 100%;
 }
 
 .overlay {
@@ -30,19 +33,19 @@ div.row {
   z-index: 1;
 }
 
-#kennel-col {
-  padding: 0px;
+.new-dog-form {
+  height: 100%;
 }
 
-#kennel-container {
-  background-color: #285a84;
+#kennel-col {
+  background-color: #9ebfdb;
 }
 
 #greeting-col {
   padding-top: 15px;
   padding-bottom: 10px;
-  margin-right: 25%;
-  margin-left: 25%;
+  margin-right: 50%;
+  margin-left: 50%;
   border-bottom: solid medium white;
   border-bottom-left-radius: inherit;
   display: inline-block;
@@ -52,6 +55,7 @@ div.row {
   color: white;
   text-align: center;
   margin-bottom: 0px;
+  font-family: "Raleway", sans-serif;
 }
 
 #plus-btn-col {

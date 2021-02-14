@@ -2,6 +2,7 @@ import React from "react";
 import "./AboutPage.css";
 import { Container, Row, Col, CardDeck, Card } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
+import Footer from "../../components/Footer/Footer";
 
 export default function AboutPage() {
   return (
@@ -103,6 +104,7 @@ export default function AboutPage() {
           </Card>
         </CardDeck>
       </div>
+      <Footer />
     </div>
   );
 }

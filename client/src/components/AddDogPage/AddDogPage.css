@@ -14,7 +14,7 @@
 .form {
   margin-left: 6em;
   margin-right: 6em;
-  margin-bottom: 20em;
+  /* margin-bottom: 20em; */
 }
 
 .form-container {
@@ -28,17 +28,12 @@ label.form-label {
 }
 
 .new-dog-form {
-  background-color: #285a84;
+  /* background-color: #285a84; */
   border: none;
-}
-
-.form-group {
-  background-color: #285a84;
 }
 
 #form-title {
   text-align: center;
-  /* padding-bottom: 15px; */
   margin-top: 15px;
   margin-bottom: -20px;
   color: white;

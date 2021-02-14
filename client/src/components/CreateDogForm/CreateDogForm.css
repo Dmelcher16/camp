@@ -1,0 +1,53 @@
+.sidebar {
+  width: 400px;
+  /* height: 100%; */
+  position: fixed;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+
+label.form-label {
+  color: white;
+}
+
+.new-dog-form {
+  background-color: #285a84;
+  border: none;
+}
+
+.form-group {
+  background-color: #285a84;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#form-title {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  /* padding-bottom: 15px; */
+  margin-top: 15px;
+  margin-bottom: -20px;
+  color: white;
+}
+
+#image.custom-file-input {
+  z-index: 9;
+  cursor: pointer;
+}
+
+.form-btn {
+  margin-top: 16px;
+}
+
+#submit {
+  float: center;
+}
+
+#cancel-add-dog {
+  margin-left: 10px;
+}
+
+#formRow {
+  justify-content: center;
+}

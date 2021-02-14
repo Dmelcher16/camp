@@ -6,6 +6,7 @@ import ExerciseContext from "../../utils/exerciseContext";
 import { Link, useParams } from "react-router-dom";
 import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
+import Footer from "../../components/Footer/Footer";
 import {
   Label,
   Input,
@@ -189,7 +190,7 @@ function DogPage() {
   return (
     <DogContext.Provider value={{ dog }}>
       <ExerciseContext.Provider value={{ exercises }}>
-        <div className="HomePageImg">
+        <div className="FormPageImg">
           <div className="overlay"></div>
           <div className="content">
             <AppNav />
@@ -397,6 +398,7 @@ function DogPage() {
               </Row>
             </Container>
           </div>
+          <Footer />
         </div>
       </ExerciseContext.Provider>
     </DogContext.Provider>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Button, Form, Spinner } from "react-bootstrap";
+import { Container, Button, Form, Spinner } from "react-bootstrap";
 import {
   Label,
   Input,
@@ -7,6 +7,8 @@ import {
 } from "../../components/CreateDogFormInputs/CreateDogFormInputs";
 import bsCustomFileInput from "bs-custom-file-input";
 import API from "../../utils/API";
+import "./CreateDogForm.css";
+import "../AddDogPage/AddDogPage.css"
 
 export default function CreateDogForm() {
   //setting initial state
@@ -73,8 +75,8 @@ export default function CreateDogForm() {
   }
 
   return (
-    <Col className="new-dog-form" md="3">
-      <h1 id="form-title">Add A Dog</h1>
+    <div className="sidebar new-dog-form" md="3">
+      <h1 id="form-title">ADD A DOG</h1>
       <Container className="form-container">
         <form className="new-dog-form">
           <Label>Name:</Label>
@@ -139,14 +141,14 @@ export default function CreateDogForm() {
             {/* <Button className="form-btn" variant="danger" id="cancel-add-dog">
               Cancel
             </Button> */}
+            {loading ? (
+              <Spinner animation="border" role="status" variant="success">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
+            ) : null}
           </div>
         </form>
-        {loading ? (
-          <Spinner animation="border" role="status" variant="success">
-            <span className="sr-only">Loading...</span>
-          </Spinner>
-        ) : null}
       </Container>
-    </Col>
+    </div>
   );
 }

@@ -23,41 +23,39 @@ export default function AppNav() {
   }, [isMountedRef]);
 
   return (
-    <div id="app-nav">
-      <Navbar variant="light" expand="sm">
-        <Navbar.Brand className="navbar-brand mb-1 h1">
-          <Link to="/">
-            <img src={BlueCampK9Logo} alt="Brand Logo"></img>
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
-            <Nav.Item>
-              <Link className="link-name" to="/about">
-                About
-              </Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Link className="link-name" to="/">
-                Home
-              </Link>
-            </Nav.Item>
-          </Nav>
-          <Nav className="ml-auto">
-            <Nav.Item>
-              <span id="status" className="navbar-text">
-                Logged In: {username}
-              </span>
-            </Nav.Item>
-            <div className="navbar-text">
-              <AmplifySignOut>
-                <AuthStateApp />
-              </AmplifySignOut>
-            </div>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+    <Navbar variant="light" expand="sm">
+      <Navbar.Brand className="navbar-brand mb-1 h1">
+        <Link to="/">
+          <img src={BlueCampK9Logo} alt="Brand Logo"></img>
+        </Link>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav>
+          <Nav.Item>
+            <Link className="link-name" to="/about">
+              ABOUT
+            </Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Link className="link-name" to="/">
+              HOME
+            </Link>
+          </Nav.Item>
+        </Nav>
+        <Nav className="ml-auto">
+          <Nav.Item>
+            <span id="status" className="navbar-text">
+              LOGGED IN: {username}
+            </span>
+          </Nav.Item>
+          <div className="navbar-text">
+            <AmplifySignOut>
+              <AuthStateApp />
+            </AmplifySignOut>
+          </div>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }

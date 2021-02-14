@@ -13,7 +13,7 @@ a {
 }
 
 .navbar {
-  background-color: rgba(0, 0, 255, 0);
+  background-color: #9EBFDB;
 }
 
 #status {
@@ -25,6 +25,7 @@ a {
 }
 
 .link-name {
+  font-family: 'Raleway', sans-serif;
   color: white;
   font-size: 25px;
   padding-right: 20px;
