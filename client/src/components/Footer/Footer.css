@@ -1,7 +1,11 @@
 .footer {
+  position: absolute;
+  width: 100%;
   background-color: #285a84;
   text-align: center;
   padding: 12px 20px;
+  z-index: 20;
+  border-top: medium solid #85c872;
 }
 
 .footer span {

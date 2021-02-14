@@ -5,7 +5,8 @@
   overflow: auto;
   margin: 0;
   padding: 0px 10px;
-  background-color: #285a84;
+  background-color: #9ebfdb;
+  border-right: medium solid white  !important;
 }
 
 label.form-label {
@@ -16,16 +17,16 @@ label.form-label {
   padding-left: 0px !important;
   padding-right: 0px !important;
 
-  background-color: #285a84;
+  background-color: #9ebfdb;
 }
 
 .new-dog-form {
-  background-color: #285a84;
+  background-color: #9ebfdb;
   border: none;
 }
 
 .form-group-inline {
-  background-color: #285a84;
+  background-color: #9ebfdb;
 }
 
 #form-title {
@@ -34,6 +35,9 @@ label.form-label {
   margin-top: 20px;
   margin-bottom: -20px;
   color: white;
+  text-decoration: underline;
+  text-underline-offset: .5em;
+  
 }
 
 #image.custom-file-input {
@@ -55,4 +59,12 @@ label.form-label {
 
 #formRow {
   justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
 }

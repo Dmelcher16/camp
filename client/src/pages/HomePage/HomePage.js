@@ -15,7 +15,7 @@ function Homepage() {
       <div className="main-homepage">
         <Row id="main-kennel-row" className="justify-content-center">
           <Col id="kennel-col">
-            <Row id="btn-row">
+            {/* <Row id="btn-row">
               <Col id="plus-btn-col">
                 <Link to="/form">
                   <span
@@ -28,7 +28,7 @@ function Homepage() {
                   </span>
                 </Link>
               </Col>
-            </Row>
+            </Row> */}
             <Row id="title-row" className="justify-content-center">
               <Col id="greeting-col" md>
                 <h1 id="greeting">KENNEL</h1>

@@ -9,7 +9,7 @@ div.row {
 }
 
 div.main-homepage {
-  background-color: #9ebfdb;
+  background-color: #285a84;
   height: calc(100% - 48px);
   margin-left: 400px !important;
 }
@@ -38,7 +38,7 @@ div.main-homepage {
 }
 
 #kennel-col {
-  background-color: #9ebfdb;
+  background-color: #285a84;
 }
 
 #greeting-col {
@@ -95,4 +95,10 @@ div.main-homepage {
 
 .card-container {
   margin-top: 8em;
+}
+
+@media screen and (max-width: 700px) {
+  div.main-homepage {
+    margin-left: 0;
+  }
 }

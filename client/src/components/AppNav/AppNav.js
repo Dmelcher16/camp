@@ -23,7 +23,7 @@ export default function AppNav() {
   }, [isMountedRef]);
 
   return (
-    <Navbar variant="light" expand="sm">
+    <Navbar sticky="top" variant="light" expand="sm">
       <Navbar.Brand className="navbar-brand mb-1 h1">
         <Link to="/">
           <img src={BlueCampK9Logo} alt="Brand Logo"></img>
