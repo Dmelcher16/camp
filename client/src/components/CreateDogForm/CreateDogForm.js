@@ -8,7 +8,6 @@ import {
 import bsCustomFileInput from "bs-custom-file-input";
 import API from "../../utils/API";
 import "./CreateDogForm.css";
-import "../AddDogPage/AddDogPage.css"
 
 export default function CreateDogForm() {
   //setting initial state
@@ -76,36 +75,48 @@ export default function CreateDogForm() {
 
   return (
     <div className="sidebar new-dog-form" md="3">
-      <h1 id="form-title">ADD A DOG</h1>
+      <h3 id="form-title">ADD A DOG</h3>
       <Container className="form-container">
         <form className="new-dog-form">
-          <Label>Name:</Label>
-          <Input
-            onChange={handleInputChange}
-            name="name"
-            placeholder="Name (required)"
-          />
-          <Label>Age (months):</Label>
-          <Input
-            onChange={handleInputChange}
-            name="age"
-            placeholder="Age (required)"
-          />
-          <Label>Breed:</Label>
-          <Select onChange={handleInputChange} name="breed" />
-          <Label>Owner's First Name:</Label>
-          <Input
-            onChange={handleInputChange}
-            name="ownerFirstName"
-            placeholder="Owner's First Name (Required)"
-          />
-          <Label>Owner's Last Name:</Label>
-          <Input
-            onChange={handleInputChange}
-            name="ownerLastName"
-            placeholder="Owner's Last Name (Required)"
-          />
-          <Label>Image:</Label>
+          <div className="form-group-inline">
+            <Label>Name:</Label>
+            <Input
+              onChange={handleInputChange}
+              name="name"
+              placeholder="Name (required)"
+            />
+          </div>
+          <div className="form-group-inline">
+            <Label>Age (months):</Label>
+            <Input
+              onChange={handleInputChange}
+              name="age"
+              placeholder="Age (required)"
+            />
+          </div>
+          <div className="form-group-inline">
+            <Label>Breed:</Label>
+            <Select onChange={handleInputChange} name="breed" />
+          </div>
+          <div className="form-group-inline">
+            <Label>Owner's First Name:</Label>
+            <Input
+              onChange={handleInputChange}
+              name="ownerFirstName"
+              placeholder="Owner's First Name (Required)"
+            />
+          </div>
+          <div className="form-group-inline">
+            <Label>Owner's Last Name:</Label>
+            <Input
+              onChange={handleInputChange}
+              name="ownerLastName"
+              placeholder="Owner's Last Name (Required)"
+            />
+          </div>
+          <div className="form-group-inline">
+            <Label>Image:</Label>
+          </div>
           <div className="form-group-inline custom-file">
             <Form.File
               className="custom-file-label"
