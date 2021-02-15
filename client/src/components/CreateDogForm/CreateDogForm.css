@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0px 10px;
   background-color: #9ebfdb;
-  border-right: medium solid white  !important;
+  border-right: medium solid white !important;
 }
 
 label.form-label {
@@ -16,7 +16,6 @@ label.form-label {
 .form-container {
   padding-left: 0px !important;
   padding-right: 0px !important;
-
   background-color: #9ebfdb;
 }
 
@@ -29,15 +28,22 @@ label.form-label {
   background-color: #9ebfdb;
 }
 
+#form-title-col {
+  padding-top: 10px;
+  padding-bottom: 25px;
+  margin-right: 25%;
+  margin-left: 25%;
+  border-bottom: solid medium white;
+  border-bottom-left-radius: inherit;
+  display: inline-block;
+}
+
 #form-title {
   text-align: center;
   font-family: "Raleway", sans-serif;
   margin-top: 20px;
   margin-bottom: -20px;
   color: white;
-  text-decoration: underline;
-  text-underline-offset: .5em;
-  
 }
 
 #image.custom-file-input {
@@ -64,7 +70,8 @@ label.form-label {
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
-    height: auto;
+    height: 100vh;
     position: relative;
+    border-right: none !important;
   }
 }

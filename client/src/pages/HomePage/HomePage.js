@@ -31,7 +31,7 @@ function Homepage() {
             </Row> */}
             <Row id="title-row" className="justify-content-center">
               <Col id="greeting-col" md>
-                <h1 id="greeting">KENNEL</h1>
+                <h3 id="greeting">KENNEL</h3>
               </Col>
             </Row>
             <Row className="row justify-content-center">
