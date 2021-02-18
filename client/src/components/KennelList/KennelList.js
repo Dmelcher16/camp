@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import { Col, Row, Card } from "react-bootstrap";
 import API from "../../utils/API";
+import KennelContext from "../../utils/kennelContext";
+// import useIsMountedRef from "../../components/IsMountedRefHook/index";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
@@ -8,14 +10,16 @@ import "./KennelList.css";
 
 function KennelList() {
   //set initial state
-  const [dogs, setDogs] = useState([]);
+  // const [dogs, setDogs] = useState([]);
+  const { dogs, loadDogs } = useContext(KennelContext);
+  // const isMountedRef = useIsMountedRef();
 
   // Loads all dogs and sets them to dogs
-  function loadDogs() {
-    API.getDogs()
-      .then((res) => setDogs(res.data))
-      .catch((err) => console.log(err));
-  }
+  // function loadDogs() {
+  //   API.getDogs()
+  //     .then((res) => setDogs(res.data))
+  //     .catch((err) => console.log(err));
+  // }
 
   //deletes selected dog from db based on id, then reloads dogs from db
   function deleteDog(id) {
@@ -27,7 +31,7 @@ function KennelList() {
   // Load all dogs and store them with setDogs
   useEffect(() => {
     loadDogs();
-  }, [dogs]);
+  }, []);
 
   return (
     <Col>

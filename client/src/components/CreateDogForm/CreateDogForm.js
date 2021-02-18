@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Row, Col, Container, Button, Form, Spinner } from "react-bootstrap";
 import {
   Label,
@@ -8,13 +8,15 @@ import {
 import bsCustomFileInput from "bs-custom-file-input";
 import API from "../../utils/API";
 import "./CreateDogForm.css";
+import KennelContext from "../../utils/kennelContext";
 
 export default function CreateDogForm() {
   //setting initial state
   const [createDog, setCreateDog] = useState({});
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
-  const [loading, setLoading] = useState(false);
+  const { loadDogs } = useContext(KennelContext);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     bsCustomFileInput.init();
@@ -29,25 +31,35 @@ export default function CreateDogForm() {
         image: url,
         exercises: [],
       })
-        .then(() => setLoading(false))
         .then(alert(`${createDog.name} has been added to your kennel!`))
-
+        .then(
+          setCreateDog({
+            name: "",
+            age: "",
+            breed: "",
+            ownerFirstName: "",
+            ownerLastName: "",
+            image: "",
+          })
+        )
+        .then(loadDogs())
+        // .then(setLoading(false))
         .catch((err) => console.log(err));
     }
-    console.log(loading);
+    console.log(createDog.name);
     // eslint-disable-next-line
   }, [
-    createDog.age,
-    createDog.breed,
-    createDog.name,
-    createDog.ownerFirstName,
-    createDog.ownerLastName,
-    createDog.image,
+    // createDog.age,
+    // createDog.breed,
+    // createDog.name,
+    // createDog.ownerFirstName,
+    // createDog.ownerLastName,
+    // createDog.image,
     url,
-    loading,
+    // loading,
   ]);
 
-  const addDog = (e) => {
+  const submitDog = (e) => {
     e.preventDefault();
     const data = new FormData();
     data.append("file", image);
@@ -61,11 +73,12 @@ export default function CreateDogForm() {
       .then((data) => {
         setUrl(data.url);
       })
-      .then(setLoading(true))
+      // .then(setLoading(true))
       .catch((err) => {
         console.log(err);
       });
   };
+  console.log(url);
 
   function handleInputChange(event) {
     event.preventDefault();
@@ -129,9 +142,6 @@ export default function CreateDogForm() {
                 onChange={(e) => setImage(e.target.files[0])}
                 custom
               />
-              {/* <label className="custom-file-label" htmlFor="image">
-                      Choose File...
-                    </label> */}
             </div>
             <div className="form-group-inline">
               <Button
@@ -147,7 +157,7 @@ export default function CreateDogForm() {
                     image
                   )
                 }
-                onClick={addDog}
+                onClick={submitDog}
               >
                 Submit
               </Button>
@@ -155,11 +165,11 @@ export default function CreateDogForm() {
               {/* <Button className="form-btn" variant="danger" id="cancel-add-dog">
               Cancel
             </Button> */}
-              {loading ? (
+              {/* {loading ? (
                 <Spinner animation="border" role="status" variant="success">
                   <span className="sr-only">Loading...</span>
                 </Spinner>
-              ) : null}
+              ) : null} */}
             </div>
           </form>
         </Container>

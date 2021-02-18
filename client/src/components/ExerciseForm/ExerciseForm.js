@@ -11,7 +11,7 @@ import {
 import API from "../../utils/API";
 import "./ExerciseForm.css";
 
-function ExerciseForm(props) {
+function ExerciseForm() {
   const [updateDog, setUpdateDog] = useState({});
 
   const [createExercise, setCreateExercise] = useState({

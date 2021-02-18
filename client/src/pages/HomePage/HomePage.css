@@ -9,9 +9,10 @@ div.row {
 }
 
 div.main-homepage {
-  background-color: #285a84;
+  background-color: #9ebfdb;
   height: calc(100% - 48px);
   margin-left: 400px !important;
+  border-top: thin solid #9ebfdb;
 }
 
 #main-kennel-row {
@@ -38,21 +39,21 @@ div.main-homepage {
 }
 
 #kennel-col {
-  background-color: #285a84;
+  background-color: #9ebfdb;
 }
 
 #greeting-col {
-  padding-top: 25px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 7px;
   margin-right: 50%;
   margin-left: 50%;
-  border-bottom: solid medium white;
+  border-bottom: solid thin #285a84;
   border-bottom-left-radius: inherit;
   display: inline-block;
 }
 
 #greeting {
-  color: white;
+  color: #285a84;
   text-align: center;
   margin-bottom: 0px;
   font-family: "Raleway", sans-serif;

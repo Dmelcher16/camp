@@ -6,26 +6,35 @@
   margin: 0;
   padding: 0px 10px;
   background-color: #9ebfdb;
-  border-right: medium solid white !important;
+  border-right: thin solid #9ebfdb !important;
+  border-top: thin solid #9ebfdb !important;
 }
 
 label.form-label {
-  color: white;
+  color: #285a84;
 }
 
 .form-container {
   padding-left: 0px !important;
   padding-right: 0px !important;
+  margin-top: 20px !important;
   background-color: #9ebfdb;
 }
 
 .new-dog-form {
-  background-color: #9ebfdb;
+  background-color: white;
   border: none;
 }
 
 .form-group-inline {
-  background-color: #9ebfdb;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.form-label {
+  margin-bottom: 0px;
+  /* margin-top: 5px */
+
 }
 
 #form-title-col {
@@ -33,7 +42,7 @@ label.form-label {
   padding-bottom: 25px;
   margin-right: 25%;
   margin-left: 25%;
-  border-bottom: solid medium white;
+  border-bottom: solid thin #285a84;
   border-bottom-left-radius: inherit;
   display: inline-block;
 }
@@ -43,7 +52,7 @@ label.form-label {
   font-family: "Raleway", sans-serif;
   margin-top: 20px;
   margin-bottom: -20px;
-  color: white;
+  color: #285a84;
 }
 
 #image.custom-file-input {
