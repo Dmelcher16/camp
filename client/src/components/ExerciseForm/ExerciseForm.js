@@ -48,7 +48,6 @@ function ExerciseForm() {
     const { name, value } = event.target;
     setCreateExercise({ ...createExercise, [name]: value });
   }
-  console.log(createExercise);
 
   function handleExerciseChange(event) {
     const exerciseType = event.target.value;

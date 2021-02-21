@@ -12,11 +12,18 @@ import KennelContext from "../../utils/kennelContext";
 
 export default function CreateDogForm() {
   //setting initial state
-  const [createDog, setCreateDog] = useState({});
+  const [createDog, setCreateDog] = useState({
+    name: "",
+    age: "",
+    breed: "",
+    ownerFirstName: "",
+    ownerLastName: "",
+    image: "",
+  });
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
   const { loadDogs } = useContext(KennelContext);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     bsCustomFileInput.init();
@@ -29,10 +36,9 @@ export default function CreateDogForm() {
         ownerFirstName: createDog.ownerFirstName,
         ownerLastName: createDog.ownerLastName,
         image: url,
-        exercises: [],
       })
         .then(alert(`${createDog.name} has been added to your kennel!`))
-        .then(
+        .then(() =>
           setCreateDog({
             name: "",
             age: "",
@@ -42,25 +48,20 @@ export default function CreateDogForm() {
             image: "",
           })
         )
-        .then(loadDogs())
+        .then(() => setImage(""))
+        .then(() => setLoading(false))
+        .then(() => loadDogs())
         // .then(setLoading(false))
         .catch((err) => console.log(err));
-    }
-    console.log(createDog.name);
-    // eslint-disable-next-line
-  }, [
-    // createDog.age,
-    // createDog.breed,
-    // createDog.name,
-    // createDog.ownerFirstName,
-    // createDog.ownerLastName,
-    // createDog.image,
-    url,
-    // loading,
-  ]);
 
-  const submitDog = (e) => {
-    e.preventDefault();
+      setLoading(false);
+    }
+
+    // eslint-disable-next-line
+  }, [url]);
+
+  function submitDog(event) {
+    event.preventDefault();
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "campk9");
@@ -73,12 +74,12 @@ export default function CreateDogForm() {
       .then((data) => {
         setUrl(data.url);
       })
-      // .then(setLoading(true))
+      .then(setLoading(true))
       .catch((err) => {
         console.log(err);
       });
-  };
-  console.log(url);
+  }
+  console.log(createDog);
 
   function handleInputChange(event) {
     event.preventDefault();
@@ -100,6 +101,7 @@ export default function CreateDogForm() {
                 onChange={handleInputChange}
                 name="name"
                 placeholder="Name (required)"
+                value={createDog.name}
               />
             </div>
             <div className="form-group-inline">
@@ -108,11 +110,16 @@ export default function CreateDogForm() {
                 onChange={handleInputChange}
                 name="age"
                 placeholder="Age (required)"
+                value={createDog.age}
               />
             </div>
             <div className="form-group-inline">
               <Label>Breed:</Label>
-              <Select onChange={handleInputChange} name="breed" />
+              <Select
+                onChange={handleInputChange}
+                name="breed"
+                value={createDog.breed}
+              />
             </div>
             <div className="form-group-inline">
               <Label>Owner's First Name:</Label>
@@ -120,6 +127,7 @@ export default function CreateDogForm() {
                 onChange={handleInputChange}
                 name="ownerFirstName"
                 placeholder="Owner's First Name (Required)"
+                value={createDog.ownerFirstName}
               />
             </div>
             <div className="form-group-inline">
@@ -128,6 +136,7 @@ export default function CreateDogForm() {
                 onChange={handleInputChange}
                 name="ownerLastName"
                 placeholder="Owner's Last Name (Required)"
+                value={createDog.ownerLastName}
               />
             </div>
             <div className="form-group-inline">
@@ -138,6 +147,7 @@ export default function CreateDogForm() {
                 className="custom-file-label"
                 id="image"
                 name="image"
+                value={createDog.image}
                 label="Choose File..."
                 onChange={(e) => setImage(e.target.files[0])}
                 custom
@@ -162,14 +172,11 @@ export default function CreateDogForm() {
                 Submit
               </Button>
 
-              {/* <Button className="form-btn" variant="danger" id="cancel-add-dog">
-              Cancel
-            </Button> */}
-              {/* {loading ? (
+              {loading ? (
                 <Spinner animation="border" role="status" variant="success">
                   <span className="sr-only">Loading...</span>
                 </Spinner>
-              ) : null} */}
+              ) : null}
             </div>
           </form>
         </Container>

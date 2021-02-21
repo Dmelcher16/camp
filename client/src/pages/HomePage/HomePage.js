@@ -32,20 +32,6 @@ function Homepage() {
         <div className="main-homepage">
           <Row id="main-kennel-row" className="justify-content-center">
             <Col id="kennel-col">
-              {/* <Row id="btn-row">
-              <Col id="plus-btn-col">
-                <Link to="/form">
-                  <span
-                    id="add-dog-icon"
-                    className="fa-stack fa-2x"
-                    title={"Add New Dog"}
-                  >
-                    <i className="fa fa-circle fa-stack-1x icon-background"></i>
-                    <i className="fa fa-plus fa-stack-1x"></i>
-                  </span>
-                </Link>
-              </Col>
-            </Row> */}
               <Row id="title-row" className="justify-content-center">
                 <Col id="greeting-col" md>
                   <h3 id="greeting">KENNEL</h3>

@@ -21,7 +21,7 @@ export function Input(props) {
 export function Select(props) {
   return (
     <div className="form-group">
-      <select className="form-control" defaultValue="Select..." {...props}>
+      <select className="form-control" default="Select..." {...props}>
         <option>Select...</option>
         <Breeds />
       </select>
