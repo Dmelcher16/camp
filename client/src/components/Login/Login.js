@@ -8,8 +8,8 @@ const Login = () => {
     <AmplifyAuthenticator usernameAlias="email">
       <AmplifySignIn slot="sign-in" usernameAlias="email" />
       
+      {/* TODO: add user's name option to sign up form */}
       {/* <AmplifySignUp
-      // TODO: add username option to sign up 
         slot="sign-up"
         usernameAlias="email"
         formFields={[
