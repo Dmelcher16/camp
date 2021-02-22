@@ -2,15 +2,36 @@
   background-image: url("../../images/DogWithBall.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  max-height: calc(100vh - 48px);
+  /* max-height: calc(100vh - 48px); */
+  min-height: calc(100vh - 48px);
+  min-width: 100vw;
+}
+
+.login-col {
+  margin-top: 75px;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
 }
 
 .logo {
-  margin: 2em;
+  position: relative;
+  /* top: 155px; */
+  z-index: 1;
 }
 
-:root {
-  --amplify-primary-color: #285a84;
-  --amplify-primary-tint: #3475ab;
-  --amplify-primary-shade: #9ebfdb;
+div.card-body.login-card-body {
+  padding-top: 0%;
+}
+
+@media screen and (max-width: 671px) {
+  div.login-col {
+    /* margin: auto; */
+    padding: 0%;
+  }
+
+  div.login-card-body {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
 }
