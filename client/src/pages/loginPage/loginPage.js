@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import WelcomeNav from "../../components/WelcomeNav/WelcomeNav";
 import Login from "../../components/Login/Login";
 import BlueCampK9Logo from "../../images/BlueCampK9Logo.jpeg";
 import "./loginPage.css";
@@ -10,6 +11,7 @@ function LoginPage() {
   return (
     <div>
       <div className="loginPageImg">
+        <WelcomeNav />
         <Container>
           <Row id="login-row">
             <Col

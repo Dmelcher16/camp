@@ -1,0 +1,10 @@
+#welcome-nav {
+  background-color: rgba(158, 191, 219, 0.8);
+  padding: 0px 16px;
+}
+
+#welcome-h5 {
+  font-family: "Roboto", sans-serif;
+  color: #285a84;
+  margin-bottom: 0px;
+}
