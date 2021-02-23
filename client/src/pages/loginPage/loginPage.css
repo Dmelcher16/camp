@@ -7,18 +7,18 @@
   min-width: 100vw;
 }
 
+#login-row {
+  padding-bottom: 20px;
+}
+
 .login-col {
-  margin-top: 75px;
+  margin-top: 15%;
   justify-content: center;
   align-items: center;
   width: max-content;
 }
 
-.logo {
-  position: relative;
-  /* top: 155px; */
-  z-index: 1;
-}
+
 
 div.card-body.login-card-body {
   padding-top: 0%;

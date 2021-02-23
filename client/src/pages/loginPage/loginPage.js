@@ -11,7 +11,7 @@ function LoginPage() {
     <div>
       <div className="loginPageImg">
         <Container>
-          <Row>
+          <Row id="login-row">
             <Col
               className="login-col text-center"
               lg={{ span: 6, offset: 6 }}

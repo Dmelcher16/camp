@@ -38,6 +38,11 @@ img {
   /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); */
 }
 
+#dog-card {
+  border: 0px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
 .card-img-top {
   object-fit: fill;
   width: 100%;
