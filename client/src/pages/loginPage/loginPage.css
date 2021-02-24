@@ -2,7 +2,6 @@
   background-image: url("../../images/DogWithBall.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /* max-height: calc(100vh - 48px); */
   min-height: calc(100vh - 48px);
   min-width: 100vw;
 }
@@ -11,14 +10,19 @@
   padding-bottom: 20px;
 }
 
+@media screen and (min-width: 1500px) {
+  #login-container {
+    margin-left: 25%;
+    margin-right: 0;
+  }
+}
+
 .login-col {
-  margin-top: 15%;
+  margin-top: 10%;
   justify-content: center;
   align-items: center;
   width: max-content;
 }
-
-
 
 div.card-body.login-card-body {
   padding-top: 0%;
