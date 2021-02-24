@@ -6,6 +6,21 @@
   min-width: 100vw;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(132, 82, 40, 0.3);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
 #login-row {
   padding-bottom: 20px;
 }
@@ -22,6 +37,22 @@
   justify-content: center;
   align-items: center;
   width: max-content;
+}
+
+#login-page-h1 {
+  font-family: "Assistant", sans-serif;
+  color: white;
+  margin-top: 20px;
+}
+
+#login-btn {
+  margin: 20px 0px 0px 15px;
+  /* background-color: #285a84; */
+}
+
+#learn-more-btn {
+  margin: 20px 15px 0px 0px;
+  /* background-color: #285a84; */
 }
 
 div.card-body.login-card-body {

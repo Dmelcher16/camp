@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import WelcomeNav from "../../components/WelcomeNav/WelcomeNav";
 import Login from "../../components/Login/Login";
-import BlueCampK9Logo from "../../images/BlueCampK9_76.jpeg";
+import Logo76x76 from "../../images/BlueCampK9_76.jpeg";
+import Logo198x198 from "../../images/BlueCampK9_198.jpeg";
 import "./loginPage.css";
 import LoginContext from "../../utils/loginContext";
 import Footer from "../../components/Footer/Footer";
@@ -11,17 +11,12 @@ function LoginPage() {
   //set initial state
   const [showLogin, setShowLogin] = useState(false);
 
-  // useEffect(() => {
-  //   setShowLogin(false);
-  // }, [showLogin]);
-
   return (
     <LoginContext.Provider value={{ setShowLogin }}>
       <div>
         <div className="loginPageImg">
           <div className="overlay"></div>
           <div className="content">
-            <WelcomeNav />
             <Container id="login-container">
               <Row id="login-row">
                 <Col
@@ -30,25 +25,16 @@ function LoginPage() {
                   sm={{ span: 12 }}
                 >
                   {!showLogin ? (
-                    <div>
-                      <h2>Welcome to Camp K-9!</h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer posuere erat a ante.Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Integer posuere erat a
-                        ante.Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Integer posuere erat a ante.Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Integer posuere erat
-                        a ante.Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Integer posuere erat a ante.
-                      </p>
+                    <div id="brand-statement">
+                      <img src={Logo198x198} alt="Brand Logo"></img>
+                      <h1 id="login-page-h1">Showcase Your Training.</h1>
                       <div className="inline">
-                        <Button id="to-kennel" variant="outline-success">
+                        <Button id="learn-more-btn" variant="outline-light">
                           Learn More
                         </Button>
                         <Button
-                          id="to-kennel"
-                          variant="outline-success"
+                          id="login-btn"
+                          variant="outline-light"
                           onClick={() => setShowLogin(true)}
                         >
                           Login/Sign-Up
@@ -60,7 +46,7 @@ function LoginPage() {
                       <div className="card-image-top">
                         <img
                           className="logo"
-                          src={BlueCampK9Logo}
+                          src={Logo76x76}
                           alt="Brand Logo"
                         ></img>
                       </div>
@@ -71,11 +57,6 @@ function LoginPage() {
                   )}
                 </Col>
               </Row>
-              {/* <Row>
-            <Col className="login-col text-center" lg={{ span: 4, offset: 8 }}>
-              <Login />
-            </Col>
-          </Row> */}
             </Container>
           </div>
         </div>
