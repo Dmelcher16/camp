@@ -89,7 +89,7 @@ div.card-body.login-card-body {
 }
 
 /* CSS for 2nd section (Learn More) */
-#about-us {
+#about-container {
   padding-bottom: 40px;
 }
 
@@ -105,8 +105,8 @@ div.card-body.login-card-body {
   padding: 40px 0px;
 }
 
-.image-col {
-  padding-bottom: 20px;
+.about-col {
+  padding: 40px 15px;
 }
 
 .img-card {
