@@ -26,8 +26,8 @@ function LoginPage() {
                 >
                   {!showLogin ? (
                     <div id="brand-statement">
-                      <img src={Logo198x198} alt="Brand Logo"></img>
-                      <h1 id="login-page-h1">Showcase Your Training.</h1>
+                      <img className="brand-logo" src={Logo198x198} alt="Brand Logo"></img>
+                      <h1 id="login-page-h1">Helping You Showcase Your Pup-Training Progress.</h1>
                       <div className="inline">
                         <Button id="learn-more-btn" variant="outline-light">
                           Learn More

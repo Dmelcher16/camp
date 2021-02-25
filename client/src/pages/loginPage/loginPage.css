@@ -12,7 +12,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(132, 82, 40, 0.3);
+  background-color: rgba(132, 82, 40, 0.4);
   z-index: 0;
 }
 
@@ -39,6 +39,10 @@
   width: max-content;
 }
 
+.brand-logo {
+  border-radius: 5px;
+}
+
 #login-page-h1 {
   font-family: "Assistant", sans-serif;
   color: white;
@@ -47,12 +51,24 @@
 
 #login-btn {
   margin: 20px 0px 0px 15px;
-  /* background-color: #285a84; */
 }
 
 #learn-more-btn {
   margin: 20px 15px 0px 0px;
-  /* background-color: #285a84; */
+}
+
+#login-btn:hover {
+  background-color: #285a84;
+  color: white;
+  border-color: #285a84;
+  transform: scale(1.05);
+}
+
+#learn-more-btn:hover {
+  background-color: #285a84;
+  color: white;
+  border-color: #285a84;
+  transform: scale(1.05);
 }
 
 div.card-body.login-card-body {
