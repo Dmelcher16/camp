@@ -21,6 +21,36 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "BlueCampK9_60.jpeg",
+      "type": "image/jpeg",
+      "sizes": "60x60"
+    },
+    {
+      "src": "BlueCampK9_76.jpeg",
+      "type": "image/jpeg",
+      "sizes": "76x76"
+    },
+    {
+      "src": "BlueCampK9_100.jpeg",
+      "type": "image/jpeg",
+      "sizes": "100x100"
+    },
+    {
+      "src": "BlueCampK9_128.jpeg",
+      "type": "image/jpeg",
+      "sizes": "128x128"
+    },
+    {
+      "src": "BlueCampK9_152.jpeg",
+      "type": "image/jpeg",
+      "sizes": "152x152"
+    },
+    {
+      "src": "BlueCampK9_198.jpeg",
+      "type": "image/jpeg",
+      "sizes": "198x198"
     }
   ],
   "start_url": ".",
