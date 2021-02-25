@@ -1,8 +1,9 @@
+/* CSS for first section of landing page */
 .loginPageImg {
   background-image: url("../../images/DogWithBall.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 48px);
+  min-height: 100vh;
   min-width: 100vw;
 }
 
@@ -33,7 +34,7 @@
 }
 
 .login-col {
-  margin-top: 10%;
+  margin-top: 15%;
   justify-content: center;
   align-items: center;
   width: max-content;
@@ -85,4 +86,38 @@ div.card-body.login-card-body {
     padding-top: 0;
     padding-bottom: 10px;
   }
+}
+
+/* CSS for 2nd section (Learn More) */
+#about-us {
+  padding-bottom: 40px;
+}
+
+.blue-div {
+  border-top: 10px solid #285a84;
+  background-color: #9ebfdb;
+  padding: 40px 0px;
+}
+
+.white-div {
+  border-top: 10px solid #285a84;
+  background-color: white;
+  padding: 40px 0px;
+}
+
+.image-col {
+  padding-bottom: 20px;
+}
+
+.img-card {
+  border: 0px !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.img-left {
+  float: left;
+}
+
+.img-right {
+  float: right;
 }

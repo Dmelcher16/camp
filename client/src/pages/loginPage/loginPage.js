@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import Login from "../../components/Login/Login";
 import Logo76x76 from "../../images/BlueCampK9_76.jpeg";
 import Logo198x198 from "../../images/BlueCampK9_198.jpeg";
+import PupHighFive from "../../images/tamu_obedience.jpg";
 import "./loginPage.css";
 import LoginContext from "../../utils/loginContext";
 import Footer from "../../components/Footer/Footer";
@@ -14,7 +15,7 @@ function LoginPage() {
   return (
     <LoginContext.Provider value={{ setShowLogin }}>
       <div>
-        <div className="loginPageImg">
+        <section className="loginPageImg">
           <div className="overlay"></div>
           <div className="content">
             <Container id="login-container">
@@ -26,8 +27,14 @@ function LoginPage() {
                 >
                   {!showLogin ? (
                     <div id="brand-statement">
-                      <img className="brand-logo" src={Logo198x198} alt="Brand Logo"></img>
-                      <h1 id="login-page-h1">Helping You Showcase Your Pup-Training Progress.</h1>
+                      <img
+                        className="brand-logo"
+                        src={Logo198x198}
+                        alt="Brand Logo"
+                      ></img>
+                      <h1 id="login-page-h1">
+                        Helping You Showcase Your Pup-Training Progress.
+                      </h1>
                       <div className="inline">
                         <Button id="learn-more-btn" variant="outline-light">
                           Learn More
@@ -59,7 +66,87 @@ function LoginPage() {
               </Row>
             </Container>
           </div>
-        </div>
+        </section>
+        <section id="about-us">
+          <div className="blue-div">
+            <Container id="about-container" fluid>
+              <Row>
+                <Col md="auto" className="image-col">
+                  <Card className="img-card">
+                    <img
+                      fluid="true"
+                      className="img-left"
+                      id="pup-high-five"
+                      src={PupHighFive}
+                      alt="Pup and Trainer High Five"
+                    ></img>
+                  </Card>
+                </Col>
+                <Col className="text-center">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Sequi iusto, sint ullam exercitationem error tempore
+                    perferendis facilis illum vel dignissimos minima commodi ut
+                    distinctio labore illo consequuntur deleniti odio qui!
+                  </p>
+                  <p>
+                    Nihil rerum mollitia atque suscipit facilis similique,
+                    ducimus officia, ratione obcaecati voluptate laborum sit
+                    maxime delectus? Dolore veritatis debitis neque reiciendis
+                    maiores adipisci cumque. Quisquam aspernatur adipisci illum
+                    officiis nam?
+                  </p>
+                  <p>
+                    Nobis delectus nesciunt, at blanditiis sit quos impedit.
+                    Dolores, nesciunt, doloremque nihil laborum soluta,
+                    dignissimos earum odio aut aliquam nam omnis nisi.
+                    Architecto est, animi necessitatibus perferendis suscipit
+                    maiores natus!
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          <div className="white-div">
+            <Container id="about-container" fluid>
+              <Row>
+                <Col className="text-center">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Sequi iusto, sint ullam exercitationem error tempore
+                    perferendis facilis illum vel dignissimos minima commodi ut
+                    distinctio labore illo consequuntur deleniti odio qui!
+                  </p>
+                  <p>
+                    Nihil rerum mollitia atque suscipit facilis similique,
+                    ducimus officia, ratione obcaecati voluptate laborum sit
+                    maxime delectus? Dolore veritatis debitis neque reiciendis
+                    maiores adipisci cumque. Quisquam aspernatur adipisci illum
+                    officiis nam?
+                  </p>
+                  <p>
+                    Nobis delectus nesciunt, at blanditiis sit quos impedit.
+                    Dolores, nesciunt, doloremque nihil laborum soluta,
+                    dignissimos earum odio aut aliquam nam omnis nisi.
+                    Architecto est, animi necessitatibus perferendis suscipit
+                    maiores natus!
+                  </p>
+                </Col>
+                <Col md="auto" className="image-col">
+                  <Card className="img-card">
+                    <img
+                      fluid="true"
+                      className="img-right"
+                      id="pup-high-five"
+                      src={PupHighFive}
+                      alt="Pup and Trainer High Five"
+                    ></img>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </section>
         <Footer />
       </div>
     </LoginContext.Provider>

@@ -3,10 +3,6 @@
   margin-right: 0px;
 }
 
-/* img {
-  cursor: pointer;
-} */
-
 #img-link {
   position: relative;
   text-decoration: none;
@@ -35,7 +31,6 @@
 
 #delete-icon:hover {
   transform: translate(68%, -25%) scale(1.5);
-  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); */
 }
 
 #dog-card {
