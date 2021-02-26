@@ -1,13 +1,20 @@
 import React, { useState } from "react";
+//imported package components
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import Login from "../../components/Login/Login";
 import { Link } from "react-scroll";
+//imported project components
+import Login from "../../components/Login/Login";
+import LoginContext from "../../utils/loginContext";
+import Footer from "../../components/Footer/Footer";
+//imported images
 import Logo76x76 from "../../images/BlueCampK9_76.jpeg";
 import Logo198x198 from "../../images/BlueCampK9_198.jpeg";
 import PupHighFive from "../../images/tamu_obedience.jpg";
+import TrainerAndDogs from "../../images/trainer-and-dogs.jpg";
+import PottyTraining from "../../images/potty-training.jpg";
+import ExampleChart from "../../images/example-chart.png";
+//CSS file
 import "./loginPage.css";
-import LoginContext from "../../utils/loginContext";
-import Footer from "../../components/Footer/Footer";
 
 function LoginPage() {
   //set initial state
@@ -39,7 +46,6 @@ function LoginPage() {
                       <div className="inline">
                         <Link
                           to="about-us"
-                          spy={true}
                           smooth={true}
                           // offset={10}
                           duration={700}
@@ -79,38 +85,30 @@ function LoginPage() {
         <section id="about-us">
           <div className="blue-div">
             <Container id="about-container" fluid>
-              <Row>
+              <Row className="align-items-center">
                 <Col md="auto" className="about-col">
                   <Card className="img-card">
                     <img
                       fluid="true"
                       className="img-left"
                       id="pup-high-five"
-                      src={PupHighFive}
+                      src={TrainerAndDogs}
                       alt="Pup and Trainer High Five"
                     ></img>
                   </Card>
                 </Col>
-                <Col className="text-center about-col">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Sequi iusto, sint ullam exercitationem error tempore
-                    perferendis facilis illum vel dignissimos minima commodi ut
-                    distinctio labore illo consequuntur deleniti odio qui!
+                <Col className="about-col">
+                  <h1 className="about-h1">Created for Trainers.</h1>
+                  <p className="h4">
+                    At Camp K-9 we believe good dogs are happy dogs, and happy
+                    dogs make happy owners.
                   </p>
-                  <p>
-                    Nihil rerum mollitia atque suscipit facilis similique,
-                    ducimus officia, ratione obcaecati voluptate laborum sit
-                    maxime delectus? Dolore veritatis debitis neque reiciendis
-                    maiores adipisci cumque. Quisquam aspernatur adipisci illum
-                    officiis nam?
-                  </p>
-                  <p>
-                    Nobis delectus nesciunt, at blanditiis sit quos impedit.
-                    Dolores, nesciunt, doloremque nihil laborum soluta,
-                    dignissimos earum odio aut aliquam nam omnis nisi.
-                    Architecto est, animi necessitatibus perferendis suscipit
-                    maiores natus!
+                  <br />
+                  <p className="h4">
+                    {" "}
+                    Our application allows trainers to create and maintain data
+                    of the progress they are making with each dog under their
+                    care, and provide up-to-date information to their clients.
                   </p>
                 </Col>
               </Row>
@@ -118,37 +116,23 @@ function LoginPage() {
           </div>
           <div className="white-div">
             <Container id="about-container" fluid>
-              <Row>
-                <Col className="text-center about-col">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Sequi iusto, sint ullam exercitationem error tempore
-                    perferendis facilis illum vel dignissimos minima commodi ut
-                    distinctio labore illo consequuntur deleniti odio qui!
-                  </p>
-                  <p>
-                    Nihil rerum mollitia atque suscipit facilis similique,
-                    ducimus officia, ratione obcaecati voluptate laborum sit
-                    maxime delectus? Dolore veritatis debitis neque reiciendis
-                    maiores adipisci cumque. Quisquam aspernatur adipisci illum
-                    officiis nam?
-                  </p>
-                  <p>
-                    Nobis delectus nesciunt, at blanditiis sit quos impedit.
-                    Dolores, nesciunt, doloremque nihil laborum soluta,
-                    dignissimos earum odio aut aliquam nam omnis nisi.
-                    Architecto est, animi necessitatibus perferendis suscipit
-                    maiores natus!
+              <Row className="align-items-center blue-row">
+                <Col className="about-col text-left order-2 order-md-1">
+                  <h1 className="about-h1">Multiple Training Disciplines.</h1>
+                  <p className="h4">
+                    Track each pup's progress in areas of focus including
+                    chewing/biting, potty training, general commands, leash
+                    training, and sit/stay commands.
                   </p>
                 </Col>
-                <Col md="auto" className="about-col">
+                <Col md="auto" className="about-col order-1 order-md-2">
                   <Card className="img-card">
                     <img
                       fluid="true"
                       className="img-right"
                       id="pup-high-five"
-                      src={PupHighFive}
-                      alt="Pup and Trainer High Five"
+                      src={PottyTraining}
+                      alt="Potty Training Accident"
                     ></img>
                   </Card>
                 </Col>
@@ -157,39 +141,58 @@ function LoginPage() {
           </div>
           <div className="blue-div">
             <Container id="about-container" fluid>
-              <Row>
+              <Row className="align-items-center">
                 <Col md="auto" className="about-col">
                   <Card className="img-card">
                     <img
                       fluid="true"
-                      className="img-left"
+                      className="img-left "
                       id="pup-high-five"
-                      src={PupHighFive}
+                      src={ExampleChart}
                       alt="Pup and Trainer High Five"
                     ></img>
                   </Card>
                 </Col>
-                <Col className="text-center about-col">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Sequi iusto, sint ullam exercitationem error tempore
-                    perferendis facilis illum vel dignissimos minima commodi ut
-                    distinctio labore illo consequuntur deleniti odio qui!
+                <Col className="about-col">
+                  <h1 className="about-h1">Measurable Results.</h1>
+                  <p className="h4">
+                    Your training data is displayed in coherent graphs so you
+                    can easily visualize where progress is being made, and where
+                    there are opportunites for improvement.
                   </p>
-                  <p>
-                    Nihil rerum mollitia atque suscipit facilis similique,
-                    ducimus officia, ratione obcaecati voluptate laborum sit
-                    maxime delectus? Dolore veritatis debitis neque reiciendis
-                    maiores adipisci cumque. Quisquam aspernatur adipisci illum
-                    officiis nam?
+                  <br />
+                  <p className="h4">
+                    Graphs are updated and displayed immediately upon entry of
+                    data.
                   </p>
-                  <p>
-                    Nobis delectus nesciunt, at blanditiis sit quos impedit.
-                    Dolores, nesciunt, doloremque nihil laborum soluta,
-                    dignissimos earum odio aut aliquam nam omnis nisi.
-                    Architecto est, animi necessitatibus perferendis suscipit
-                    maiores natus!
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          <div className="white-div">
+            <Container id="about-container" fluid>
+              <Row className="align-items-center blue-row">
+                <Col className="about-col text-left order-2 order-md-1">
+                  <h1 className="about-h1">Committed to Your Success.</h1>
+                  <p className="h4">
+                    At Camp K-9 we are constantly seeking ways to improve our
+                    product to ensure your continued success as a trainer.
                   </p>
+                  <br />
+                  <p className="h4">
+                    Contact us today with any questions or suggestions!
+                  </p>
+                </Col>
+                <Col md="auto" className="about-col order-1 order-md-2">
+                  <Card className="img-card">
+                    <img
+                      fluid="true"
+                      className="img-right"
+                      id="pup-high-five"
+                      src={PupHighFive}
+                      alt="Potty Training Accident"
+                    ></img>
+                  </Card>
                 </Col>
               </Row>
             </Container>

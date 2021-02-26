@@ -89,35 +89,38 @@ div.card-body.login-card-body {
 }
 
 /* CSS for 2nd section (Learn More) */
-#about-container {
-  padding-bottom: 40px;
+@media screen and (max-width: 671px) {
+  #about-container {
+    padding-bottom: 40px;
+  }
 }
 
 .blue-div {
   border-top: 10px solid #285a84;
-  background-color: #9ebfdb;
+  background-color: #bfdbf3;
   padding: 40px 0px;
+  color: #285a84;
 }
 
 .white-div {
   border-top: 10px solid #285a84;
-  background-color: white;
+  background-color: whitesmoke;
   padding: 40px 0px;
+  color: #285a84;
 }
 
 .about-col {
-  padding: 40px 15px;
+  padding: 40px 50px !important;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  /* font-weight: 900 !important; */
+}
+
+.about-h1 {
+  margin-bottom: 15px;
 }
 
 .img-card {
   border: 0px !important;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.img-left {
-  float: left;
-}
-
-.img-right {
-  float: right;
 }
