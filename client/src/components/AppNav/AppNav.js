@@ -25,20 +25,15 @@ export default function AppNav() {
   return (
     <Navbar sticky="top" variant="light" expand="sm">
       <Navbar.Brand className="navbar-brand mb-1 h1">
-        <Link to="/">
+        <Link to="/home">
           <img src={BlueCampK9Logo} alt="Brand Logo"></img>
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          {/* <Nav.Item>
-            <Link className="link-name" to="/about">
-              ABOUT
-            </Link>
-          </Nav.Item> */}
           <Nav.Item>
-            <Link className="link-name" to="/">
+            <Link className="link-name" to="/home">
               HOME
             </Link>
           </Nav.Item>

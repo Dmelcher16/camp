@@ -386,7 +386,7 @@ function DogPage() {
                       </Row>
                     </Card.Body>
                     <Card.Footer>
-                      <Link id="link-font" to="/">
+                      <Link id="link-font" to="/home">
                         <Button id="to-kennel" variant="outline-success">
                           ← Back to Your Kennel
                         </Button>
