@@ -101,11 +101,11 @@ div.main-homepage {
 @media screen and (max-width: 700px) {
   div.main-homepage {
     margin-left: 0px !important;
+    height: auto;
   }
 
   .footer {
     position: fixed;
-    bottom: 0;
     z-index: 11;
   }
 
