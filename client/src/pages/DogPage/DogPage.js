@@ -190,10 +190,9 @@ function DogPage() {
   return (
     <DogContext.Provider value={{ dog }}>
       <ExerciseContext.Provider value={{ exercises }}>
-        <div className="FormPageImg">
-          <div className="overlay"></div>
-          <div className="content">
-            <AppNav />
+        <div>
+          <AppNav />
+          <div className="background-div">
             <Container>
               <Row className="justify-content-md-center">
                 <Col md>

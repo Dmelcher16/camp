@@ -32,11 +32,11 @@ export default function AppNav() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <Nav.Item>
+          {/* <Nav.Item>
             <Link className="link-name" to="/about">
               ABOUT
             </Link>
-          </Nav.Item>
+          </Nav.Item> */}
           <Nav.Item>
             <Link className="link-name" to="/">
               HOME

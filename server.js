@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 8080;
 
 //requiring morgan to use as dev tool
 const logger = require("morgan");
+app.use(logger("dev"));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +19,6 @@ app.use(cors());
 
 // Add routes, both API and view
 app.use(routes);
-app.use(logger("dev"));
 
 //Connect to Mongo Database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campK9", {

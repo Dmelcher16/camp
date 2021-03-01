@@ -1,14 +1,5 @@
-.FormPageImg {
-  position: relative;
-  width: 100%;
-  background-image: url("../../images/DoghouseImage.jpg");
-  width: 100vw;
-  background-size: center;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  padding-bottom: 20px;
+.background-div {
+  background-color: #9ebfdb;
 }
 
 #dog-detail-title {
@@ -32,6 +23,7 @@
 
 #main-dog-card {
   margin-top: 75px;
+  background-color: #285a84;
 }
 
 #dog-name {

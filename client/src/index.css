@@ -13,6 +13,7 @@ div[data-reactroot] {
   --amplify-primary-tint: #3475ab;
   --amplify-primary-shade: #9ebfdb;
   --container-height: fit-content;
+  --amplify-secondary-tint: rgba(250, 183, 59, 0.95);
 }
 
 body {

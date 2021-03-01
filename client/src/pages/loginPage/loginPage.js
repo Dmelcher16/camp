@@ -74,6 +74,13 @@ function LoginPage() {
                       </div>
                       <div className="card-body login-card-body">
                         <Login />
+                        <Button
+                          id="cxl-login-btn"
+                          variant="outline-light"
+                          onClick={() => setShowLogin(false)}
+                        >
+                          Cancel
+                        </Button>
                       </div>
                     </Card>
                   )}
