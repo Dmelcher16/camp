@@ -79,7 +79,6 @@ export default function CreateDogForm() {
         console.log(err);
       });
   }
-  console.log(createDog);
 
   function handleInputChange(event) {
     event.preventDefault();
@@ -169,14 +168,14 @@ export default function CreateDogForm() {
                 }
                 onClick={submitDog}
               >
-                Submit
+                {loading ? (
+                  <Spinner animation="border" role="status" variant="light">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                ) : (
+                  "Submit"
+                )}
               </Button>
-
-              {loading ? (
-                <Spinner animation="border" role="status" variant="success">
-                  <span className="sr-only">Loading...</span>
-                </Spinner>
-              ) : null}
             </div>
           </form>
         </Container>
