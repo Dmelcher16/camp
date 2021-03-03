@@ -367,7 +367,7 @@ function DogPage() {
                         {show ? null : (
                           <Button
                             id="add-exercise-btn"
-                            variant="outline-success"
+                            variant="outline-light"
                             onClick={() => {
                               setShow(true);
                             }}
@@ -387,7 +387,7 @@ function DogPage() {
                     </Card.Body>
                     <Card.Footer>
                       <Link id="link-font" to="/home">
-                        <Button id="to-kennel" variant="outline-success">
+                        <Button id="to-kennel" variant="outline-light">
                           ← Back to Your Kennel
                         </Button>
                       </Link>

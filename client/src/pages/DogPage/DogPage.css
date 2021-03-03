@@ -41,25 +41,28 @@
 #to-kennel {
   float: right;
   position: relative;
-  color: #85c872;
+  color: white;
   text-decoration: none;
 }
 
 #to-kennel:hover {
-  color: white;
+  color: #285a84;
+  border-color: #85c872;
+  background-color: #85c872;
   text-decoration: none;
   transform: scale(1.05);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 #add-exercise-btn {
-  color: #85c872;
+  color: white;
   margin-top: 20px;
 }
 
 #add-exercise-btn:hover {
-  color: white;
-  text-decoration: none;
+  color: #285a84;
+  border-color: #85c872;
+  background-color: #85c872;
   transform: scale(1.05);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
