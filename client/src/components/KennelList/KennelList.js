@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Col, Row, Card } from "react-bootstrap";
+import { Col, Row, Card, Pagination } from "react-bootstrap";
 import API from "../../utils/API";
 import KennelContext from "../../utils/kennelContext";
 // import useIsMountedRef from "../../components/IsMountedRefHook/index";
@@ -61,7 +61,7 @@ function KennelList() {
                     <Link id="img-link" to={"/dog/" + dog._id}>
                       <Card.Body className="kennel-card-body" key={dog._id}>
                         <Card.Title
-                          className="dogName text-center"
+                          className="dog-name text-center"
                           key={dog._id}
                         >
                           {dog.name}

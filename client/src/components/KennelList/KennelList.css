@@ -1,6 +1,5 @@
 #map-row {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin: 0px 20px;
 }
 
 #img-link {
@@ -52,10 +51,12 @@
   padding: 2px !important;
 }
 
-.dogName {
+.dog-name {
   margin-top: 7px;
   margin-bottom: 7px !important;
   color: #285a84;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
 }
 
 #dog-card:hover {

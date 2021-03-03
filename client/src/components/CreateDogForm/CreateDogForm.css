@@ -12,6 +12,17 @@
 
 label.form-label {
   color: #285a84;
+  font-family: "Raleway", sans-serif;
+}
+
+.form-control {
+  font-family: "Raleway", sans-serif;
+}
+
+label.custom-file-label {
+  font-family: "Raleway", sans-serif;
+  color: #495057;
+  font-weight: 400 !important;
 }
 
 .form-container {
@@ -34,7 +45,6 @@ label.form-label {
 .form-label {
   margin-bottom: 0px;
   /* margin-top: 5px */
-
 }
 
 #form-title-col {
