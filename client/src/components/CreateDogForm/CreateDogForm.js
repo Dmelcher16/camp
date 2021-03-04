@@ -10,6 +10,9 @@ import API from "../../utils/API";
 import "./CreateDogForm.css";
 import KennelContext from "../../utils/kennelContext";
 
+const CLOUDINARY_API = process.env.REACT_APP_CLOUDINARY_API;
+const UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
+const CLOUD_NAME = process.env.REACT_APP_CLOUD_NAME;
 
 export default function CreateDogForm() {
   //setting initial state
@@ -65,10 +68,10 @@ export default function CreateDogForm() {
     event.preventDefault();
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "campk9");
-    data.append("cloud_name", "robbiek");
+    data.append("upload_preset", UPLOAD_PRESET);
+    data.append("cloud_name", CLOUD_NAME);
     // data.append("eager", "w_auto");
-    fetch("https://api.cloudinary.com/v1_1/robbiek/image/upload/", {
+    fetch(CLOUDINARY_API, {
       method: "post",
       body: data,
       secure: true,
