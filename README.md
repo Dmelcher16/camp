@@ -6,7 +6,7 @@
  - Dakota Melcher (Back End)
  - Maria Betancourt (Front End)
  - Giancarlo Brida (Front End)
- - Rob Kellen (Back End)
+ - Rob Kellen (Full Stack)
 
 ## Application Name: Camp K-9
 Link to deployed application:  https://agile-garden-72992.herokuapp.com/
@@ -31,7 +31,7 @@ Schedule & Project Management Board:
  - PDF Kit NPM ???
 
 
-## UI/UX Layout:
+## Original UI/UX Layout:
 ![WireFrame](assets/Project_3_Wireframe_Updated.png)
 
 ## Workflow:
@@ -49,7 +49,6 @@ Schedule & Project Management Board:
  - Must be backed by MongoDB or MySQL with Mongoose or Sequelize ORM
  - Must have both GET and POST routes for retrieving new data
  - Must be deployed using Heroku (with data)
- - Must utilize as least two libraries, packages, or technologies that we haven’t discussed
  - Must allow for or involve the authentication of users in some way
  - Must have a polished frontend/UI
  - Must have a folder structure that meets the MVC paradigm

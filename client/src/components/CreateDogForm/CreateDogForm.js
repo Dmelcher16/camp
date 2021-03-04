@@ -10,6 +10,7 @@ import API from "../../utils/API";
 import "./CreateDogForm.css";
 import KennelContext from "../../utils/kennelContext";
 
+
 export default function CreateDogForm() {
   //setting initial state
   const [createDog, setCreateDog] = useState({
@@ -66,9 +67,11 @@ export default function CreateDogForm() {
     data.append("file", image);
     data.append("upload_preset", "campk9");
     data.append("cloud_name", "robbiek");
-    fetch("https://api.cloudinary.com/v1_1/robbiek/image/upload", {
+    // data.append("eager", "w_auto");
+    fetch("https://api.cloudinary.com/v1_1/robbiek/image/upload/", {
       method: "post",
       body: data,
+      secure: true,
     })
       .then((res) => res.json())
       .then((data) => {
@@ -79,6 +82,7 @@ export default function CreateDogForm() {
         console.log(err);
       });
   }
+  console.log(image);
 
   function handleInputChange(event) {
     event.preventDefault();

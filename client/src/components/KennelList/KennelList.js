@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Col, Row, Card, Pagination } from "react-bootstrap";
+import { Col, Row, Card } from "react-bootstrap";
 import API from "../../utils/API";
 import KennelContext from "../../utils/kennelContext";
 // import useIsMountedRef from "../../components/IsMountedRefHook/index";
