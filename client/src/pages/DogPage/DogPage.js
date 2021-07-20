@@ -64,6 +64,8 @@ function DogPage() {
     });
   }
 
+  console.log(dog)
+
   const cancelBtn = document.querySelector(".cancel-btn");
   const addExerciseBtn = document.querySelector(".add-exercise-btn");
 

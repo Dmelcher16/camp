@@ -70,6 +70,10 @@ label.custom-file-label {
   cursor: pointer;
 }
 
+div.form-group {
+  margin: 0px 0px 10px;
+}
+
 .form-btn {
   margin-top: 16px;
 }

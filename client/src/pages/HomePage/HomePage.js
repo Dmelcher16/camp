@@ -25,6 +25,7 @@ function Homepage() {
   }
 
   return (
+    <>
     <KennelContext.Provider value={{ dogs, loadDogs }}>
       <div className="main">
         <AppNav />
@@ -43,9 +44,10 @@ function Homepage() {
             </Col>
           </Row>
         </div>
-        <Footer />
+      <Footer />
       </div>
     </KennelContext.Provider>
+    </>
   );
 }
 

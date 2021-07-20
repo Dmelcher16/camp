@@ -68,11 +68,11 @@ export default function CreateDogForm() {
     event.preventDefault();
     const data = new FormData();
     data.append("file", image);
+    data.append("manifest_transformation", "h_208,w_256");
     data.append("upload_preset", UPLOAD_PRESET);
     data.append("cloud_name", CLOUD_NAME);
-    // data.append("eager", "w_auto");
     fetch(CLOUDINARY_API, {
-      method: "post",
+      method: "POST",
       body: data,
       secure: true,
     })
@@ -85,7 +85,6 @@ export default function CreateDogForm() {
         console.log(err);
       });
   }
-  console.log(image);
 
   function handleInputChange(event) {
     event.preventDefault();

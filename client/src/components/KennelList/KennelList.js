@@ -19,6 +19,8 @@ function KennelList() {
       .catch((err) => console.log(err));
   }
 
+  console.log(dogs);
+
   return (
     <Col>
       {dogs.length ? (
@@ -33,7 +35,7 @@ function KennelList() {
                     style={{ width: "16rem", text: "center" }}
                   >
                     <Link id="img-link" to={"/dog/" + dog._id}>
-                      <img
+                      <Card.Img
                         id={dog.name}
                         key={dog._id}
                         alt={dog.name}

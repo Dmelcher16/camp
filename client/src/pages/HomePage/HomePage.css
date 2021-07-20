@@ -1,5 +1,6 @@
 .main {
   background-color: #9ebfdb;
+  
 }
 
 div.row {
@@ -12,6 +13,7 @@ div.main-homepage {
   background-color: #9ebfdb;
   height: calc(100% - 48px);
   margin-left: 400px !important;
+  
   border-top: thin solid #9ebfdb;
 }
 
@@ -40,6 +42,7 @@ div.main-homepage {
 
 #kennel-col {
   background-color: #9ebfdb;
+  padding-bottom: 40px;
 }
 
 #greeting-col {
