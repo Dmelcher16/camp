@@ -3,6 +3,7 @@ import "./HomePage.css";
 import { Row, Col } from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import CreateDogForm from "../../components/CreateDogForm/CreateDogForm";
+import SearchInput from "../../components/SearchInput/SearchInput";
 import KennelList from "../../components/KennelList/KennelList";
 import Footer from "../../components/Footer/Footer";
 import API from "../../utils/API";
@@ -12,6 +13,8 @@ import KennelContext from "../../utils/kennelContext";
 function Homepage() {
   //set initial state
   const [dogs, setDogs] = useState([]);
+  const [search, setSearch] = useState("");
+  const [nameSearchParam] = useState(["name"]);
 
   useEffect(() => {
     loadDogs();
@@ -24,29 +27,66 @@ function Homepage() {
       .catch((err) => console.log(err));
   }
 
+  //update state of search based on value of input
+  const handleInputChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  function dogSearch(dogs) {
+    if (search) {
+      return dogs.filter((searchResults) => {
+        return nameSearchParam.some((newSearchResults) => {
+          return (
+            searchResults[newSearchResults]
+              .toString()
+              .toLowerCase()
+              .indexOf(search.toLowerCase()) > -1
+          );
+        });
+      });
+    } else {
+      return dogs;
+    }
+  }
+
   return (
     <>
-    <KennelContext.Provider value={{ dogs, loadDogs }}>
-      <div className="main">
-        <AppNav />
-        <CreateDogForm />
-        <div className="main-homepage">
-          <Row id="main-kennel-row" className="justify-content-center">
-            <Col id="kennel-col">
-              <Row id="title-row" className="justify-content-center">
-                <Col id="greeting-col" md>
-                  <h3 id="greeting">KENNEL</h3>
-                </Col>
-              </Row>
-              <Row className="row justify-content-center">
-                <KennelList />
-              </Row>
+      <KennelContext.Provider value={{ dogs, loadDogs, search, dogSearch }}>
+        <div className="main">
+          <AppNav />
+          <Row className="main-row">
+            <Col xs={12} className="main-cols">
+              <CreateDogForm />
+            </Col>
+            <Col xs={12} className="main-cols">
+              <div className="main-homepage">
+                <Row id="main-kennel-row" className="justify-content-center">
+                  <Col id="kennel-col">
+                    <Row id="title-row" className="justify-content-center">
+                      <Col id="greeting-col" md>
+                        <h3 id="greeting">KENNEL</h3>
+                      </Col>
+                    </Row>
+                    <Row className="row justify-content-center">
+                      <Col lg={8}>
+                        <SearchInput
+                          placeholder="Search by name..."
+                          value={search}
+                          onChange={handleInputChange}
+                        />
+                      </Col>
+                      <Col sm="12">
+                        <KennelList />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </div>
+              <Footer />
             </Col>
           </Row>
         </div>
-      <Footer />
-      </div>
-    </KennelContext.Provider>
+      </KennelContext.Provider>
     </>
   );
 }

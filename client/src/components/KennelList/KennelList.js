@@ -10,7 +10,7 @@ import "./KennelList.css";
 
 function KennelList() {
   //set initial state
-  const { dogs, loadDogs } = useContext(KennelContext);
+  const { dogs, loadDogs, dogSearch } = useContext(KennelContext);
 
   //deletes selected dog from db based on id, then reloads dogs from db
   function deleteDog(id) {
@@ -25,7 +25,7 @@ function KennelList() {
     <Col>
       {dogs.length ? (
         <Row id="map-row" className="justify-content-center">
-          {dogs.map((dog) => (
+          {dogSearch(dogs).map((dog) => (
             <div key={dog._id} className="card-deck">
               <Col key={dog._id} mb="3">
                 <div className="card-box">

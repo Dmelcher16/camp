@@ -1,0 +1,49 @@
+/* make width of input 100% of parent element */
+.input-container input {
+  width: 100%;
+  display: flex;
+}
+
+/* define styles for border and font of input */
+.search-input {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  color: white;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-bottom: thin solid #eee;
+  background-color: inherit;
+  background-image: url("../../images/searchIcon.png");
+  background-position: 10px 10px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  padding: 5px 20px 5px 40px;
+}
+
+/* when input is focused darken the bottom border and remove browsers default outline */
+.search-input:focus {
+  outline: none;
+  border-bottom: 3px solid white;
+}
+
+#search-icon {
+  display: inline-block;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}

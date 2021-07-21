@@ -1,6 +1,5 @@
 .main {
   background-color: #9ebfdb;
-  
 }
 
 div.row {
@@ -13,8 +12,13 @@ div.main-homepage {
   background-color: #9ebfdb;
   height: calc(100% - 48px);
   margin-left: 400px !important;
-  
+
   border-top: thin solid #9ebfdb;
+}
+
+.main-cols {
+  /* background-color: #9ebfdb; */
+  padding: 0px !important;
 }
 
 #main-kennel-row {
@@ -50,51 +54,22 @@ div.main-homepage {
   padding-bottom: 7px;
   margin-right: 50%;
   margin-left: 50%;
-  border-bottom: solid thin #285a84;
+  border-bottom: solid thin white;
   border-bottom-left-radius: inherit;
   display: inline-block;
 }
 
 #greeting {
-  color: #285a84;
+  color: white;
   text-align: center;
   margin-bottom: 0px;
   font-family: "Raleway", sans-serif;
-}
-
-#plus-btn-col {
-  margin-bottom: -80px;
 }
 
 #title-row {
   margin-left: 0px;
   margin-right: 0px;
   padding-bottom: 20px;
-}
-
-.fa-plus {
-  color: white;
-  vertical-align: middle;
-  margin-left: 1px;
-  margin-top: 2px;
-}
-
-.icon-background {
-  color: green;
-}
-
-#add-dog-icon {
-  transform: translate(68%, -25%);
-  float: right;
-  position: relative;
-  z-index: 2;
-  border-radius: 50%;
-  background-color: green;
-}
-
-#add-dog-icon:hover {
-  transform: scale(1.05) translate(68%, -25%);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-container {
