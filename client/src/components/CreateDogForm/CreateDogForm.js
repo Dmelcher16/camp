@@ -25,7 +25,7 @@ export default function CreateDogForm() {
     image: "",
   });
   const [image, setImage] = useState("");
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState();
   const { loadDogs } = useContext(KennelContext);
   const [loading, setLoading] = useState(false);
 
@@ -49,7 +49,7 @@ export default function CreateDogForm() {
             breed: "",
             ownerFirstName: "",
             ownerLastName: "",
-            image: "",
+            image: [],
           })
         )
         .then(() => setImage(""))
@@ -68,7 +68,6 @@ export default function CreateDogForm() {
     event.preventDefault();
     const data = new FormData();
     data.append("file", image);
-    data.append("manifest_transformation", "h_208,w_256");
     data.append("upload_preset", UPLOAD_PRESET);
     data.append("cloud_name", CLOUD_NAME);
     fetch(CLOUDINARY_API, {
@@ -78,7 +77,8 @@ export default function CreateDogForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUrl(data.url);
+        console.log(data.eager)
+        setUrl(data.eager[0].secure_url || data.secure_url);
       })
       .then(setLoading(true))
       .catch((err) => {

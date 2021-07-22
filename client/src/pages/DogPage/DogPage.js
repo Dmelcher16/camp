@@ -205,7 +205,7 @@ function DogPage() {
                           <div className="text-center">
                             <img
                               id="detail-image"
-                              className="mx-auto"
+                              className="mx-auto dog-image"
                               src={dog.image}
                               alt={dog.name}
                             />

@@ -54,37 +54,33 @@ function Homepage() {
       <KennelContext.Provider value={{ dogs, loadDogs, search, dogSearch }}>
         <div className="main">
           <AppNav />
+          <CreateDogForm />
           <Row className="main-row">
-            <Col xs={12} className="main-cols">
-              <CreateDogForm />
-            </Col>
-            <Col xs={12} className="main-cols">
-              <div className="main-homepage">
-                <Row id="main-kennel-row" className="justify-content-center">
-                  <Col id="kennel-col">
-                    <Row id="title-row" className="justify-content-center">
-                      <Col id="greeting-col" md>
-                        <h3 id="greeting">KENNEL</h3>
-                      </Col>
-                    </Row>
-                    <Row className="row justify-content-center">
-                      <Col lg={8}>
-                        <SearchInput
-                          placeholder="Search by name..."
-                          value={search}
-                          onChange={handleInputChange}
-                        />
-                      </Col>
-                      <Col sm="12">
-                        <KennelList />
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </div>
-              <Footer />
-            </Col>
+            <div className="main-homepage">
+              <Row id="main-kennel-row" className="justify-content-center">
+                <Col id="kennel-col">
+                  <Row id="title-row" className="justify-content-center">
+                    <Col id="greeting-col" md>
+                      <h3 id="greeting">KENNEL</h3>
+                    </Col>
+                  </Row>
+                  <Row className="row justify-content-center">
+                    <Col lg={8}>
+                      <SearchInput
+                        placeholder="Search by name..."
+                        value={search}
+                        onChange={handleInputChange}
+                      />
+                    </Col>
+                    <Col sm="12">
+                      <KennelList />
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </div>
           </Row>
+          <Footer />
         </div>
       </KennelContext.Provider>
     </>
