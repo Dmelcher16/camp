@@ -71,13 +71,12 @@ export default function CreateDogForm() {
     data.append("upload_preset", UPLOAD_PRESET);
     data.append("cloud_name", CLOUD_NAME);
     fetch(CLOUDINARY_API, {
-      method: "POST",
+      method: "post",
       body: data,
       secure: true,
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.eager)
         setUrl(data.eager[0].secure_url || data.secure_url);
       })
       .then(setLoading(true))
