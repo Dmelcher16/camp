@@ -70,7 +70,7 @@ export default function CreateDogForm() {
     data.append("file", image);
     data.append("upload_preset", UPLOAD_PRESET);
     data.append("cloud_name", CLOUD_NAME);
-    fetch(CLOUDINARY_API, {
+    fetch("https://api.cloudinary.com/v1_1/robbiek/image/upload/", {
       method: "post",
       body: data,
       secure: true,
