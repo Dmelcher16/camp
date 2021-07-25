@@ -68,9 +68,9 @@ export default function CreateDogForm() {
     event.preventDefault();
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "campk9");
-    data.append("cloud_name", "robbiek");
-    fetch("https://api.cloudinary.com/v1_1/robbiek/image/upload/", {
+    data.append("upload_preset", UPLOAD_PRESET);
+    data.append("cloud_name", CLOUD_NAME);
+    fetch(CLOUDINARY_API, {
       method: "post",
       body: data,
       secure: true,
