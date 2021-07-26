@@ -4,7 +4,15 @@ import API from "../../utils/API";
 import DogContext from "../../utils/dogContext";
 import ExerciseContext from "../../utils/exerciseContext";
 import { Link, useParams } from "react-router-dom";
-import { Container, Row, Col, Card, ListGroup, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  ListGroup,
+  Button,
+  Collapse,
+} from "react-bootstrap";
 import AppNav from "../../components/AppNav/AppNav.js";
 import Footer from "../../components/Footer/Footer";
 import {
@@ -63,8 +71,6 @@ function DogPage() {
         .catch((err) => reject(err));
     });
   }
-
-  console.log(dog)
 
   const cancelBtn = document.querySelector(".cancel-btn");
   const addExerciseBtn = document.querySelector(".add-exercise-btn");
@@ -235,149 +241,161 @@ function DogPage() {
                         id="add-exercise-row"
                         className="justify-content-center"
                       >
-                        {show ? (
-                          <Col className="exercise-form col-md-auto">
+                        <Col xs={12} className="text-center">
+                          {show ? (
+                            <Button
+                              aria-controls="exercise-form"
+                              aria-expanded={show}
+                              id="cancel-btn"
+                              variant="danger"
+                              onClick={() => {
+                                setShow(!show);
+                              }}
+                              onChange={handleButtonShow}
+                            >
+                              Cancel
+                            </Button>
+                          ) : (
+                            <Button
+                              aria-controls="exercise-form"
+                              aria-expanded={show}
+                              id="add-exercise-btn"
+                              variant="outline-light"
+                              onClick={() => {
+                                setShow(!show);
+                              }}
+                              onChange={handleButtonShow}
+                            >
+                              + Add Exercise
+                            </Button>
+                          )}
+                        </Col>
+                        <Collapse in={show}>
+                          <Col id="exercise-form" className="col-md">
                             <Container
                               fluid
                               className="form-container"
                               name="dog"
                               value={dog._id}
                             >
-                              <form id="create-exercise-form">
-                                <div>
-                                  <Label id="exercise-label">Exercise:</Label>
-                                  <Select
-                                    onChange={handleInputChange}
-                                    value={createExercise.exercises}
-                                    name="exercises"
-                                    placeholder="Exercise Name (required)"
-                                    id="type"
-                                    default="Choose..."
-                                  />
-                                </div>
-                                <div className="d-none leash-training">
-                                  <Label>Walk Time:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.leashDuration}
-                                    name="leashDuration"
-                                    placeholder="Length of walk in minutes (required)"
-                                  />
-                                  <Label>Leash Pulls:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.leashPullDuration}
-                                    name="leashPullDuration"
-                                    placeholder="Length of time spent pulling in minutes (required)"
-                                  />
-                                </div>
-                                <div className="d-none sit-stay-form">
-                                  <Label>Sit/Stay attempts:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.sitStayAttempts}
-                                    name="sitStayAttempts"
-                                    placeholder="Number of attempted sit/stay commands (Required)"
-                                  />
-                                  <Label>Sit/stay Successes:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.sitStaySuccess}
-                                    name="sitStaySuccess"
-                                    placeholder="Number of times successfully sit/stayed (Required)"
-                                  />
-                                </div>
-                                <div className="d-none commands-form">
-                                  <Label>Commands Attempted:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.commandsAttempted}
-                                    name="commandsAttempted"
-                                    placeholder="Number of commands attempted (Required)"
-                                  />
-                                  <Label>
-                                    Commands Successfully Completed:
-                                  </Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.commandsCompleted}
-                                    name="commandsCompleted"
-                                    placeholder="Number of commands completed (Required)"
-                                  />
-                                </div>
-                                <div className="d-none chewing">
-                                  <Label>Chewing:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.chewing}
-                                    name="chewing"
-                                    placeholder="Number of items chewed up today (Required)"
-                                  />
-                                </div>
-                                <div className="d-none potty-form">
-                                  <Label>Potty Accidents:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.numPottyAccidents}
-                                    name="numPottyAccidents"
-                                    placeholder="Number of accidents today (Required)"
-                                  />
-                                  <Label>Successful Potty Breaks:</Label>
-                                  <Input
-                                    onChange={handleInputChange}
-                                    value={createExercise.numPottySuccesses}
-                                    name="numPottySuccesses"
-                                    placeholder="Number of successful potty breaks (Required)"
-                                  />
-                                </div>
-                                <div className="mb-2">
-                                  <FormBtn
-                                    id="exercise-submit-btn"
-                                    disabled={
-                                      !(
-                                        createExercise.leashDuration ||
-                                        createExercise.leashPullDuration ||
-                                        createExercise.sitStayAttempts ||
-                                        createExercise.sitStaySuccess ||
-                                        createExercise.commandsAttempted ||
-                                        createExercise.commandsCompleted ||
-                                        createExercise.chewing ||
-                                        createExercise.numPottyAccidents ||
-                                        createExercise.numPottySuccesses
-                                      )
-                                    }
-                                    // variant="outline-success"
-                                    onClick={handleFormSubmit}
-                                  >
-                                    Submit
-                                  </FormBtn>
-                                  <FormBtn
-                                    id="cancel-btn"
-                                    variant="danger"
-                                    onClick={() => {
-                                      clearExerciseForm();
-                                      setShow(false);
-                                    }}
-                                  >
-                                    Cancel
-                                  </FormBtn>
-                                </div>
-                              </form>
+                              <Row id="add-exercise-row">
+                                <Col md={{ span: 6, offset: 3 }}>
+                                  <form id="create-exercise-form">
+                                    <div>
+                                      <Label id="exercise-label">
+                                        Exercise:
+                                      </Label>
+                                      <Select
+                                        onChange={handleInputChange}
+                                        value={createExercise.exercises}
+                                        name="exercises"
+                                        placeholder="Exercise Name (required)"
+                                        id="type"
+                                        default="Choose..."
+                                      />
+                                    </div>
+                                    <div className="d-none leash-training">
+                                      <Label>Walk Time:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.leashDuration}
+                                        name="leashDuration"
+                                        placeholder="Length of walk in minutes (required)"
+                                      />
+                                      <Label>Leash Pulls:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.leashPullDuration}
+                                        name="leashPullDuration"
+                                        placeholder="Length of time spent pulling in minutes (required)"
+                                      />
+                                    </div>
+                                    <div className="d-none sit-stay-form">
+                                      <Label>Sit/Stay attempts:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.sitStayAttempts}
+                                        name="sitStayAttempts"
+                                        placeholder="Number of attempted sit/stay commands (Required)"
+                                      />
+                                      <Label>Sit/stay Successes:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.sitStaySuccess}
+                                        name="sitStaySuccess"
+                                        placeholder="Number of times successfully sit/stayed (Required)"
+                                      />
+                                    </div>
+                                    <div className="d-none commands-form">
+                                      <Label>Commands Attempted:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.commandsAttempted}
+                                        name="commandsAttempted"
+                                        placeholder="Number of commands attempted (Required)"
+                                      />
+                                      <Label>
+                                        Commands Successfully Completed:
+                                      </Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.commandsCompleted}
+                                        name="commandsCompleted"
+                                        placeholder="Number of commands completed (Required)"
+                                      />
+                                    </div>
+                                    <div className="d-none chewing">
+                                      <Label>Chewing:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.chewing}
+                                        name="chewing"
+                                        placeholder="Number of items chewed up today (Required)"
+                                      />
+                                    </div>
+                                    <div className="d-none potty-form">
+                                      <Label>Potty Accidents:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.numPottyAccidents}
+                                        name="numPottyAccidents"
+                                        placeholder="Number of accidents today (Required)"
+                                      />
+                                      <Label>Successful Potty Breaks:</Label>
+                                      <Input
+                                        onChange={handleInputChange}
+                                        value={createExercise.numPottySuccesses}
+                                        name="numPottySuccesses"
+                                        placeholder="Number of successful potty breaks (Required)"
+                                      />
+                                    </div>
+                                    <div className="mb-2">
+                                      <FormBtn
+                                        id="exercise-submit-btn"
+                                        disabled={
+                                          !(
+                                            createExercise.leashDuration ||
+                                            createExercise.leashPullDuration ||
+                                            createExercise.sitStayAttempts ||
+                                            createExercise.sitStaySuccess ||
+                                            createExercise.commandsAttempted ||
+                                            createExercise.commandsCompleted ||
+                                            createExercise.chewing ||
+                                            createExercise.numPottyAccidents ||
+                                            createExercise.numPottySuccesses
+                                          )
+                                        }
+                                        onClick={handleFormSubmit}
+                                      >
+                                        Submit
+                                      </FormBtn>
+                                    </div>
+                                  </form>
+                                </Col>
+                              </Row>
                             </Container>
                           </Col>
-                        ) : null}
-                        {show ? null : (
-                          <Button
-                            id="add-exercise-btn"
-                            variant="outline-light"
-                            onClick={() => {
-                              setShow(true);
-                            }}
-                            onChange={handleButtonShow}
-                          >
-                            + Add Exercise
-                          </Button>
-                        )}
+                        </Collapse>
                       </Row>
                       <Row>
                         <CommandsChart />

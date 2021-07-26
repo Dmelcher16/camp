@@ -19,8 +19,6 @@ function KennelList() {
       .catch((err) => console.log(err));
   }
 
-  console.log(dogs);
-
   return (
     <Col>
       {dogs.length ? (
